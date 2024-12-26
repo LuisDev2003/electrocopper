@@ -1,0 +1,310 @@
+.hero {
+  position: relative;
+  width: 100%;
+  background: url("../../images/banner-01.jpg") no-repeat center/cover;
+  padding: 50px 30px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: rgb(2, 116, 190, 0.86);
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin-inline: auto;
+    display: flex;
+    row-gap: 30px;
+    flex-direction: column;
+    position: relative;
+    color: white;
+  }
+
+  .content {
+    .title {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 2.25rem;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .description {
+      color: white;
+      line-height: 1.55rem;
+      margin-bottom: 44px;
+    }
+
+    a {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 10px;
+      padding: 17px 30px;
+      background-color: white;
+      color: #0274be;
+      line-height: 15px;
+
+      span {
+        font-size: 15px;
+        line-height: 15px;
+      }
+    }
+  }
+
+  .content-form {
+    padding: 20px;
+    background-color: white;
+    color: black;
+
+    .title {
+      font-size: 1.25rem;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #dddddd;
+      outline: none;
+    }
+
+    textarea {
+      resize: none;
+      field-sizing: content;
+      max-height: 100px;
+      line-height: 1.2;
+    }
+
+    button {
+      border: none;
+      padding: 17px 30px;
+      width: fit-content;
+      background-color: #0274be;
+      color: white;
+    }
+  }
+}
+
+.section-1 {
+  padding-inline: 30px;
+  max-width: 800px;
+  margin-block: 50px 100px;
+  margin-inline: auto;
+  text-align: center;
+
+  .title {
+    margin-bottom: 20px;
+    font-size: 2rem;
+  }
+
+  .description {
+    line-height: 1.55;
+  }
+}
+
+.section-2 {
+  display: flex;
+  flex-direction: column;
+
+  .card {
+    --bg: #4b4f58b3;
+    --btn-bg: #0274be;
+    --btn-txt: white;
+    width: 100%;
+    padding: 32px;
+    position: relative;
+    background: url("../../images/residential-free-img.jpg") no-repeat
+      center/cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: var(--bg);
+    }
+
+    &:nth-child(2) {
+      --bg: #0274bed9;
+      --btn-bg: white;
+      --btn-txt: #0274be;
+    }
+
+    .title,
+    .description {
+      color: white;
+    }
+  }
+
+  .content {
+    color: white;
+    position: relative;
+    text-align: center;
+
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 44px;
+      line-height: 1.5;
+    }
+
+    .contact {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 10px;
+      padding: 17px 30px;
+      font-size: 0.95rem;
+      line-height: 1;
+      background-color: var(--btn-bg);
+      color: var(--btn-txt);
+
+      svg {
+        fill: var(--btn-txt);
+        stroke: var(--btn-bg);
+      }
+    }
+  }
+}
+
+.section-3 {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  padding: 50px 8px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+
+  .card {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 20px;
+
+    .icon {
+      margin-inline: auto;
+      stroke: #0274be;
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+  }
+}
+
+.section-4 {
+  max-width: 1200px;
+  margin-inline: auto;
+  text-align: center;
+  padding: 50px 16px;
+
+  header .title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+
+  .group-card {
+    margin-top: 30px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .card {
+    flex: 1 0 280px;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: url("../../images/why-choose-us.png") no-repeat center/cover;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-color: #424242bf;
+    }
+  }
+
+  .content {
+    position: relative;
+    text-align: center;
+
+    .icon {
+      fill: #0274be;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .title,
+    .description {
+      color: white;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+    }
+
+    .description {
+      margin-bottom: 44px;
+      line-height: 1.5;
+    }
+
+    .contact,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      column-gap: 10px;
+      padding: 17px 30px;
+      font-size: 0.95rem;
+      line-height: 1;
+      background-color: #0274be;
+      color: white;
+    }
+  }
+}
+
+@media (width >= 720px) {
+  .hero {
+    padding-inline: 50px;
+
+    .wrapper {
+      flex-direction: row;
+      align-items: center;
+      column-gap: 50px;
+
+      .content,
+      .content-form {
+        flex: 1 0 0;
+      }
+
+      .content .title {
+        font-size: 2.9rem;
+      }
+    }
+  }
+
+  .section-1 {
+    padding-inline: 50px;
+  }
+
+  .section-2 {
+    flex-direction: row;
+  }
+
+  .section-4 .group-card {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

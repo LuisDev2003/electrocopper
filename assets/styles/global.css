@@ -3,6 +3,13 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  /* border: 1px solid red; */
+}
+
+html,
+textarea {
+  scrollbar-width: thin;
 }
 
 body {
@@ -10,6 +17,7 @@ body {
 }
 
 a {
+  display: inline-block;
   color: inherit;
   text-decoration: none;
 }
@@ -22,4 +30,17 @@ ol {
 button {
   display: inline-flex;
   cursor: pointer;
+}
+
+.title {
+  font-family: "Playfair Display", serif;
+  color: #3a3a3a;
+  text-wrap: balance;
+}
+
+.description {
+  font-family: "Open Sans", sans-serif;
+  color: #4b4f58;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
