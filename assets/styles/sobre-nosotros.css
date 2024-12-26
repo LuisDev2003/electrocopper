@@ -1,0 +1,148 @@
+.s-1,
+.s-4 {
+  --img: url("../../images/sobre-nosotros-hero.jpg");
+  position: relative;
+  padding: 80px 30px;
+  background: var(--img) no-repeat center/cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: rgb(66, 66, 66, 0.65);
+  }
+
+  .title {
+    position: relative;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+}
+
+.s-2 {
+  padding: 80px 12px;
+  text-align: center;
+
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .div {
+    margin-top: 30px;
+  }
+
+  .accolades {
+    margin-bottom: 50px;
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.s-3 {
+  .tab {
+    overflow: hidden;
+  }
+
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  .tab button.active {
+    background-color: #eee;
+  }
+
+  .tabcontent {
+    text-align: start;
+    display: none;
+    padding: 20px 12px;
+  }
+}
+
+.s-4 {
+  --img: url("../../images/cta-bg-free-img.jpg");
+
+  .wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    text-align: center;
+    color: white;
+    margin-block: 20px;
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 10px;
+    padding: 17px 30px;
+    font-size: 0.95rem;
+    line-height: 1;
+    background-color: #0274be;
+    color: white;
+  }
+}
+
+@media (width >= 1024px) {
+  .s-1 > .title,
+  .s-2,
+  .s-3,
+  .s-4 > .wrapper {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+
+  .s-2 .div {
+    display: flex;
+
+    & > div {
+      flex: 1 0 0;
+    }
+
+    .accolades {
+      margin-bottom: 0;
+      margin-left: 12px;
+
+      img {
+        width: 120px;
+      }
+    }
+  }
+
+  .s-4 .wrapper {
+    flex-direction: row;
+    column-gap: 12px;
+
+    .title,
+    .description {
+      text-align: start;
+    }
+
+    div {
+      flex: 1 0 0;
+    }
+  }
+}

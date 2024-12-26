@@ -4,6 +4,7 @@
   row-gap: 40px;
   max-width: 1200px;
   margin-inline: auto;
+  margin-top: 50px;
 
   .div-1 {
     display: flex;

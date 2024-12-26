@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./images/favicon.svg" type="image/svg+xml" />
-
+    <?php require_once "./layout/meta.html" ?>
+    
     <title>Electrocopper Riojas</title>
-
-    <link rel="stylesheet" href="./assets/styles/global.css" />
+    
     <link rel="stylesheet" href="./assets/styles/home.css" />
-    <link rel="stylesheet" href="./assets/styles/header.css" />
-    <link rel="stylesheet" href="./assets/styles/footer.css" />
-
-    <base href="http://localhost/electrocopper/">
   </head>
   <body>
     <?php require_once "./layout/header.html" ?>

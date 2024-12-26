@@ -217,7 +217,7 @@
   .group-card {
     margin-top: 30px;
     display: grid;
-    gap: 10px;
+    gap: 5px;
   }
 
   .card {
