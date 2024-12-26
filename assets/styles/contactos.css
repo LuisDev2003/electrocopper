@@ -1,0 +1,64 @@
+.s-1 {
+  --img: url("../../images/sobre-nosotros-hero.jpg");
+  position: relative;
+  padding: 80px 30px;
+  background: var(--img) no-repeat center/cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: rgb(66, 66, 66, 0.65);
+  }
+
+  .title {
+    position: relative;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+}
+
+.s-2 {
+  display: grid;
+  row-gap: 50px;
+  padding: 50px 12px;
+
+  img {
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  h4 {
+    font-size: 1.625rem;
+    margin-bottom: 60px;
+  }
+
+  h3 {
+    font-size: 2rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 50%;
+      height: 2px;
+      background-color: #3a3a3a;
+      margin-top: 20px;
+    }
+  }
+
+  h5 {
+    margin-top: 20px;
+  }
+}
+
+@media (width >= 640px) {
+  .s-2 {
+    max-width: 1200px;
+    margin-inline: auto;
+    column-gap: 50px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
