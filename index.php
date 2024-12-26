@@ -9,7 +9,7 @@
   </head>
   <body>
     <?php require_once "./layout/header.html" ?>
-
+<!-- 
     <section class="hero">
       <div class="wrapper">
         <div class="content">
@@ -51,7 +51,7 @@
         </div>
       </div>
     </section>
-
+ -->
     <section class="section-1">
       <h2 class="title">Quality Work Through Dedication</h2>
 

@@ -1,0 +1,149 @@
+.s-1 {
+  --img: url("../../images/sobre-nosotros-hero.jpg");
+  position: relative;
+  padding: 80px 30px;
+  background: var(--img) no-repeat center/cover;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-color: rgb(66, 66, 66, 0.65);
+  }
+
+  .title {
+    position: relative;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+  }
+}
+
+.s-2 {
+  padding: 80px 12px;
+  text-align: center;
+
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .accolades {
+    margin-bottom: 50px;
+
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    img {
+      width: 200px;
+    }
+  }
+}
+
+.services {
+  padding: 50px 12px;
+  max-width: 1200px;
+  margin-inline: auto;
+
+  .service + .service {
+    margin-top: 50px;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+
+    .title {
+      font-size: 1.55rem;
+      margin-block: 16px;
+    }
+
+    img {
+      border-radius: 12px;
+      width: 100%;
+      max-width: 480px;
+      float: right;
+    }
+
+    ul {
+      list-style: "\226B";
+      margin-top: 20px;
+      padding-left: 14.25px;
+
+      li + li {
+        margin-top: 10px;
+      }
+
+      li p {
+        color: #4b4f58;
+        margin-left: 10px;
+      }
+
+      li::marker {
+        color: #0274be;
+      }
+    }
+  }
+}
+
+.s-3 {
+  max-width: 1200px;
+  margin-inline: auto;
+  display: grid;
+  padding: 50px 8px;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+
+  .card {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 20px;
+
+    .icon {
+      margin-inline: auto;
+      stroke: #0274be;
+    }
+
+    .title {
+      font-size: 1.1rem;
+    }
+
+    .description {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+@media (width >= 640px) {
+  .services .service {
+    flex-direction: row;
+    column-gap: 30px;
+    align-items: center;
+
+    & > img,
+    & > div {
+      flex: 1 0 0;
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      img {
+        float: left;
+      }
+    }
+
+    .title {
+      font-size: 2.25rem;
+      margin-top: 0;
+    }
+  }
+}
