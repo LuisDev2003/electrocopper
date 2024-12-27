@@ -1,3 +1,93 @@
+<header class="header-2">
+  <div class="wrapper">
+    <div class="logo">
+      <img
+        src="images/cropped-ELECTROCOPPER-logo-web_page-0001-1.jpg"
+        alt=""
+        height="48"
+      />
+    </div>
+
+    <div class="navegation">
+      <button
+        id="button-toggle-menu"
+        type="button"
+        aria-label="Mostrar menú"
+        data-status="close"
+        class="button"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="open"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M4 6l16 0" />
+          <path d="M4 12l16 0" />
+          <path d="M4 18l16 0" />
+        </svg>
+
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="close"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M18 6l-12 12" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
+
+      <nav id="nav-menu" class="menu">
+        <a href="" class="item">Inicio</a>
+        <a href="sobre-nosotros" class="item">Sobre nosotros</a>
+        <a href="servicios" class="item">Servicios</a>
+        <a href="faq" class="item">FAQ</a>
+        <a href="contactos" class="item">Contactos</a>
+      </nav>
+    </div>
+
+    <div class="contact">
+      <a href="#" class="button">Contáctenos</a>
+    </div>
+  </div>
+</header>
+
+<aside id="sidebar-menu" class="sidebar">
+  <ul class="menu">
+    <li class="item">
+      <a href="">Inicio</a>
+    </li>
+    <li class="item">
+      <a href="sobre-nosotros">Sobre nosotros</a>
+    </li>
+    <li class="item">
+      <a href="servicios">Servicios</a>
+    </li>
+    <li class="item">
+      <a href="faq">FAQ</a>
+    </li>
+    <li class="item">
+      <a href="contactos">Contactos</a>
+    </li>
+  </ul>
+</aside>
+
+<div id="backdrop" class="backdrop"></div>
+
+<!-- 
 <header id="header">
   <div id="social-networks">
     <a href="https://www.facebook.com/profile.php?id=61556652903051">
@@ -208,3 +298,49 @@
     </li>
   </ul>
 </header>
+ -->
+<script>
+  const currentUrl = window.location.pathname;
+  const lastSegment = currentUrl.split("/").pop() || "";
+
+  const headerMenuItems = document.querySelectorAll("#nav-menu .item");
+  const sidebarMenuItems = document.querySelectorAll("#sidebar-menu .item");
+
+  function setActiveMenuItem(item) {
+    const href =
+      item.getAttribute("href") ?? item.querySelector("a").getAttribute("href");
+
+    const isActive = href === lastSegment;
+    item.classList.toggle("active", isActive);
+
+    if (isActive) return;
+  }
+
+  headerMenuItems.forEach(setActiveMenuItem);
+  sidebarMenuItems.forEach(setActiveMenuItem);
+</script>
+
+<script>
+  const buttonOpenMenu = document.querySelector("#button-toggle-menu");
+  const sidebarMenu = document.querySelector("#sidebar-menu");
+  const sidebarBackdrop = document.querySelector("#backdrop");
+
+  function toggleStatusMenu() {
+    const status = buttonOpenMenu.dataset.status;
+
+    if (status === "open") {
+      buttonOpenMenu.dataset.status = "close";
+
+      sidebarMenu.classList.remove("open");
+      sidebarBackdrop.classList.remove("open");
+    } else {
+      buttonOpenMenu.dataset.status = "open";
+
+      sidebarMenu.classList.add("open");
+      sidebarBackdrop.classList.add("open");
+    }
+  }
+
+  buttonOpenMenu.addEventListener("click", toggleStatusMenu);
+  sidebarBackdrop.addEventListener("click", toggleStatusMenu);
+</script>
