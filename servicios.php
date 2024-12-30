@@ -15,17 +15,58 @@
     </section>
 
     <section class="s-2">
-      <h2 class="title">What We Do</h2>
+      <ul>
+        <li>
+          <div class="service">
+            <img src="images/services/service-1.jpeg" alt="Servicio 1" />
 
-      <p class="description">
-        Aliquam suscipit felis a arcu laoreet congue. Habeo nemore appellantur
-        eu usu putant adolescens consequuntur ei, mel tempor consulatu
-        voluptaria. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Elit luctus nec ullamcorper mattis, pulvinar dapibus leo. It elit
-        tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Aliquam
-        suscipit felis a arcu laoreet congue. Habeo putant adolescens
-        consequuntur.
-      </p>
+            <h4 class="title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              saepe.
+            </h4>
+          </div>
+        </li>
+        <li>
+          <div class="service">
+            <img src="images/services/service-2.jpg" alt="Servicio 1" />
+
+            <h4 class="title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              saepe.
+            </h4>
+          </div>
+        </li>
+        <li>
+          <div class="service">
+            <img src="images/services/service-1.jpeg" alt="Servicio 1" />
+
+            <h4 class="title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              saepe.
+            </h4>
+          </div>
+        </li>
+        <li>
+          <div class="service">
+            <img src="images/services/service-2.jpg" alt="Servicio 1" />
+
+            <h4 class="title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              saepe.
+            </h4>
+          </div>
+        </li>
+        <li>
+          <div class="service">
+            <img src="images/services/service-1.jpeg" alt="Servicio 1" />
+
+            <h4 class="title">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime,
+              saepe.
+            </h4>
+          </div>
+        </li>
+      </ul>
     </section>
 
     <ul class="services">
