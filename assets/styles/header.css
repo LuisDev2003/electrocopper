@@ -3,7 +3,7 @@
   z-index: 90;
   top: 0;
   background-color: var(--white);
-  border-bottom: 1px solid var(--gray);
+  /* border-bottom: 1px solid var(--gray); */
 
   .wrapper {
     height: 64px;

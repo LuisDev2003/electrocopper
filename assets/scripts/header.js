@@ -8,7 +8,7 @@ function setActiveMenuItem(item) {
   const href =
     item.getAttribute("href") ?? item.querySelector("a").getAttribute("href");
 
-  const isActive = href === lastSegment;
+  const isActive = href.substring(2) === lastSegment;
   item.classList.toggle("active", isActive);
 
   if (isActive) return;

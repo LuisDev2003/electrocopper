@@ -47,6 +47,12 @@
   }
 }
 
+.s-1,
+.s-2 {
+  max-width: 1024px;
+  margin-inline: auto;
+}
+
 @media (width >= 400px) {
   .s-2 span {
     display: inline;

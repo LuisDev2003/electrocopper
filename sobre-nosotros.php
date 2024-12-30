@@ -10,10 +10,6 @@
   <body>
     <?php require_once "./layout/header.html" ?>
 
-    <section class="s-1">
-      <h1 class="title">Sobre nosotros</h1>
-    </section>
-
     <section class="s-2">
       <h2 class="title">Quienes somos…</h2>
 
@@ -58,16 +54,30 @@
     </section>
 
     <section class="s-4">
-      <h2 class="title">Quienes somos…</h2>
+      <h2 class="title">¿Por qué elegirnos?</h2>
 
-      <p class="description">
-        Somos una empresa que se desarrolla en el mercado español, especialistas
-        en instalaciones eléctricas domiciliarias e industriales, automatizamos
-        tus instalaciones eléctricas, reformamos pisos en forma general. Nos
-        enfocamos en la satisfacción del cliente para lo cual contamos con una
-        amplia experiencia en la ejecución de proyectos caracterizándonos por
-        ejecutar los trabajos a tiempo pactado.
-      </p>
+      <ol>
+        <li>
+          <p>Porque contamos con la experiencia y capacidad requerida</p>
+        </li>
+        <li>
+          <p>
+            Porque realizamos seguimiento a nuestros clientes y proyectos
+            después de haber finalizado los trabajos.
+          </p>
+        </li>
+        <li>
+          <p>
+            Porque nos adecuamos a la necesidad y al presupuesto de cada cliente
+          </p>
+        </li>
+        <li>
+          <p>
+            Porque realizamos un trabajo con calidad y seguridad aplicando la
+            mejora continua.
+          </p>
+        </li>
+      </ol>
     </section>
 
     <?php require_once "./layout/footer.html" ?>

@@ -1,52 +1,18 @@
-.s-1 {
-  --img: url("../../images/sobre-nosotros-hero.jpg");
-  position: relative;
-  padding: 80px 30px;
-  background: var(--img) no-repeat center/cover;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-color: rgb(66, 66, 66, 0.65);
-  }
-
-  .title {
-    position: relative;
-    font-size: 3rem;
-    text-align: center;
-    color: white;
-  }
-}
-
-.s-2 {
-  padding: 80px 12px;
+.s-2,
+.s-4 {
+  padding: 50px 12px;
   text-align: center;
 
   .title {
-    font-size: 2.5rem;
-    text-align: center;
+    color: var(--black);
+    font-size: 2rem;
     margin-bottom: 20px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
   }
 
-  .div {
-    margin-top: 30px;
-  }
-
-  .accolades {
-    margin-bottom: 50px;
-
-    .images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 30px;
-    }
-
-    img {
-      width: 200px;
-    }
+  .description {
+    color: var(--black);
   }
 }
 
@@ -71,34 +37,49 @@
   }
 
   .tab button.active {
-    background-color: #eee;
+    background-color: var(--black);
+    color: var(--white);
   }
 
   .tabcontent {
-    background-color: #eee;
+    background-color: var(--black);
+    color: var(--white);
     text-align: start;
     display: none;
-    padding: 20px 12px;
+    padding: 20px;
     border-radius: 10px;
     border-top-left-radius: var(--br);
     transition: all 0.3 ease-in-out;
   }
+
+  .tabcontent p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
 }
 
 .s-4 {
-  .description {
-    text-align: center;
-    color: white;
-    margin-block: 20px;
+  .title,
+  p {
+    text-align: start;
+  }
+
+  ol {
+    list-style-type: auto;
+    padding-left: 24px;
+  }
+
+  li + li {
+    margin-top: 8px;
   }
 }
 
 @media (width >= 1024px) {
-  .s-1 > .title,
+  .s-1,
   .s-2,
   .s-3,
-  .s-4 > .wrapper {
-    max-width: 1200px;
+  .s-4 {
+    max-width: 1024px;
     margin-inline: auto;
   }
 
