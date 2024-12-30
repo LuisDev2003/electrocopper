@@ -15,95 +15,59 @@
     </section>
 
     <section class="s-2">
-      <div>
-        <h2 class="title">Company Profile</h2>
+      <h2 class="title">Quienes somos…</h2>
 
-        <p class="description">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio
-          repellendus reiciendis id totam vel, odit incidunt amet ab, accusamus,
-          libero distinctio ducimus omnis maiores. Est natus porro nostrum
-          delectus consequuntur?
+      <p class="description">
+        Somos una empresa que se desarrolla en el mercado español, especialistas
+        en instalaciones eléctricas domiciliarias e industriales, automatizamos
+        tus instalaciones eléctricas, reformamos pisos en forma general. Nos
+        enfocamos en la satisfacción del cliente para lo cual contamos con una
+        amplia experiencia en la ejecución de proyectos caracterizándonos por
+        ejecutar los trabajos a tiempo pactado.
+      </p>
+    </section>
+
+    <section class="s-3">
+      <div id="tabs" class="tab">
+        <button data-tab-content="vision" class="tablinks active">
+          Visión
+        </button>
+        <button data-tab-content="mission" class="tablinks">Missión</button>
+      </div>
+
+      <div id="vision" class="tabcontent" style="--br: 0; display: block">
+        <p>
+          Electrocopper Riojas se proyecta en la inserción del mercado laboral
+          comprometido a ser uno de los mejores en el rubro de electricidad,
+          desarrollando trabajos altamente conceptuados y con tecnología de
+          punta proporcionando asesoramiento y consultoría experta para la toma
+          de decisiones en cuanto a sistemas de electrificación, automatización
+          y domótica.
         </p>
       </div>
 
-      <div class="div">
-        <div class="accolades">
-          <h2 class="title">Accolades</h2>
-
-          <div class="images">
-            <img src="images/2015-award-free-img.png" alt="" />
-            <img src="images/2015-award-free-img.png" alt="" />
-            <img src="images/2015-award-free-img.png" alt="" />
-          </div>
-        </div>
-
-        <div class="s-3">
-          <div id="tabs" class="tab">
-            <button data-tab-content="vision" class="tablinks active">
-              Vision
-            </button>
-            <button data-tab-content="mission" class="tablinks">Mission</button>
-            <button data-tab-content="values" class="tablinks">Values</button>
-          </div>
-
-          <div id="vision" class="tabcontent" style="display: block">
-            <p>
-              Vision - Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore corporis amet maxime, ipsum nulla nemo omnis quae
-              exercitationem quaerat dicta?
-            </p>
-          </div>
-
-          <div id="mission" class="tabcontent">
-            <p>
-              Mision - Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore corporis amet maxime, ipsum nulla nemo omnis quae
-              exercitationem quaerat dicta?
-            </p>
-          </div>
-
-          <div id="values" class="tabcontent">
-            <p>
-              Values - Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-              Tempore corporis amet maxime, ipsum nulla nemo omnis quae
-              exercitationem quaerat dicta?
-            </p>
-          </div>
-        </div>
+      <div id="mission" class="tabcontent" style="--br: 10px">
+        <p>
+          Electrocopper Riojas tiene la misión de brindar un trabajo de calidad
+          y seguridad a nuestros clientes, con la intervención del personal
+          adecuado y utilizando la innovación tecnológica en sistema de
+          electricidad alcanzando la satisfacción y confort de quienes nos
+          eligen.
+        </p>
       </div>
     </section>
 
     <section class="s-4">
-      <div class="wrapper">
-        <div>
-          <h1 class="title">Have Queries?</h1>
+      <h2 class="title">Quienes somos…</h2>
 
-          <p class="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
-            veniam adipisci libero! Doloribus dolorem necessitatibus sit
-            architecto omnis voluptatibus minus.
-          </p>
-        </div>
-
-        <a href="#" class="button">
-          <span>Contact us</span>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-            <path d="M7 7l5 5l-5 5" />
-            <path d="M13 7l5 5l-5 5" />
-          </svg>
-        </a>
-      </div>
+      <p class="description">
+        Somos una empresa que se desarrolla en el mercado español, especialistas
+        en instalaciones eléctricas domiciliarias e industriales, automatizamos
+        tus instalaciones eléctricas, reformamos pisos en forma general. Nos
+        enfocamos en la satisfacción del cliente para lo cual contamos con una
+        amplia experiencia en la ejecución de proyectos caracterizándonos por
+        ejecutar los trabajos a tiempo pactado.
+      </p>
     </section>
 
     <?php require_once "./layout/footer.html" ?>

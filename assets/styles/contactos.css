@@ -1,64 +1,60 @@
-.s-1 {
-  --img: url("../../images/sobre-nosotros-hero.jpg");
-  position: relative;
-  padding: 80px 30px;
-  background: var(--img) no-repeat center/cover;
-
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background-color: rgb(66, 66, 66, 0.65);
-  }
-
-  .title {
-    position: relative;
-    font-size: 3rem;
-    text-align: center;
-    color: white;
-  }
+.s-1 iframe {
+  width: 100%;
+  height: 480px;
+  border: none;
 }
 
 .s-2 {
-  display: grid;
-  row-gap: 50px;
-  padding: 50px 12px;
+  background-color: var(--white);
 
-  img {
-    margin-top: 50px;
-    width: 100%;
-    border-radius: 10px;
+  & > div {
+    max-width: 1200px;
+    padding-block: 50px;
+    padding-inline: 12px;
+    margin-inline: auto;
+    text-align: center;
   }
 
-  h4 {
-    font-size: 1.625rem;
-    margin-bottom: 60px;
-  }
-
-  h3 {
+  .title {
+    color: var(--black);
     font-size: 2rem;
-
-    &::after {
-      content: "";
-      display: block;
-      width: 50%;
-      height: 2px;
-      background-color: #3a3a3a;
-      margin-top: 20px;
-    }
+    margin-bottom: 20px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
   }
 
-  h5 {
-    margin-top: 20px;
+  .social-media {
+    margin-top: 8px;
+    display: flex;
+    justify-content: center;
+  }
+
+  strong {
+    color: var(--black);
+  }
+
+  span {
+    display: block;
+    color: var(--black);
+  }
+
+  li + li {
+    margin-top: 14px;
+  }
+
+  li:last-child {
+    margin-top: 40px;
   }
 }
 
-@media (width >= 640px) {
+@media (width >= 400px) {
+  .s-2 span {
+    display: inline;
+  }
+}
+
+@media (width >= 600px) {
   .s-2 {
-    max-width: 1200px;
-    margin-inline: auto;
-    column-gap: 50px;
-    grid-template-columns: repeat(2, 1fr);
+    padding-inline: 20px;
   }
 }

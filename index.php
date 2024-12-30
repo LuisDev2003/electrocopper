@@ -2,56 +2,14 @@
 <html lang="es">
   <head>
     <?php require_once "./layout/meta.html" ?>
-    
+
     <title>Electrocopper Riojas</title>
-    
+
     <link rel="stylesheet" href="./assets/styles/home.css" />
   </head>
   <body>
     <?php require_once "./layout/header.html" ?>
-<!-- 
-    <section class="hero">
-      <div class="wrapper">
-        <div class="content">
-          <h1 class="title">
-            Cuando se trata de confiabilidad somos lo que usted nesecita
-          </h1>
-          <p class="description">
-            Fusce porta euismod magna, eu vehicula tellus feugiat ac.
-          </p>
 
-          <a href="#">
-            <span>Saber más</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M12 2c5.523 0 10 4.477 10 10a10 10 0 0 1 -20 0c0 -5.523 4.477 -10 10 -10m-.293 6.293a1 1 0 0 0 -1.414 0l-.083 .094a1 1 0 0 0 .083 1.32l2.292 2.293l-2.292 2.293a1 1 0 0 0 1.414 1.414l3 -3a1 1 0 0 0 0 -1.414z"
-              />
-            </svg>
-          </a>
-        </div>
-
-        <div class="content-form">
-          <h5 class="title">Request Callback</h5>
-
-          <form class="form">
-            <input type="text" placeholder="Nombre" class="input" />
-            <input type="text" placeholder="Correo electrónico" class="input" />
-            <input type="text" placeholder="Numero de contacto" class="input" />
-            <textarea placeholder="Mensaje"></textarea>
-
-            <button type="submit">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </section>
- -->
     <section class="section-1">
       <h2 class="title">Quality Work Through Dedication</h2>
 

@@ -1,10 +1,15 @@
+footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--gray);
+}
+
 .footer {
   display: grid;
-  padding: 12px;
+  padding-inline: 12px;
+  padding-block: 50px;
   row-gap: 40px;
   max-width: 1200px;
   margin-inline: auto;
-  margin-top: 50px;
 
   .div-1 {
     display: flex;
@@ -16,23 +21,16 @@
       margin-inline: auto;
     }
 
-    .social-media {
-      width: 100%;
-      display: flex;
-      column-gap: 10px;
-    }
-
-    a {
-      display: block;
-      width: 20px;
-      height: 20px;
+    .description {
+      color: var(--black);
     }
   }
 
   .navegation {
-    h3 {
+    .title {
       font-size: 1.5rem;
       margin-bottom: 16px;
+      color: var(--black);
     }
 
     nav {
@@ -40,12 +38,37 @@
       flex-direction: column;
       row-gap: 10px;
     }
+
+    a {
+      color: var(--black);
+    }
+  }
+}
+
+.social-media {
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+
+  a {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  .item {
+    width: 48px;
+    height: 48px;
+    background-image: url("../../images/redes-sociales.png");
+    background-size: 115px;
+    background-repeat: no-repeat;
+    background-position: var(--bp);
   }
 }
 
 @media (width>= 600px) {
   .footer {
-    grid-template-columns: 1fr 175px 2fr;
+    grid-template-columns: repeat(3, 1fr);
     column-gap: 30px;
   }
 

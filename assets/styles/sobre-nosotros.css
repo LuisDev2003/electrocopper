@@ -1,5 +1,4 @@
-.s-1,
-.s-4 {
+.s-1 {
   --img: url("../../images/sobre-nosotros-hero.jpg");
   position: relative;
   padding: 80px 30px;
@@ -52,19 +51,23 @@
 }
 
 .s-3 {
+  padding: 12px;
+
   .tab {
     overflow: hidden;
   }
 
   .tab button {
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
     background-color: inherit;
     float: left;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
+    font-size: 1.1rem;
+    padding-inline: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    font-weight: 600;
   }
 
   .tab button.active {
@@ -72,37 +75,21 @@
   }
 
   .tabcontent {
+    background-color: #eee;
     text-align: start;
     display: none;
     padding: 20px 12px;
+    border-radius: 10px;
+    border-top-left-radius: var(--br);
+    transition: all 0.3 ease-in-out;
   }
 }
 
 .s-4 {
-  --img: url("../../images/cta-bg-free-img.jpg");
-
-  .wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
   .description {
     text-align: center;
     color: white;
     margin-block: 20px;
-  }
-
-  .button {
-    display: inline-flex;
-    align-items: center;
-    column-gap: 10px;
-    padding: 17px 30px;
-    font-size: 0.95rem;
-    line-height: 1;
-    background-color: #0274be;
-    color: white;
   }
 }
 
@@ -129,20 +116,6 @@
       img {
         width: 120px;
       }
-    }
-  }
-
-  .s-4 .wrapper {
-    flex-direction: row;
-    column-gap: 12px;
-
-    .title,
-    .description {
-      text-align: start;
-    }
-
-    div {
-      flex: 1 0 0;
     }
   }
 }
