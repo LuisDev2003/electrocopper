@@ -9,7 +9,7 @@
   </head>
   <body>
     <?php require_once "./layout/header.html" ?>
-
+    <!-- 
     <section class="section-1">
       <h2 class="title">Quality Work Through Dedication</h2>
 
@@ -241,7 +241,7 @@
         </p>
       </article>
     </section>
-
+ -->
     <section class="section-4">
       <header>
         <h2 class="title">Why Choose Us</h2>
@@ -384,6 +384,61 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <section class="s-1">
+      <h2 class="title">Reseñas</h2>
+
+      <ul>
+        <li>
+          <article class="review">
+            <div class="d-1">
+              <h4 class="username">Cliente 1</h4>
+              <span class="date">31-12-24</span>
+            </div>
+
+            <div class="d-2">
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                voluptate sed deleniti earum qui sunt recusandae enim quam
+                suscipit dolores!
+              </p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="review">
+            <div class="d-1">
+              <h4 class="username">Cliente 2</h4>
+              <span class="date">31-12-24</span>
+            </div>
+
+            <div class="d-2">
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                voluptate sed deleniti earum qui sunt recusandae enim quam
+                suscipit dolores!
+              </p>
+            </div>
+          </article>
+        </li>
+        <li>
+          <article class="review">
+            <div class="d-1">
+              <h4 class="username">Cliente 3</h4>
+              <span class="date">31-12-24</span>
+            </div>
+
+            <div class="d-2">
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
+                voluptate sed deleniti earum qui sunt recusandae enim quam
+                suscipit dolores!
+              </p>
+            </div>
+          </article>
+        </li>
+      </ul>
     </section>
 
     <?php require_once "./layout/footer.html" ?>

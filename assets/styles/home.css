@@ -182,6 +182,54 @@
   }
 }
 
+.s-1 {
+  max-width: 768px;
+  margin-inline: auto;
+  padding: 50px 16px;
+
+  .title {
+    color: var(--black);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+    text-align: center;
+  }
+
+  ul > li + li {
+    margin-top: 12px;
+  }
+
+  .review {
+    background-image: linear-gradient(45deg, var(--black), var(--secondary));
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  .d-1 {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .username {
+    color: var(--white);
+    text-transform: uppercase;
+  }
+
+  .date {
+    color: var(--white);
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .description {
+    color: var(--white);
+    font-size: 0.9rem;
+  }
+}
+
 @media (width >= 720px) {
   .hero {
     padding-inline: 50px;
