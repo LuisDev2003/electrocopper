@@ -1,3 +1,10 @@
+<?php
+require_once "./models/servicio.php";
+
+$servicio = new Servicio();
+
+$servicios = $servicio->getAll(); ?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -7,11 +14,30 @@
 
     <link rel="stylesheet" href="./assets/styles/servicios.css" />
   </head>
+
   <body>
     <?php require_once "./layout/header.html" ?>
 
     <section class="s-1">
       <h1 class="title">Servicios</h1>
+    </section>
+
+    <section class="s-2">
+      <ul>
+        <?php foreach ($servicios as $item): ?>
+        <li>
+          <div class="service">
+            <img
+              src="images/services/<?= htmlspecialchars($item['imagen']); ?>"
+              alt="<?= htmlspecialchars($item['nombre']); ?>"
+            />
+            <h4 class="title">
+              <?= htmlspecialchars($item['nombre']); ?>
+            </h4>
+          </div>
+        </li>
+        <?php endforeach; ?>
+      </ul>
     </section>
 
     <section class="s-2">

@@ -39,6 +39,15 @@ button {
   cursor: pointer;
 }
 
+dialog {
+  border: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  scrollbar-width: none;
+}
+
 .title {
   color: #3a3a3a;
   text-wrap: balance;
