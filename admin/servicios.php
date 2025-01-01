@@ -36,48 +36,52 @@
         </button>
       </div>
 
-      <table id="tb-servicios" class="table">
-        <thead class="t-head">
-          <tr class="t-row">
-            <th>Id</th>
-            <th>Nombre</th>
-            <th>Descripción</th>
-          </tr>
-        </thead>
+      <section class="s-table">
+        <table id="tb-servicios" class="table">
+          <thead class="t-head">
+            <tr class="t-row">
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th class="actions">Acciones</th>
+            </tr>
+          </thead>
 
-        <tbody class="t-body">
-          <tr class="t-row">
-            <td>1</td>
-            <td>Servicio 1</td>
-            <td>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, dolore!
-            </td>
-          </tr>
-
-          <tr class="t-row">
-            <td>1</td>
-            <td>Servicio 1</td>
-            <td>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus, dolore!
-            </td>
-          </tr>
-        </tbody>
-      </table>
+          <tbody class="t-body"></tbody>
+        </table>
+      </section>
     </main>
 
     <dialog id="fm-servicio" class="form-modal">
       <h3 class="title">Agregar servicio</h3>
 
       <form autocomplete="off" class="form">
-        <input type="text" placeholder="Nombre" />
-        <textarea name="" placeholder="Descripción"></textarea>
-        <input id="file-image" type="file" name="" />
+        <input type="text" name="nombre" placeholder="Nombre" />
+        <textarea name="descripcion" placeholder="Descripción"></textarea>
+        <input id="file-image" type="file" name="imagen" />
         <div id="preview-file-image" class="image"></div>
 
         <div class="d-1">
           <button type="submit" class="button">Guardar</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog id="delete-servicio" class="form-modal delete">
+      <h3 class="title">Eliminar servicio</h3>
+
+      <p class="description">¿Desea eliminar el servicio?</p>
+
+      <form autocomplete="off" class="form">
+        <input
+          id="input-delete-service-id"
+          type="text"
+          name="servicio_id"
+          readonly
+          style="display: none"
+        />
+        <div class="d-1">
+          <button type="button" class="button cancel">Cancelar</button>
+          <button type="submit" class="button submit delete">Eliminar</button>
         </div>
       </form>
     </dialog>

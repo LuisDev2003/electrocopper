@@ -27,10 +27,8 @@ $servicios = $servicio->getAll(); ?>
         <?php foreach ($servicios as $item): ?>
         <li>
           <div class="service">
-            <img
-              src="images/services/<?= htmlspecialchars($item['imagen']); ?>"
-              alt="<?= htmlspecialchars($item['nombre']); ?>"
-            />
+            <img src="images/services/<?= htmlspecialchars($item['imagen'] ?? ""); ?>"
+            alt="<?= htmlspecialchars($item['nombre']); ?>" />
             <h4 class="title">
               <?= htmlspecialchars($item['nombre']); ?>
             </h4>
@@ -40,7 +38,7 @@ $servicios = $servicio->getAll(); ?>
       </ul>
     </section>
 
-    <section class="s-2">
+    <!--  <section class="s-2">
       <ul>
         <li>
           <div class="service">
@@ -93,7 +91,7 @@ $servicios = $servicio->getAll(); ?>
           </div>
         </li>
       </ul>
-    </section>
+    </section> -->
 
     <ul class="services">
       <li class="service">
@@ -237,7 +235,7 @@ $servicios = $servicio->getAll(); ?>
       </li>
     </ul>
 
-    <section class="s-3">
+    <!--    <section class="s-3">
       <article class="card">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -382,7 +380,7 @@ $servicios = $servicio->getAll(); ?>
           voluptatum deserunt reprehenderit.
         </p>
       </article>
-    </section>
+    </section> -->
 
     <?php require_once "./layout/footer.html" ?>
   </body>

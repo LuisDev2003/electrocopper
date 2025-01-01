@@ -1,5 +1,7 @@
 main {
-  padding: 12px;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 8px;
 }
 
 .d-1 {
@@ -31,7 +33,7 @@ main {
   .form {
     padding-block: 12px;
 
-    * + * {
+    > * + * {
       margin-top: 8px;
     }
 
@@ -77,9 +79,7 @@ main {
     }
 
     .button {
-      width: 100%;
-      min-width: 200px;
-      max-width: 80%;
+      flex: 1 0 0;
       height: 40px;
       justify-content: center;
       align-items: center;
@@ -89,7 +89,46 @@ main {
       border-radius: 12px;
       line-height: 1.2;
     }
+
+    .cancel {
+      background-color: var(--white);
+      color: var(--black);
+    }
   }
+}
+
+.form-modal.delete {
+  max-width: 440px;
+  width: 95%;
+
+  > * + * {
+    margin-top: 32px;
+  }
+
+  .form {
+    padding: 0px;
+  }
+
+  .description {
+    font-weight: bold;
+    color: #f60e0e;
+    text-align: center;
+  }
+
+  .d-1 {
+    margin-block: 0;
+  }
+
+  .button.delete {
+    background-color: #ef4444;
+    color: #fef2f2;
+  }
+}
+
+.s-table {
+  padding-inline: 10px;
+  margin-inline: -8px;
+  overflow-x: auto;
 }
 
 .table {
@@ -101,9 +140,40 @@ main {
     padding: 12px;
   }
 
+  .t-row {
+    border-bottom: 1px solid var(--gray);
+  }
+
   .t-head th {
     padding: 12px;
     background-color: var(--black);
     color: var(--white);
+  }
+
+  .t-head .actions {
+    min-width: 110px;
+  }
+
+  .t-body .actions {
+    display: flex;
+    justify-content: center;
+    column-gap: 4px;
+  }
+
+  .update,
+  .delete {
+    color: var(--white);
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .update {
+    background-color: #facc15;
+    color: #422006;
+  }
+
+  .delete {
+    background-color: #ef4444;
+    color: #fef2f2;
   }
 }

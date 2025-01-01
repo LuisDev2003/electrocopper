@@ -72,7 +72,7 @@ class Servicio extends Conexion
 				)
 			);
 
-			return true;
+			return ["success" => true];
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
@@ -86,7 +86,7 @@ class Servicio extends Conexion
 				array($id)
 			);
 
-			return true;
+			return ["success" => true];
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}
