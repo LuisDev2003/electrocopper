@@ -22,11 +22,7 @@ $servicios = $servicio->getAll(); ?>
     <header id="header" class="header">
       <div class="wrapper">
         <div class="logo">
-          <img
-            src="images/cropped-ELECTROCOPPER-logo-web_page-0001-1.jpg"
-            alt=""
-            height="48"
-          />
+          <img src="./images/logo.png" alt="" height="48" />
         </div>
 
         <div class="navegation">
@@ -352,12 +348,7 @@ $servicios = $servicio->getAll(); ?>
     <footer id="footer">
       <div class="footer">
         <div class="div-1">
-          <img
-            src="./images/cropped-ELECTROCOPPER-logo-web_page-0001-1.jpg"
-            alt="Logo"
-            height="145"
-            class="logo"
-          />
+          <img src="./images/logo.png" alt="Logo" height="145" class="logo" />
 
           <p class="description">
             Electricistas calificados con varios años de experiencia en la
