@@ -1,3 +1,20 @@
+section > .title {
+  color: var(--primary);
+  font-size: 2rem;
+  margin-bottom: 20px;
+  text-decoration-line: underline;
+  text-underline-offset: 4px;
+  /* background-image: linear-gradient(
+    to right,
+    var(--primary),
+    var(--white),
+    var(--primary)
+  );
+  width: fit-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
 #header {
   width: 100%;
   position: fixed;
@@ -85,12 +102,12 @@
 .sidebar {
   position: fixed;
   top: 64px;
-  right: 0;
+  right: 8px;
   height: fit-content;
   z-index: 80;
-  width: 280px;
+  width: 240px;
   background-color: var(--gray);
-
+  border-radius: 12px;
   color: var(--white);
 
   .menu {
@@ -99,36 +116,24 @@
     display: flex;
     flex-direction: column;
 
-    .item + .item {
+    li + li {
       margin-top: 8px;
     }
 
-    a {
+    a.item {
       display: flex;
-      align-items: end;
+      align-items: center;
       font-weight: 600;
       height: 40px;
-      padding-left: 8px;
-      padding-bottom: 8px;
-      border-radius: 12px;
+      padding-inline: 12px;
     }
   }
 }
 
 .header .menu,
 .sidebar .menu {
-  .item::after {
-    content: "";
-    display: block;
-    height: 0.1px;
-    width: 0%;
-    background-color: var(--black);
-    transition: width 0.3s ease-in-out;
-  }
-
-  .item:hover::after,
-  .item.active::after {
-    width: 100%;
+  .item:hover {
+    color: var(--primary);
   }
 }
 
@@ -199,14 +204,6 @@
   z-index: -999;
 }
 
-.title {
-  color: var(--white);
-  font-size: 1.75rem;
-  text-decoration-line: underline;
-  text-underline-offset: 4px;
-  margin-bottom: 12px;
-}
-
 .services {
   padding: 12px;
   max-width: 1024px;
@@ -228,7 +225,7 @@
     border: 1px solid var(--black);
     position: relative;
     margin-inline: auto;
-    max-width: 360px;
+    max-width: 400px;
     border-radius: 12px;
     overflow: hidden;
     padding-bottom: 40px;
@@ -263,21 +260,8 @@
 }
 
 .contact-s-1 {
-  & > div {
-    max-width: 1200px;
-    padding-block: 50px;
-    padding-inline: 12px;
-    margin-inline: auto;
-    text-align: center;
-  }
-
-  .title {
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-decoration-line: underline;
-    text-underline-offset: 4px;
-  }
+  text-align: center;
+  margin-bottom: 50px;
 
   .social-media {
     margin-top: 8px;
@@ -326,14 +310,6 @@
 .about-us-3 {
   padding: 50px 12px;
   text-align: center;
-
-  .title {
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-decoration-line: underline;
-    text-underline-offset: 4px;
-  }
 
   .description {
     color: var(--white);
@@ -384,7 +360,10 @@
 }
 
 .about-us-3 {
-  .title,
+  .title {
+    text-align: start;
+  }
+
   p {
     text-align: start;
     color: var(--white);
@@ -392,22 +371,20 @@
 
   ol {
     list-style-type: auto;
-    padding-left: 24px;
+    padding-left: 32px;
   }
 
   li + li {
     margin-top: 8px;
   }
+
+  li::marker {
+    color: var(--primary);
+    font-weight: bold;
+  }
 }
 
 @media (width >= 1024px) {
-  .about-us-1,
-  .about-us-2,
-  .about-us-3 {
-    max-width: 1024px;
-    margin-inline: auto;
-  }
-
   .about-us-1 .div {
     display: flex;
 
@@ -426,22 +403,85 @@
   }
 }
 
-.review {
+@keyframes gradient {
+  0% {
+    background-position: 0% 75%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 200% 75%;
+  }
+}
+
+.reviews {
   max-width: 768px;
   margin-inline: auto;
   padding: 50px 16px;
 
-  .title {
-    text-align: start;
-    color: var(--white);
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-decoration-line: underline;
-    text-underline-offset: 4px;
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    padding-block: 10px 30px;
+    row-gap: 4px;
   }
 
-  ul > li + li {
+  .wrapper {
+    width: 100%;
+  }
+
+  .input {
+    margin-bottom: 8px;
+  }
+
+  .textarea {
+    resize: none;
+    field-sizing: content;
+  }
+
+  .input,
+  .textarea {
+    height: 40px;
+    background-color: rgb(255, 255, 255, 0.1);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+
+    &::placeholder {
+      color: var(--white);
+    }
+  }
+
+  .button {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    padding-inline: 12px;
+    border-radius: 8px;
+    background: var(--primary);
+  }
+
+  .review-item + .review-item {
     margin-top: 12px;
+  }
+
+  .review-item {
+    padding: 1px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-image: linear-gradient(
+      55deg,
+      var(--secondary),
+      var(--primary) 45%,
+      var(--secondary) 55%
+    );
+    background-size: 200% auto;
+    animation: 10s gradient linear infinite;
   }
 
   .review {
@@ -471,6 +511,16 @@
   .description {
     color: var(--white);
     font-size: 0.9rem;
+  }
+}
+
+@media (width >= 480px) {
+  .reviews {
+    .form {
+      flex-direction: row;
+      align-items: start;
+      column-gap: 8px;
+    }
   }
 }
 
@@ -570,4 +620,11 @@
       height: 100%;
     }
   }
+}
+
+.about-us-1,
+.about-us-2,
+.about-us-3 {
+  max-width: 768px;
+  margin-inline: auto;
 }

@@ -93,16 +93,16 @@ $servicios = $servicio->getAll(); ?>
 
     <aside id="sidebar-menu" class="sidebar">
       <ul class="menu">
-        <li class="item">
+        <li>
           <a href="./#servicios" class="item">Servicios</a>
         </li>
-        <li class="item">
+        <li>
           <a href="./#sobre-nosotros" class="item">Sobre nosotros</a>
         </li>
-        <li class="item">
+        <li>
           <a href="./#contactos" class="item">Contactos</a>
         </li>
-        <li class="item">
+        <li>
           <a href="./#reseñas" class="item">Reseñas</a>
         </li>
       </ul>
@@ -125,80 +125,82 @@ $servicios = $servicio->getAll(); ?>
         </ul>
       </section>
 
-      <section id="sobre-nosotros" class="about-us-1">
-        <h2 class="title">Quienes somos…</h2>
+      <section id="sobre-nosotros">
+        <section class="about-us-1">
+          <h2 class="title">Quienes somos…</h2>
 
-        <p class="description">
-          Somos una empresa que se desarrolla en el mercado español,
-          especialistas en instalaciones eléctricas domiciliarias e
-          industriales, automatizamos tus instalaciones eléctricas, reformamos
-          pisos en forma general. Nos enfocamos en la satisfacción del cliente
-          para lo cual contamos con una amplia experiencia en la ejecución de
-          proyectos caracterizándonos por ejecutar los trabajos a tiempo
-          pactado.
-        </p>
-      </section>
-
-      <section class="about-us-2">
-        <div id="tabs" class="tab">
-          <button data-tab-content="vision" class="tablinks active">
-            Visión
-          </button>
-          <button data-tab-content="mission" class="tablinks">Missión</button>
-        </div>
-
-        <div id="vision" class="tabcontent" style="--br: 0; display: block">
-          <p>
-            Electrocopper Riojas se proyecta en la inserción del mercado laboral
-            comprometido a ser uno de los mejores en el rubro de electricidad,
-            desarrollando trabajos altamente conceptuados y con tecnología de
-            punta proporcionando asesoramiento y consultoría experta para la
-            toma de decisiones en cuanto a sistemas de electrificación,
-            automatización y domótica.
+          <p class="description">
+            Somos una empresa que se desarrolla en el mercado español,
+            especialistas en instalaciones eléctricas domiciliarias e
+            industriales, automatizamos tus instalaciones eléctricas, reformamos
+            pisos en forma general. Nos enfocamos en la satisfacción del cliente
+            para lo cual contamos con una amplia experiencia en la ejecución de
+            proyectos caracterizándonos por ejecutar los trabajos a tiempo
+            pactado.
           </p>
-        </div>
+        </section>
 
-        <div id="mission" class="tabcontent" style="--br: 10px">
-          <p>
-            Electrocopper Riojas tiene la misión de brindar un trabajo de
-            calidad y seguridad a nuestros clientes, con la intervención del
-            personal adecuado y utilizando la innovación tecnológica en sistema
-            de electricidad alcanzando la satisfacción y confort de quienes nos
-            eligen.
-          </p>
-        </div>
+        <section class="about-us-2">
+          <div id="tabs" class="tab">
+            <button data-tab-content="vision" class="tablinks active">
+              Visión
+            </button>
+            <button data-tab-content="mission" class="tablinks">Missión</button>
+          </div>
+
+          <div id="vision" class="tabcontent" style="--br: 0; display: block">
+            <p>
+              Electrocopper Riojas se proyecta en la inserción del mercado
+              laboral comprometido a ser uno de los mejores en el rubro de
+              electricidad, desarrollando trabajos altamente conceptuados y con
+              tecnología de punta proporcionando asesoramiento y consultoría
+              experta para la toma de decisiones en cuanto a sistemas de
+              electrificación, automatización y domótica.
+            </p>
+          </div>
+
+          <div id="mission" class="tabcontent" style="--br: 10px">
+            <p>
+              Electrocopper Riojas tiene la misión de brindar un trabajo de
+              calidad y seguridad a nuestros clientes, con la intervención del
+              personal adecuado y utilizando la innovación tecnológica en
+              sistema de electricidad alcanzando la satisfacción y confort de
+              quienes nos eligen.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-us-3">
+          <h2 class="title">¿Por qué elegirnos?</h2>
+
+          <ol>
+            <li>
+              <p>Porque contamos con la experiencia y capacidad requerida</p>
+            </li>
+            <li>
+              <p>
+                Porque realizamos seguimiento a nuestros clientes y proyectos
+                después de haber finalizado los trabajos.
+              </p>
+            </li>
+            <li>
+              <p>
+                Porque nos adecuamos a la necesidad y al presupuesto de cada
+                cliente
+              </p>
+            </li>
+            <li>
+              <p>
+                Porque realizamos un trabajo con calidad y seguridad aplicando
+                la mejora continua.
+              </p>
+            </li>
+          </ol>
+        </section>
       </section>
 
-      <section class="about-us-3">
-        <h2 class="title">¿Por qué elegirnos?</h2>
-
-        <ol>
-          <li>
-            <p>Porque contamos con la experiencia y capacidad requerida</p>
-          </li>
-          <li>
-            <p>
-              Porque realizamos seguimiento a nuestros clientes y proyectos
-              después de haber finalizado los trabajos.
-            </p>
-          </li>
-          <li>
-            <p>
-              Porque nos adecuamos a la necesidad y al presupuesto de cada
-              cliente
-            </p>
-          </li>
-          <li>
-            <p>
-              Porque realizamos un trabajo con calidad y seguridad aplicando la
-              mejora continua.
-            </p>
-          </li>
-        </ol>
-      </section>
-
-      <section id="contactos" class="contact-s-1">
-        <div>
+      <section id="contactos">
+        <section class="contact-s-1">
           <h2 class="title">Contactos</h2>
 
           <ul>
@@ -242,22 +244,60 @@ $servicios = $servicio->getAll(); ?>
               </div>
             </li>
           </ul>
-        </div>
+        </section>
+
+        <section class="contact-s-2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.1976876039835!2d-3.640015025195772!3d40.42662128925557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f685502732f%3A0xf385b3a8c844dc5a!2sC%2F%20de%20San%20Fidel%2C%2054%2C%20Cdad.%20Lineal%2C%2028017%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2spe!4v1735563542536!5m2!1ses-419!2spe"
+            loading="lazy"
+            border
+          ></iframe>
+        </section>
       </section>
 
-      <section class="contact-s-2">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.1976876039835!2d-3.640015025195772!3d40.42662128925557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f685502732f%3A0xf385b3a8c844dc5a!2sC%2F%20de%20San%20Fidel%2C%2054%2C%20Cdad.%20Lineal%2C%2028017%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2spe!4v1735563542536!5m2!1ses-419!2spe"
-          loading="lazy"
-          border
-        ></iframe>
-      </section>
-
-      <section id="reseñas" class="review">
+      <section id="reseñas" class="reviews">
         <h2 class="title">Reseñas</h2>
 
+        <form class="form">
+          <div class="wrapper">
+            <input
+              type="text"
+              name="nombre"
+              placeholder="Nombre"
+              class="input"
+            />
+            <textarea
+              name="comentario"
+              placeholder="Escríbanos una reseña"
+              class="textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 14l11 -11" />
+              <path
+                d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+              />
+            </svg>
+            Comentar
+          </button>
+        </form>
+
         <ul>
-          <li>
+          <li class="review-item">
             <article class="review">
               <div class="d-1">
                 <h4 class="username">Cliente 1</h4>
@@ -273,7 +313,7 @@ $servicios = $servicio->getAll(); ?>
               </div>
             </article>
           </li>
-          <li>
+          <li class="review-item">
             <article class="review">
               <div class="d-1">
                 <h4 class="username">Cliente 2</h4>
@@ -289,7 +329,7 @@ $servicios = $servicio->getAll(); ?>
               </div>
             </article>
           </li>
-          <li>
+          <li class="review-item">
             <article class="review">
               <div class="d-1">
                 <h4 class="username">Cliente 3</h4>
@@ -364,7 +404,27 @@ $servicios = $servicio->getAll(); ?>
     </footer>
   </body>
 
-  <script src="./assets/scripts/header.js"></script>
+  <script>
+    const buttonOpenMenu = document.querySelector("#button-toggle-menu");
+    const sidebarMenu = document.querySelector("#sidebar-menu");
+
+    function toggleStatusMenu() {
+      const status = buttonOpenMenu.dataset.status;
+
+      if (status === "open") {
+        buttonOpenMenu.dataset.status = "close";
+
+        sidebarMenu.classList.remove("open");
+      } else {
+        buttonOpenMenu.dataset.status = "open";
+
+        sidebarMenu.classList.add("open");
+      }
+    }
+
+    buttonOpenMenu.addEventListener("click", toggleStatusMenu);
+  </script>
+
   <script>
     const tabs = document.querySelectorAll("#tabs > button");
 
