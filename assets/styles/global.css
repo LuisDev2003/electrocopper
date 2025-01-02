@@ -17,8 +17,12 @@
 }
 
 html,
+main,
+div,
+section,
 textarea {
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 a {
@@ -48,6 +52,10 @@ dialog {
   scrollbar-width: none;
 }
 
+section {
+  scroll-margin-top: 64px;
+}
+
 .title {
   color: #3a3a3a;
   text-wrap: balance;
@@ -69,4 +77,25 @@ dialog {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border-width: 0;
+}
+
+.social-media {
+  width: 100%;
+  display: flex;
+  column-gap: 10px;
+
+  a {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+
+  .item {
+    width: 48px;
+    height: 48px;
+    background-image: url("../../images/redes-sociales.png");
+    background-size: 115px;
+    background-repeat: no-repeat;
+    background-position: var(--bp);
+  }
 }
