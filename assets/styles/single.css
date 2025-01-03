@@ -1,3 +1,78 @@
+section[id] {
+  padding-top: 16px;
+  margin-bottom: 80px;
+}
+
+.hero {
+  max-width: 1024px;
+  margin-inline: auto;
+
+  .wrapper {
+    min-height: 500px;
+    padding: 20px 12px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    color: var(--white);
+    text-shadow: 0 0 25px var(--primary);
+    margin-bottom: 16px;
+  }
+
+  .title:first-child {
+    font-size: 2.25rem;
+    line-height: 1.1;
+  }
+
+  .description {
+    margin-block: 50px;
+    color: var(--white);
+  }
+
+  .image {
+    width: 100%;
+    scale: 0.85;
+    filter: drop-shadow(0 0 50px var(--primary));
+  }
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    column-gap: 8px;
+    height: 48px;
+    padding-inline: 16px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px #02d195;
+    font-weight: bold;
+    color: #02d195;
+  }
+}
+
+@media (width >= 768px) {
+  .hero > .wrapper {
+    flex-direction: row;
+    text-align: start;
+
+    .title {
+      font-size: 1.75rem;
+    }
+
+    .title:first-child {
+      font-size: 3rem;
+    }
+
+    .image {
+      scale: 0.95;
+    }
+  }
+}
+
 section > .title {
   color: var(--primary);
   font-size: 2rem;
@@ -316,6 +391,10 @@ section > .title {
   }
 }
 
+.about-us-1 {
+  padding-top: 0px;
+}
+
 .about-us-2 {
   padding: 12px;
 
@@ -418,7 +497,7 @@ section > .title {
 .reviews {
   max-width: 768px;
   margin-inline: auto;
-  padding: 50px 16px;
+  padding: 16px;
 
   .form {
     display: flex;
@@ -434,16 +513,17 @@ section > .title {
 
   .input {
     margin-bottom: 8px;
+    height: 40px;
   }
 
   .textarea {
     resize: none;
     field-sizing: content;
+    min-height: 40px;
   }
 
   .input,
   .textarea {
-    height: 40px;
     background-color: rgb(255, 255, 255, 0.1);
     padding: 8px 12px;
     border: none;
@@ -524,12 +604,7 @@ section > .title {
   }
 }
 
-.about-us-1 {
-  padding-top: 80px;
-}
-
-.about-us-2,
-.contact-s-2 {
+.about-us-2 {
   padding-bottom: 80px;
 }
 
