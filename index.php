@@ -309,14 +309,27 @@ $servicios = $servicio->getAll(); ?>
       <section id="reseñas" class="reviews">
         <h2 class="title">Reseñas</h2>
 
-        <form class="form">
+        <p id="error-review" class="error"></p>
+
+        <form class="form" autocomplete="off">
           <div class="wrapper">
-            <input
-              type="text"
-              name="nombre"
-              placeholder="Nombre"
-              class="input"
-            />
+            <div class="group-input">
+              <input
+                type="text"
+                name="nombre"
+                maxlength="50"
+                placeholder="Nombre"
+                class="input"
+              />
+
+              <input
+                type="text"
+                name="codigo"
+                placeholder="Código"
+                maxlength="6"
+                class="input"
+              />
+            </div>
             <textarea
               name="comentario"
               placeholder="Escríbanos una reseña"
