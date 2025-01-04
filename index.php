@@ -347,7 +347,7 @@ $servicios = $servicio->getAll(); ?>
           </button>
         </form>
 
-        <ul>
+        <ul id="list-reviews">
           <li class="review-item">
             <article class="review">
               <div class="d-1">
@@ -498,4 +498,6 @@ $servicios = $servicio->getAll(); ?>
       event.currentTarget.className += " active";
     }
   </script>
+
+  <script type="module" src="./assets/scripts/review.js"></script>
 </html>

@@ -66,7 +66,7 @@ CREATE TABLE detalle_ventas (
 
 -- ###################################################################
 CREATE TABLE comentarios (
-	id				INT AUTO_INCREMENT	PRIMARY KEY,
+	comentario_id	INT AUTO_INCREMENT	PRIMARY KEY,
 	nombre_cliente	VARCHAR(125)		NOT NULL,
 	comentario		TEXT				NOT NULL,
     created_at 		DATETIME			DEFAULT NOW(),
