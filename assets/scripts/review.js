@@ -100,7 +100,10 @@ const handleSubmitFormReview = async (event) => {
 
     const data = await response.json();
 
-    if (data.comentario_id) {
+    if (data.error === "code") {
+      $errorReview.textContent = data.message;
+      $errorReview.style.display = "block";
+    } else if (data.comentario_id) {
       renderTable();
     }
   } catch (error) {

@@ -15,3 +15,7 @@ VALUES
 ('Jorge Ramírez', 'Buen trabajo, aunque podrían mejorar la atención al cliente en el teléfono.'),
 ('Luisa Fernández', 'Los recomiendo, precios justos y explican todo el trabajo realizado.'),
 ('Ricardo Gómez', 'Servicio rápido y eficiente, estoy muy satisfecho con los resultados.');
+
+INSERT INTO configuraciones (clave, valor) 
+VALUES
+('codigo-comentario', '123456')

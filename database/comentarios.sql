@@ -1,8 +1,17 @@
 USE electrocopper;
 
+DROP PROCEDURE IF EXISTS spu_codigo_obtener;
 DROP PROCEDURE IF EXISTS spu_comentario_listar;
 DROP PROCEDURE IF EXISTS spu_comentario_registrar;
 DROP PROCEDURE IF EXISTS spu_comentario_eliminar;
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_codigo_obtener()
+BEGIN
+	SELECT * FROM configuraciones
+    WHERE clave = "codigo-comentario";
+END $$
 
 -- ###################################################################
 DELIMITER $$

@@ -2,6 +2,7 @@
 
 require_once '../models/review.php';
 
+
 if (isset($_POST['operacion'])) {
   $review = new Review();
 
@@ -13,11 +14,22 @@ if (isset($_POST['operacion'])) {
 
     case "create": {
         $data = [
-          "nombre"  => $_POST["nombre"],
-          "comentario"      => $_POST["comentario"],
+          "nombre"      => $_POST["nombre"],
+          "comentario"  => $_POST["comentario"],
+          "codigo"      => $_POST["codigo"],
         ];
 
-        echo json_encode($review->create($data));
+        $code = $review->getCode()["valor"];
+
+        if ($data['codigo'] !== $code) {
+          echo json_encode([
+            "error" => "code",
+            "message" => "El código es incorrecto."
+          ]);
+        } else {
+          echo json_encode($review->create($data));
+        }
+
         break;
       }
 

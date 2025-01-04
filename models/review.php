@@ -11,6 +11,18 @@ class Review extends Conexion
     $this->conexion = parent::getConexion();
   }
 
+  public function getCode()
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_codigo_obtener()');
+      $consulta->execute();
+
+      return $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
+
   public function getAll()
   {
     try {
