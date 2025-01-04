@@ -105,6 +105,7 @@ const handleSubmitFormReview = async (event) => {
       $errorReview.style.display = "block";
     } else if (data.comentario_id) {
       renderTable();
+      $formReview.reset();
     }
   } catch (error) {
     console.error(error);
