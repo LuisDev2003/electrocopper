@@ -17,7 +17,7 @@ CREATE TABLE empleados (
     nombres			VARCHAR(50)				NOT NULL,
     apellidos		VARCHAR(50)				NOT NULL,
     correo			VARCHAR(255)			NOT NULL,
-    contraseña		VARCHAR(60)				NOT NULL,
+    clave			VARCHAR(60)				NOT NULL,
     created_at 		DATETIME				DEFAULT NOW(),
     updated_at		DATETIME				NULL,
     inactive_at		DATETIME				NULL,

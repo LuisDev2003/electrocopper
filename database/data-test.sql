@@ -1,5 +1,13 @@
 USE electrocopper;
 
+INSERT INTO empleados (nombres, apellidos, correo, contraseña)
+VALUES 
+('Carlos', 'García', 'carlos.garcia@example.com', 'password123'),
+('María', 'Lopez', 'maria.lopez@example.com', 'securepass456'),
+('Juan', 'Martínez', 'juan.martinez@example.com', 'mypassword789'),
+('Ana', 'Gómez', 'ana.gomez@example.com', 'bestpass321'),
+('Luis', 'Hernández', 'luis.hernandez@example.com', 'strongpass654');
+
 INSERT INTO servicios (nombre) 
 VALUES
 	("Instalaciones eléctricas domiciliarias e industriales"),
