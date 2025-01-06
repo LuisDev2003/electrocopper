@@ -1,8 +1,8 @@
 <?php
 
-date_default_timezone_set('America/Lima');
+date_default_timezone_set('Europe/Madrid');
 
-require_once '../models/servicio.php';
+require_once '../models/service.php';
 
 if (isset($_POST['operacion'])) {
   $servicio = new Servicio();

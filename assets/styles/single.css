@@ -296,6 +296,7 @@ section > .title {
   }
 
   .service {
+    display: block;
     background-color: var(--white);
     border: 1px solid var(--black);
     position: relative;

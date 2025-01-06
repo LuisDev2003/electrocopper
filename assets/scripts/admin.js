@@ -1,3 +1,5 @@
+"use strict";
+
 const $ = (el) => document.querySelector(el);
 
 //#region Header
@@ -169,4 +171,101 @@ $("#tb-reviews").addEventListener("click", (event) => {
     $inputReviewDelete.value = reviewId;
   }
 });
+//#endregion
+
+const IconX = `
+<svg
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.5"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  class="icon"
+>
+  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+  <path d="M18 6l-12 12" />
+  <path d="M6 6l12 12" />
+</svg>
+`;
+
+function generateAlert(
+  reference,
+  type = "success",
+  message = "Se ha actualizado el código"
+) {
+  const content = document.createElement("div");
+  content.classList.add("message", type);
+
+  const description = document.createElement("p");
+  description.classList.add("description");
+  description.innerHTML = message;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.style.backgroundColor = "transparent";
+
+  button.innerHTML = IconX;
+  button.addEventListener("click", () => content.remove());
+
+  content.appendChild(description);
+  content.appendChild(button);
+
+  reference.prepend(content);
+}
+
+function generateCode() {
+  const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
+
+  $("#fm-code .input").value = Array.from(
+    { length: 6 },
+    () => characters[Math.floor(Math.random() * characters.length)]
+  )
+    .join("")
+    .toUpperCase();
+}
+
+async function handleSubmitCode(event) {
+  event.preventDefault();
+
+  const formdata = new FormData($("#fm-code"));
+  formdata.append("operacion", "update-code");
+
+  if (formdata.get("codigo").trim() === "") {
+    $("#message-fm-code").innerHTML = "";
+    generateAlert(
+      $("#message-fm-code"),
+      "error",
+      "El código no puede estar vacío"
+    );
+    return;
+  }
+
+  const requestOptions = {
+    method: "POST",
+    body: formdata,
+  };
+
+  try {
+    const response = await fetch(previewController, requestOptions);
+
+    const data = await response.json();
+
+    if (data.success) {
+      $("#message-fm-code").innerHTML = "";
+      generateAlert($("#message-fm-code"));
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+//#region Event Listeners
+
+$("#generate-code").addEventListener("click", generateCode);
+
+$("#fm-code").addEventListener("submit", handleSubmitCode);
+
 //#endregion

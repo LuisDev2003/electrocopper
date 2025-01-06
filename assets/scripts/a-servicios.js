@@ -1,4 +1,4 @@
-const serviceController = "../controllers/servicio.controller.php";
+const serviceController = "../controllers/service.controller.php";
 
 //#region Table - Services
 const buttonUpdate = `

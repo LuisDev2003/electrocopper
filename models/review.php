@@ -23,6 +23,20 @@ class Review extends Conexion
     }
   }
 
+  public function updateCode($data = [])
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_codigo_actualizar(?)');
+      $consulta->execute(
+        [$data["codigo"]]
+      );
+
+      return ["success" => true];
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
+
   public function getAll()
   {
     try {

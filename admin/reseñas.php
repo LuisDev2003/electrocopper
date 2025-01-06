@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electrocopper Riojas</title>
 
-    <link rel="stylesheet" href="../assets/styles/global.css" />
+    <link rel="stylesheet" href="../assets/styles/admin.css" />
     <link rel="stylesheet" href="../assets/styles/a-servicios.css" />
   </head>
 
@@ -84,6 +84,19 @@
     <main>
       <div class="d-1">
         <h2 class="title">Reseñas</h2>
+      </div>
+
+      <div class="d-2">
+        <div id="message-fm-code"></div>
+
+        <form id="fm-code" class="form">
+          <input type="text" name="codigo" class="input" placeholder="Código" />
+
+          <button id="generate-code" type="button" class="button">
+            Generar
+          </button>
+          <button type="submit" class="submit">Actualizar</button>
+        </form>
       </div>
 
       <section class="s-table">

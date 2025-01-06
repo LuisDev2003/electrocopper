@@ -1,10 +1,3 @@
-<?php
-require_once "./models/servicio.php";
-
-$servicio = new Servicio();
-
-$servicios = $servicio->getAll(); ?>
-
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -22,7 +15,7 @@ $servicios = $servicio->getAll(); ?>
     <header id="header" class="header">
       <div class="wrapper">
         <div class="logo">
-          <img src="./images/logo.png" alt="" height="48" />
+          <img src="./images/logo.png" alt="Logo de la empresa" height="48" />
         </div>
 
         <div class="navegation">
@@ -78,7 +71,8 @@ $servicios = $servicio->getAll(); ?>
 
         <div class="contact">
           <a
-            href="https://api.whatsapp.com/send?phone=604982792"
+            href="https://wa.me/604982792"
+            target="_blank"
             class="button"
             style="--bp: -59px -8.85px"
           >
@@ -121,12 +115,7 @@ $servicios = $servicio->getAll(); ?>
               y empresas.
             </p>
 
-            <a
-              href="https://api.whatsapp.com/send?phone=604982792"
-              type="button"
-              target="_blank"
-              class="button"
-            >
+            <a href="https://wa.me/604982792" target="_blank" class="button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"
@@ -161,19 +150,7 @@ $servicios = $servicio->getAll(); ?>
       </section>
 
       <section id="servicios" class="services">
-        <ul>
-          <?php foreach ($servicios as $item): ?>
-          <li>
-            <div class="service">
-              <img src="images/services/<?= htmlspecialchars($item['imagen'] ?? ""); ?>"
-              alt="<?= htmlspecialchars($item['nombre']); ?>" class="image" />
-              <h4 class="service-name">
-                <?= htmlspecialchars($item['nombre']); ?>
-              </h4>
-            </div>
-          </li>
-          <?php endforeach; ?>
-        </ul>
+        <ul></ul>
       </section>
 
       <section id="sobre-nosotros">
@@ -282,7 +259,8 @@ $servicios = $servicio->getAll(); ?>
                 </a>
 
                 <a
-                  href="https://api.whatsapp.com/send?phone=604982792"
+                  href="https://wa.me/604982792"
+                  target="_blank"
                   class="item"
                   style="--bp: -59px -8.85px"
                 >
@@ -448,7 +426,8 @@ $servicios = $servicio->getAll(); ?>
           </a>
 
           <a
-            href="https://api.whatsapp.com/send?phone=604982792"
+            href="https://wa.me/604982792"
+            target="_blank"
             class="item"
             style="--bp: -59px -8.85px"
           >
@@ -513,4 +492,6 @@ $servicios = $servicio->getAll(); ?>
   </script>
 
   <script type="module" src="./assets/scripts/review.js"></script>
+
+  <script type="module" src="./assets/scripts/main.js"></script>
 </html>

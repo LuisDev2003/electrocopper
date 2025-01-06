@@ -7,6 +7,15 @@ if (isset($_POST['operacion'])) {
   $review = new Review();
 
   switch ($_POST['operacion']) {
+    case 'update-code': {
+        $data = [
+          "codigo" => $_POST["codigo"]
+        ];
+
+        echo json_encode($review->updateCode($data));
+        break;
+      }
+
     case 'get-all': {
         echo json_encode($review->getAll());
         break;
