@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Electrocopper Riojas</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Electrocopper Riojas</title>
+    <?php require_once "./layouts/meta.php" ?>
 
-  <link rel="stylesheet" href="./styles/main.css" />
-</head>
+    <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
 
-<body>
-  <?php require_once "./layout/header.php" ?>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
 
-  <main class="main">
-    <?php require_once "./layout/hero.php" ?>
+  <body>
+    <?php require_once "./layouts/header.php" ?>
 
-    <?php require_once "./layout/services.php" ?>
+    <main class="main">
+      <?php require_once "./layouts/hero.php" ?>
 
-    <?php require_once "./layout/about-us.php" ?>
+      <?php require_once "./layouts/services.php" ?>
 
-    <?php require_once "./layout/contact.php" ?>
+      <?php require_once "./layouts/about-us.php" ?>
 
-    <?php require_once "./layout/reviews.php" ?>
-  </main>
+      <?php require_once "./layouts/contact.php" ?>
 
-  <?php require_once "./layout/footer.php" ?>
-</body>
+      <?php require_once "./layouts/reviews.php" ?>
+    </main>
 
-<script type="module" src="./scripts/header.js"></script>
-<script type="module" src="./scripts/main.js"></script>
+    <?php require_once "./layouts/footer.php" ?>
+  </body>
 
+  <script type="module" src="./scripts/header.js"></script>
+  <script type="module" src="./scripts/main.js"></script>
 </html>
