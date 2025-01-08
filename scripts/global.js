@@ -49,7 +49,7 @@ export const buttonDelete = `
   </button>
 `;
 
-const IconX = `
+export const IconX = `
 <svg
   width="24"
   height="24"
