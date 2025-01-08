@@ -1,16 +1,14 @@
-<header class="header">
+<div id="background"></div>
+
+<header id="header" class="header">
   <div class="wrapper">
     <div class="logo">
-      <img
-        src="images/cropped-ELECTROCOPPER-logo-web_page-0001-1.jpg"
-        alt=""
-        height="48"
-      />
+      <img src="./images/logo.png" alt="Logo de la empresa" height="48" />
     </div>
 
     <div class="navegation">
       <button
-        id="button-toggle-menu"
+        id="button-toggle-sidebar"
         type="button"
         aria-label="Mostrar menú"
         data-status="close"
@@ -50,18 +48,19 @@
         </svg>
       </button>
 
-      <nav id="nav-menu" class="menu">
-        <a href="./" class="item">Inicio</a>
-        <a href="./sobre-nosotros" class="item">Sobre nosotros</a>
-        <a href="./servicios" class="item">Servicios</a>
-        <a href="./faq" class="item">FAQ</a>
-        <a href="./contactos" class="item">Contactos</a>
+      <nav id="nav-menu" class="nav-menu">
+        <a href="./#" class="item">Inicio</a>
+        <a href="./#servicios" class="item">Servicios</a>
+        <a href="./#sobre-nosotros" class="item">Sobre nosotros</a>
+        <a href="./#contactos" class="item">Contactos</a>
+        <a href="./#reseñas" class="item">Reseñas</a>
       </nav>
     </div>
 
     <div class="contact">
       <a
-        href="https://api.whatsapp.com/send?phone=604982792"
+        href="https://wa.me/604982792"
+        target="_blank"
         class="button"
         style="--bp: -59px -8.85px"
       >
@@ -71,24 +70,22 @@
   </div>
 </header>
 
-<aside id="sidebar-menu" class="sidebar">
+<aside id="sidebar" class="sidebar">
   <ul class="menu">
-    <li class="item">
-      <a href="./">Inicio</a>
+    <li>
+      <a href="./#" class="item">Inicio</a>
     </li>
-    <li class="item">
-      <a href="./sobre-nosotros">Sobre nosotros</a>
+    <li>
+      <a href="./#servicios" class="item">Servicios</a>
     </li>
-    <li class="item">
-      <a href="./servicios">Servicios</a>
+    <li>
+      <a href="./#sobre-nosotros" class="item">Sobre nosotros</a>
     </li>
-    <li class="item">
-      <a href="./faq">FAQ</a>
+    <li>
+      <a href="./#contactos" class="item">Contactos</a>
     </li>
-    <li class="item">
-      <a href="./contactos">Contactos</a>
+    <li>
+      <a href="./#reseñas" class="item">Reseñas</a>
     </li>
   </ul>
 </aside>
-
-<div id="backdrop" class="backdrop"></div>

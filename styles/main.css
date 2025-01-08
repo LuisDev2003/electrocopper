@@ -1,0 +1,13 @@
+@import url("./global.css");
+@import url("./header.css");
+@import url("./hero.css");
+@import url("./sidebar.css");
+@import url("./services.css");
+@import url("./about-us.css");
+@import url("./contact.css");
+@import url("./reviews.css");
+@import url("./footer.css");
+
+.main {
+  margin-top: 64px;
+}

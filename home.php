@@ -1,448 +1,497 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <?php require_once "./layout/meta.html" ?>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electrocopper Riojas</title>
 
-    <link rel="stylesheet" href="./assets/styles/home.css" />
+    <link rel="stylesheet" href="./assets/styles/global.css" />
+    <link rel="stylesheet" href="./assets/styles/single.css" />
   </head>
+
   <body>
-    <?php require_once "./layout/header.html" ?>
-    <!-- 
-    <section class="section-1">
-      <h2 class="title">Quality Work Through Dedication</h2>
+    <div class="background"></div>
 
-      <p class="description">
-        Aliquam suscipit felis a arcu laoreet congue. Habeo nemore appellantur
-        eu usu, usu putant adolescens consequuntur ei, mel tempor consulatu
-        voluptaria. Aliquam suscipit felis a arcu laoreet congue. Usu putant
-        adolescens consequuntur.
-      </p>
-    </section>
-
-    <section class="section-2">
-      <article class="card">
-        <div class="content">
-          <h3 class="title">Residential services</h3>
-          <p class="description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
-            asperiores.
-          </p>
-
-          <a href="#" class="contact">
-            <span>Contact us</span>
-            <svg
-              xmlns="https://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 512 512"
-            >
-              <path
-                d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"
-              ></path>
-            </svg>
-          </a>
+    <header id="header" class="header">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="./images/logo.png" alt="Logo de la empresa" height="48" />
         </div>
-      </article>
 
-      <article class="card">
-        <div class="content">
-          <h3 class="title">Residential services</h3>
-          <p class="description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
-            asperiores.
-          </p>
-
-          <a href="#" class="contact">
-            <span>Contact us</span>
+        <div class="navegation">
+          <button
+            id="button-toggle-menu"
+            type="button"
+            aria-label="Mostrar menú"
+            data-status="close"
+            class="button"
+          >
             <svg
-              xmlns="https://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 512 512"
-            >
-              <path
-                d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="content">
-          <h3 class="title">Residential services</h3>
-          <p class="description">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
-            asperiores.
-          </p>
-
-          <a href="#" class="contact">
-            <span>Contact us</span>
-            <svg
-              xmlns="https://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              viewBox="0 0 512 512"
-            >
-              <path
-                d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM358.6 278.6l-112 112c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25L290.8 256L201.4 166.6c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l112 112C364.9 239.6 368 247.8 368 256S364.9 272.4 358.6 278.6z"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </article>
-    </section>
-
-    <section class="section-3">
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-      <article class="card">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="48"
-          height="48"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          class="icon"
-        >
-          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-          <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
-        </svg>
-
-        <h4 class="title">Lighting Upgrades</h4>
-
-        <p class="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
-          voluptatum deserunt reprehenderit.
-        </p>
-      </article>
-    </section>
- -->
-    <section class="section-4">
-      <header>
-        <h2 class="title">Why Choose Us</h2>
-
-        <p class="description">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos
-          delectus fugit accusamus placeat quod unde voluptas porro aliquid,
-          assumenda sed asperiores deserunt! In vero ut doloribus iusto
-          reprehenderit totam aliquam?
-        </p>
-      </header>
-
-      <div class="group-card">
-        <article class="card">
-          <div class="content">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="open"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M11.998 2l.032 .002l.086 .005a1 1 0 0 1 .342 .104l.105 .062l.097 .076l.016 .015l.247 .21a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717a13 13 0 0 1 -9.208 16.25a1 1 0 0 1 -.502 0a13 13 0 0 1 -9.209 -16.25a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.791 -2.75l.046 -.036l.053 -.041a1 1 0 0 1 .217 -.112l.075 -.023l.036 -.01a1 1 0 0 1 .12 -.022l.086 -.005zm.002 2.296l-.176 .135a13 13 0 0 1 -7.288 2.572l-.264 .006l-.064 .31a11 11 0 0 0 1.064 7.175l.17 .314a11 11 0 0 0 6.49 5.136l.068 .019z"
-              />
+              <path d="M4 6l16 0" />
+              <path d="M4 12l16 0" />
+              <path d="M4 18l16 0" />
             </svg>
 
-            <h3 class="title">Safe & Secure</h3>
-            <p class="description">
-              It elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus
-              leo.
-            </p>
-
-            <a href="#" class="button">
-              <span>Contact us</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 7l5 5l-5 5" />
-                <path d="M13 7l5 5l-5 5" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="content">
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
+              width="24"
+              height="24"
               viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="close"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M11.998 2l.032 .002l.086 .005a1 1 0 0 1 .342 .104l.105 .062l.097 .076l.016 .015l.247 .21a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717a13 13 0 0 1 -9.208 16.25a1 1 0 0 1 -.502 0a13 13 0 0 1 -9.209 -16.25a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.791 -2.75l.046 -.036l.053 -.041a1 1 0 0 1 .217 -.112l.075 -.023l.036 -.01a1 1 0 0 1 .12 -.022l.086 -.005zm.002 2.296l-.176 .135a13 13 0 0 1 -7.288 2.572l-.264 .006l-.064 .31a11 11 0 0 0 1.064 7.175l.17 .314a11 11 0 0 0 6.49 5.136l.068 .019z"
-              />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
             </svg>
+          </button>
 
-            <h3 class="title">24×7 Support</h3>
-            <p class="description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
-              asperiores.
-            </p>
+          <nav id="nav-menu" class="menu">
+            <a href="./#" class="item">Inicio</a>
+            <a href="./#servicios" class="item">Servicios</a>
+            <a href="./#sobre-nosotros" class="item">Sobre nosotros</a>
+            <a href="./#contactos" class="item">Contactos</a>
+            <a href="./#reseñas" class="item">Reseñas</a>
+          </nav>
+        </div>
 
-            <a href="#" class="button">
-              <span>Contact us</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 7l5 5l-5 5" />
-                <path d="M13 7l5 5l-5 5" />
-              </svg>
-            </a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="content">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="48"
-              height="48"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              class="icon"
-            >
-              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-              <path
-                d="M11.998 2l.032 .002l.086 .005a1 1 0 0 1 .342 .104l.105 .062l.097 .076l.016 .015l.247 .21a11 11 0 0 0 7.189 2.537l.342 -.01a1 1 0 0 1 1.005 .717a13 13 0 0 1 -9.208 16.25a1 1 0 0 1 -.502 0a13 13 0 0 1 -9.209 -16.25a1 1 0 0 1 1.005 -.717a11 11 0 0 0 7.791 -2.75l.046 -.036l.053 -.041a1 1 0 0 1 .217 -.112l.075 -.023l.036 -.01a1 1 0 0 1 .12 -.022l.086 -.005zm.002 2.296l-.176 .135a13 13 0 0 1 -7.288 2.572l-.264 .006l-.064 .31a11 11 0 0 0 1.064 7.175l.17 .314a11 11 0 0 0 6.49 5.136l.068 .019z"
-              />
-            </svg>
-
-            <h3 class="title">Low Cost</h3>
-            <p class="description">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Et,
-              asperiores.
-            </p>
-
-            <a href="#" class="button">
-              <span>Contact us</span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M7 7l5 5l-5 5" />
-                <path d="M13 7l5 5l-5 5" />
-              </svg>
-            </a>
-          </div>
-        </article>
+        <div class="contact">
+          <a
+            href="https://wa.me/604982792"
+            target="_blank"
+            class="button"
+            style="--bp: -59px -8.85px"
+          >
+            <span class="sr-only">Whatsapp</span>
+          </a>
+        </div>
       </div>
-    </section>
+    </header>
 
-    <section class="s-1">
-      <h2 class="title">Reseñas</h2>
-
-      <ul>
+    <aside id="sidebar-menu" class="sidebar">
+      <ul class="menu">
         <li>
-          <article class="review">
-            <div class="d-1">
-              <h4 class="username">Cliente 1</h4>
-              <span class="date">31-12-24</span>
-            </div>
-
-            <div class="d-2">
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                voluptate sed deleniti earum qui sunt recusandae enim quam
-                suscipit dolores!
-              </p>
-            </div>
-          </article>
+          <a href="./#" class="item">Inicio</a>
         </li>
         <li>
-          <article class="review">
-            <div class="d-1">
-              <h4 class="username">Cliente 2</h4>
-              <span class="date">31-12-24</span>
-            </div>
-
-            <div class="d-2">
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                voluptate sed deleniti earum qui sunt recusandae enim quam
-                suscipit dolores!
-              </p>
-            </div>
-          </article>
+          <a href="./#servicios" class="item">Servicios</a>
         </li>
         <li>
-          <article class="review">
-            <div class="d-1">
-              <h4 class="username">Cliente 3</h4>
-              <span class="date">31-12-24</span>
-            </div>
-
-            <div class="d-2">
-              <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore
-                voluptate sed deleniti earum qui sunt recusandae enim quam
-                suscipit dolores!
-              </p>
-            </div>
-          </article>
+          <a href="./#sobre-nosotros" class="item">Sobre nosotros</a>
+        </li>
+        <li>
+          <a href="./#contactos" class="item">Contactos</a>
+        </li>
+        <li>
+          <a href="./#reseñas" class="item">Reseñas</a>
         </li>
       </ul>
-    </section>
+    </aside>
 
-    <?php require_once "./layout/footer.html" ?>
+    <main class="main">
+      <section class="hero">
+        <div class="wrapper">
+          <div>
+            <h3 class="title">Electrocopper Riojas</h3>
+
+            <h3 class="title">¡Soluciones Eléctricas Rápidas y Seguras!</h3>
+
+            <p class="description">
+              Reparaciones, instalaciones y mantenimiento eléctrico para hogares
+              y empresas.
+            </p>
+
+            <a href="https://wa.me/604982792" target="_blank" class="button">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="icon"
+              >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
+                <path
+                  d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1"
+                />
+              </svg>
+
+              <span>Contáctanos</span>
+            </a>
+          </div>
+
+          <div>
+            <img
+              src="./images/logo.png"
+              alt="Logo de la empresa"
+              class="image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="servicios" class="services">
+        <ul></ul>
+      </section>
+
+      <section id="sobre-nosotros">
+        <section class="about-us-1">
+          <h2 class="title">Quienes somos…</h2>
+
+          <p class="description">
+            Somos una empresa que se desarrolla en el mercado español,
+            especialistas en instalaciones eléctricas domiciliarias e
+            industriales, automatizamos tus instalaciones eléctricas, reformamos
+            pisos en forma general. Nos enfocamos en la satisfacción del cliente
+            para lo cual contamos con una amplia experiencia en la ejecución de
+            proyectos caracterizándonos por ejecutar los trabajos a tiempo
+            pactado.
+          </p>
+        </section>
+
+        <section class="about-us-2">
+          <div id="tabs" class="tab">
+            <button data-tab-content="vision" class="tablinks active">
+              Visión
+            </button>
+            <button data-tab-content="mission" class="tablinks">Missión</button>
+          </div>
+
+          <div id="vision" class="tabcontent" style="--br: 0; display: block">
+            <p>
+              Electrocopper Riojas se proyecta en la inserción del mercado
+              laboral comprometido a ser uno de los mejores en el rubro de
+              electricidad, desarrollando trabajos altamente conceptuados y con
+              tecnología de punta proporcionando asesoramiento y consultoría
+              experta para la toma de decisiones en cuanto a sistemas de
+              electrificación, automatización y domótica.
+            </p>
+          </div>
+
+          <div id="mission" class="tabcontent" style="--br: 10px">
+            <p>
+              Electrocopper Riojas tiene la misión de brindar un trabajo de
+              calidad y seguridad a nuestros clientes, con la intervención del
+              personal adecuado y utilizando la innovación tecnológica en
+              sistema de electricidad alcanzando la satisfacción y confort de
+              quienes nos eligen.
+            </p>
+          </div>
+        </section>
+
+        <section class="about-us-3">
+          <h2 class="title">¿Por qué elegirnos?</h2>
+
+          <ol>
+            <li>
+              <p>Porque contamos con la experiencia y capacidad requerida</p>
+            </li>
+            <li>
+              <p>
+                Porque realizamos seguimiento a nuestros clientes y proyectos
+                después de haber finalizado los trabajos.
+              </p>
+            </li>
+            <li>
+              <p>
+                Porque nos adecuamos a la necesidad y al presupuesto de cada
+                cliente
+              </p>
+            </li>
+            <li>
+              <p>
+                Porque realizamos un trabajo con calidad y seguridad aplicando
+                la mejora continua.
+              </p>
+            </li>
+          </ol>
+        </section>
+      </section>
+
+      <section id="contactos">
+        <section class="contact-s-1">
+          <h2 class="title">Contactos</h2>
+
+          <ul>
+            <li>
+              <strong>Correo: </strong>
+              <span>Electrocopper23@gmail.com</span>
+            </li>
+
+            <li>
+              <strong>Teléfono: </strong>
+              <span>+34604982793 | +34642916010</span>
+            </li>
+
+            <li>
+              <strong>Dirección: </strong>
+              <span>Calle de san fidel 54 – piso 1C - Madrid</span>
+            </li>
+
+            <li>
+              <strong>Redes Sociales: </strong>
+              <div class="social-media">
+                <a
+                  href="https://www.facebook.com/profile.php?id=61556652903051"
+                  class="item"
+                  style="--bp: -8px -8.85px"
+                >
+                  <span class="sr-only">Facebook</span>
+                </a>
+
+                <a
+                  href="https://wa.me/604982792"
+                  target="_blank"
+                  class="item"
+                  style="--bp: -59px -8.85px"
+                >
+                  <span class="sr-only">Whatsapp</span>
+                </a>
+
+                <a href="#" class="item" style="--bp: -59px -57px">
+                  <span class="sr-only">Instagram</span>
+                </a>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <section class="contact-s-2">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.1976876039835!2d-3.640015025195772!3d40.42662128925557!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f685502732f%3A0xf385b3a8c844dc5a!2sC%2F%20de%20San%20Fidel%2C%2054%2C%20Cdad.%20Lineal%2C%2028017%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2spe!4v1735563542536!5m2!1ses-419!2spe"
+            loading="lazy"
+            border
+          ></iframe>
+        </section>
+      </section>
+
+      <section id="reseñas" class="reviews">
+        <h2 class="title">Reseñas</h2>
+
+        <p id="error-review" class="error"></p>
+
+        <form class="form" autocomplete="off">
+          <div class="wrapper">
+            <div class="group-input">
+              <input
+                type="text"
+                name="nombre"
+                maxlength="50"
+                placeholder="Nombre"
+                class="input"
+              />
+
+              <input
+                type="text"
+                name="codigo"
+                placeholder="Código"
+                maxlength="6"
+                class="input"
+              />
+            </div>
+            <textarea
+              name="comentario"
+              placeholder="Escríbanos una reseña"
+              class="textarea"
+            ></textarea>
+          </div>
+
+          <button type="submit" class="button">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M10 14l11 -11" />
+              <path
+                d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5"
+              />
+            </svg>
+            Comentar
+          </button>
+        </form>
+
+        <ul id="list-reviews">
+          <li class="review-item">
+            <article class="review">
+              <div class="d-1">
+                <h4 class="username">Cliente 1</h4>
+                <span class="date">31-12-24</span>
+              </div>
+
+              <div class="d-2">
+                <p class="description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Labore voluptate sed deleniti earum qui sunt recusandae enim
+                  quam suscipit dolores!
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="review-item">
+            <article class="review">
+              <div class="d-1">
+                <h4 class="username">Cliente 2</h4>
+                <span class="date">31-12-24</span>
+              </div>
+
+              <div class="d-2">
+                <p class="description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Labore voluptate sed deleniti earum qui sunt recusandae enim
+                  quam suscipit dolores!
+                </p>
+              </div>
+            </article>
+          </li>
+          <li class="review-item">
+            <article class="review">
+              <div class="d-1">
+                <h4 class="username">Cliente 3</h4>
+                <span class="date">31-12-24</span>
+              </div>
+
+              <div class="d-2">
+                <p class="description">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Labore voluptate sed deleniti earum qui sunt recusandae enim
+                  quam suscipit dolores!
+                </p>
+              </div>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer id="footer">
+      <div class="footer">
+        <div class="div-1">
+          <img src="./images/logo.png" alt="Logo" height="145" class="logo" />
+
+          <p class="description">
+            Electricistas calificados con varios años de experiencia en la
+            industria, capaces de manejar una amplia gama de proyectos y
+            reparaciones eléctricas. Conocedores de normas de seguridad,
+            comprometidos con la entrega de un trabajo de calidad.
+          </p>
+        </div>
+
+        <div class="navegation">
+          <h3 class="title">Links</h3>
+
+          <nav>
+            <a href="./">Inicio</a>
+            <a href="./sobre-nosotros">Sobre nosotros</a>
+            <a href="./servicios">Servicios</a>
+            <a href="./faq">FAQ</a>
+            <a href="./contactos">Contactos</a>
+          </nav>
+        </div>
+
+        <div class="social-media">
+          <a
+            href="https://www.facebook.com/profile.php?id=61556652903051"
+            class="item"
+            style="--bp: -8px -8.85px"
+          >
+            <span class="sr-only">Facebook</span>
+          </a>
+
+          <a
+            href="https://wa.me/604982792"
+            target="_blank"
+            class="item"
+            style="--bp: -59px -8.85px"
+          >
+            <span class="sr-only">Whatsapp</span>
+          </a>
+
+          <a href="#" class="item" style="--bp: -59px -57px">
+            <span class="sr-only">Instagram</span>
+          </a>
+        </div>
+      </div>
+    </footer>
   </body>
 
-  <script type="module" src="./assets/scripts/header.js"></script>
+  <script>
+    const buttonOpenMenu = document.querySelector("#button-toggle-menu");
+    const sidebarMenu = document.querySelector("#sidebar-menu");
+
+    function toggleStatusMenu() {
+      const status = buttonOpenMenu.dataset.status;
+
+      if (status === "open") {
+        buttonOpenMenu.dataset.status = "close";
+
+        sidebarMenu.classList.remove("open");
+      } else {
+        buttonOpenMenu.dataset.status = "open";
+
+        sidebarMenu.classList.add("open");
+      }
+    }
+
+    buttonOpenMenu.addEventListener("click", toggleStatusMenu);
+  </script>
+
+  <script>
+    const tabs = document.querySelectorAll("#tabs > button");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", (event) => {
+        tabEvent(event);
+      });
+    });
+
+    function tabEvent(event) {
+      const id = event.target.dataset.tabContent;
+      const tabContent = document.querySelectorAll(".tabcontent");
+
+      for (let i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+      }
+
+      const tabLinks = document.querySelectorAll(".tablinks");
+
+      for (let i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+      }
+
+      document.getElementById(id).style.display = "block";
+      event.currentTarget.className += " active";
+    }
+  </script>
+
+  <script type="module" src="./assets/scripts/review.js"></script>
+
+  <script type="module" src="./assets/scripts/main.js"></script>
 </html>

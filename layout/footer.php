@@ -1,7 +1,7 @@
-<footer>
-  <div class="footer">
+<footer id="footer">
+  <div class="wrapper">
     <div class="div-1">
-      <img src="images/favicon.svg" alt="Logo" height="145" class="logo" />
+      <img src="./images/logo.png" alt="Logo" height="145" class="logo" />
 
       <p class="description">
         Electricistas calificados con varios años de experiencia en la
@@ -15,11 +15,10 @@
       <h3 class="title">Links</h3>
 
       <nav>
-        <a href="./">Inicio</a>
-        <a href="./sobre-nosotros">Sobre nosotros</a>
-        <a href="./servicios">Servicios</a>
-        <a href="./faq">FAQ</a>
-        <a href="./contactos">Contactos</a>
+        <a href="./#">Inicio</a>
+        <a href="./#sobre-nosotros">Sobre nosotros</a>
+        <a href="./#servicios">Servicios</a>
+        <a href="./#contactos">Contactos</a>
       </nav>
     </div>
 
@@ -27,16 +26,15 @@
       <a
         href="https://www.facebook.com/profile.php?id=61556652903051"
         class="item"
-        style="--bp: -8px -8.85px"
-      >
+        style="--bp: -8px -8.85px">
         <span class="sr-only">Facebook</span>
       </a>
 
       <a
-        href="https://api.whatsapp.com/send?phone=604982792"
+        href="https://wa.me/604982792"
+        target="_blank"
         class="item"
-        style="--bp: -59px -8.85px"
-      >
+        style="--bp: -59px -8.85px">
         <span class="sr-only">Whatsapp</span>
       </a>
 

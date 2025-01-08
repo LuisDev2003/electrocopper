@@ -1,0 +1,169 @@
+@keyframes blur {
+  to {
+    box-shadow: 0 5px 50px -5px #0000001a, 0 0 0 1px #0000004d;
+    background: #0000004d;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+  }
+}
+
+#background {
+  position: fixed;
+  inset: 0px;
+  background-color: var(--black);
+  background-image: radial-gradient(
+    circle 500px at 50% 200px,
+    var(--secondary),
+    transparent
+  );
+  z-index: -999;
+}
+
+#header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  animation: blur linear both;
+  animation-timeline: scroll();
+  animation-range: 0 500px;
+  z-index: 90;
+  /* border-bottom: 1px solid var(--gray); */
+
+  .wrapper {
+    height: 64px;
+    max-width: 1024px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 8px;
+  }
+
+  .logo,
+  .contact {
+    flex: 1 0 0;
+  }
+
+  .navegation {
+    .button {
+      width: 40px;
+      height: 40px;
+      justify-content: center;
+      align-items: center;
+      color: var(--white);
+      background-color: var(--gray);
+      border-radius: 12px;
+
+      &[data-status="close"] {
+        .close {
+          display: none;
+        }
+      }
+
+      &[data-status="open"] {
+        .open {
+          display: none;
+        }
+      }
+
+      &:hover {
+        background-color: var(--black);
+      }
+    }
+
+    .nav-menu {
+      display: none;
+
+      .item {
+        color: var(--white);
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .contact {
+    display: none;
+  }
+}
+
+#sidebar {
+  position: fixed;
+  top: 64px;
+  right: 8px;
+  z-index: 80;
+  width: 240px;
+  border-radius: 12px;
+  height: 0px;
+  overflow: hidden;
+  interpolate-size: allow-keywords;
+  transition: height 0.3s ease-in-out;
+  background-color: var(--gray);
+  color: var(--white);
+
+  &.open {
+    height: fit-content;
+  }
+
+  .menu {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+
+    li + li {
+      margin-top: 8px;
+    }
+
+    a.item {
+      display: flex;
+      align-items: center;
+      font-weight: 600;
+      height: 40px;
+      padding-inline: 12px;
+    }
+  }
+}
+
+#header,
+#sidebar {
+  .menu .item:hover {
+    color: var(--primary);
+  }
+}
+
+@media (width >= 768px) {
+  #button-toggle-sidebar,
+  #sidebar {
+    display: none;
+  }
+
+  #header {
+    #nav-menu {
+      display: flex;
+
+      .item {
+        font-weight: 600;
+        padding: 10px;
+        color: var(--white);
+      }
+    }
+
+    .contact {
+      display: inline-flex;
+      justify-content: end;
+
+      .button {
+        float: right;
+        padding: 4px;
+        border-radius: 12px;
+        width: 48px;
+        height: 48px;
+        background-image: url("../images/redes-sociales.png");
+        background-size: 115px;
+        background-repeat: no-repeat;
+        background-position: var(--bp);
+      }
+    }
+  }
+}
