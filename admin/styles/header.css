@@ -7,12 +7,16 @@
 
   .wrapper {
     height: 64px;
-    max-width: 1024px;
+    max-width: 1200px;
     margin-inline: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-inline: 8px;
+  }
+
+  .wrapper-menu {
+    position: relative;
   }
 
   .button {
@@ -44,9 +48,9 @@
 }
 
 #sidebar {
-  position: fixed;
-  top: 64px;
-  right: 8px;
+  position: absolute;
+  top: 48px;
+  right: 0;
   z-index: 80;
   width: 240px;
   border-radius: 12px;

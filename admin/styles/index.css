@@ -3,6 +3,8 @@
 @import url("./table.css");
 
 .main {
+  max-width: 1200px;
+  margin-inline: auto;
   margin-top: 64px;
   padding: 12px;
 }

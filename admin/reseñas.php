@@ -1,3 +1,7 @@
+<?php
+require_once "./layouts/permissions.php";
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -17,6 +21,8 @@
         <h2 class="title">Reseñas</h2>
 
         <form id="fm-code" class="form">
+          <div id="message-fm-code"></div>
+
           <input type="text" name="codigo" class="input" placeholder="Código" />
 
           <div class="actions">

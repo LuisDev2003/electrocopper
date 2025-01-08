@@ -102,8 +102,9 @@ async function handleSubmitCode(event) {
   formdata.append("operacion", "update-code");
 
   if (formdata.get("codigo").trim() === "") {
+    $("#message-fm-code").innerHTML = "";
     generateAlert(
-      $("#fm-code"),
+      $("#message-fm-code"),
       "error",
       "El nombre del servicio es obligatorio"
     );
@@ -123,7 +124,11 @@ async function handleSubmitCode(event) {
 
     if (data.success) {
       $("#message-fm-code").innerHTML = "";
-      generateAlert($("#message-fm-code"));
+      generateAlert(
+        $("#message-fm-code"),
+        "success",
+        "Código actualizado correctamente"
+      );
     }
   } catch (error) {
     console.error(error);
