@@ -11,6 +11,18 @@ class Employee extends Conexion
     $this->conexion = parent::getConexion();
   }
 
+  public function login($data = [])
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_iniciar_sesion(?)');
+      $consulta->execute([$data["correo"]]);
+
+      return $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
+
   public function getAll()
   {
     try {

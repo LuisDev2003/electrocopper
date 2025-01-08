@@ -3,6 +3,7 @@ USE electrocopper;
 DROP PROCEDURE IF EXISTS spu_servicio_listar;
 DROP PROCEDURE IF EXISTS spu_servicio_registrar;
 DROP PROCEDURE IF EXISTS spu_servicio_actualizar;
+DROP PROCEDURE IF EXISTS spu_servicio_eliminar;
 
 -- ###################################################################
 DELIMITER $$

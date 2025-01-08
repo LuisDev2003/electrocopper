@@ -50,13 +50,9 @@
 
       label {
         display: block;
-        margin-top: 30px;
+        margin-top: 16px;
         font-size: 16px;
         font-weight: 500;
-      }
-
-      label:first-child {
-        margin-top: 0px;
       }
 
       input {
@@ -76,7 +72,7 @@
       }
 
       button {
-        margin-top: 50px;
+        margin-top: 24px;
         width: 100%;
         background-color: #ffffff;
         color: #080710;
@@ -86,17 +82,37 @@
         border-radius: 5px;
         cursor: pointer;
       }
+
+      p {
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        padding-inline: 12px;
+        border-radius: 10px;
+        font-weight: 500;
+        height: 40px;
+        background-color: #ef4444;
+        color: #fef2f2;
+      }
     </style>
   </head>
 
   <body>
     <form>
+      <p style="display: none">Lorem, ipsum dolor.</p>
+
       <label>Correo</label>
-      <input type="text" placeholder="Correo" autocomplete="username" />
+      <input
+        type="text"
+        name="correo"
+        placeholder="Correo"
+        autocomplete="username"
+      />
 
       <label>Contraseña</label>
       <input
         type="password"
+        name="contraseña"
         placeholder="Contraseña"
         autocomplete="current-password"
       />
@@ -104,4 +120,39 @@
       <button>Iniciar sesión</button>
     </form>
   </body>
+
+  <script>
+    const $form = document.querySelector("form");
+    const $formMessage = document.querySelector("p");
+
+    $form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const formdata = new FormData($form);
+
+      for (const field of formdata) {
+        const [key, value] = field;
+
+        if (value.trim() === "") {
+          $formMessage.removeAttribute("style");
+          $formMessage.textContent = `El campo "${key}" es requerido`;
+          return;
+        }
+      }
+
+      formdata.append("operacion", "login");
+
+      fetch("../controllers/auth.controller.php", {
+        method: "POST",
+        body: formdata,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log(data);
+        })
+        .finally(() => {
+          $formMessage.style.display = "none";
+        });
+    });
+  </script>
 </html>

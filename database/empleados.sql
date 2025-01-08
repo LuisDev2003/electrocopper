@@ -1,9 +1,25 @@
 USE electrocopper;
 
+DROP PROCEDURE IF EXISTS spu_iniciar_sesion;
 DROP PROCEDURE IF EXISTS spu_empleado_listar;
 DROP PROCEDURE IF EXISTS spu_empleado_registrar;
 DROP PROCEDURE IF EXISTS spu_empleado_actualizar;
 DROP PROCEDURE IF EXISTS spu_empleado_eliminar;
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_iniciar_sesion(IN _correo VARCHAR(255))
+BEGIN
+	SELECT
+		empleado_id,
+        apellidos,
+        nombres,
+        correo,
+        clave
+    FROM empleados
+    WHERE correo = _correo
+		AND inactive_at IS NULL;
+END $$
 
 -- ###################################################################
 DELIMITER $$
