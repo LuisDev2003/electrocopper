@@ -27,8 +27,8 @@ async function renderTable() {
         <li class="review-item" data-review-id="${comentario_id}">
           <div class="review">
             <div class="d-1">
-              <h4 class="username">${nombre_cliente}</h4>
-              <span class="date">${formatDate(created_at)}</span>
+              <p class="username">${nombre_cliente}</p>
+              <p class="date">${formatDate(created_at)}</p>
             </div>
 
             <div class="d-2">

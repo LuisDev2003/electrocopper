@@ -1,4 +1,5 @@
-:root {
+:root,
+:host {
   --black: #121418;
   --white: #fff;
   --gray: #3a3a3a;
@@ -82,7 +83,7 @@ section[id] {
     display: block;
     width: 48px;
     height: 48px;
-    background-image: url("../images/redes-sociales.png");
+    background-image: url("../images/redes-sociales.webp");
     background-size: 115px;
     background-repeat: no-repeat;
     background-position: var(--bp);

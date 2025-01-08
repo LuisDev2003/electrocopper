@@ -124,6 +124,7 @@
   .username {
     color: var(--white);
     text-transform: uppercase;
+    font-weight: bold;
   }
 
   .date {

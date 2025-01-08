@@ -3,10 +3,9 @@
 
   .wrapper {
     display: grid;
-    padding-inline: 12px;
-    padding-block: 50px;
+    padding: 50px 8px;
     row-gap: 40px;
-    max-width: 768px;
+    max-width: 1024px;
     margin-inline: auto;
 
     .div-1 {
@@ -58,6 +57,10 @@
 
       .description {
         text-align: start;
+      }
+
+      .social-media {
+        justify-content: end;
       }
     }
 

@@ -29,7 +29,7 @@ export async function renderTable() {
         >
           <img src="./images/services/${
             imagen ?? "image-not-found.png"
-          }" alt="${nombre}" class="image" />
+          }" alt="Imagen del servicio" class="image" />
           <h4 class="service-name">${nombre}</h4>
         </a>
       </li>
