@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (!isset($_SESSION["estado"]) || $_SESSION["estado"] == false) {
+  header("Location: ./iniciar-sesion");
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -61,6 +72,10 @@
           <nav id="nav-menu" class="menu">
             <a href="./servicios" class="item">Servicios</a>
             <a href="./reseñas" class="item">Reseñas</a>
+            <form action="../controllers/auth.controller.php" method="post">
+              <input type="text" name="operacion" value="logout" hidden />
+              <button type="submit" class="item">Cerrar sesión</button>
+            </form>
           </nav>
         </div>
       </div>

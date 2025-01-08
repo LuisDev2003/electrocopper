@@ -1,7 +1,5 @@
 <?php
 
-session_start();
-
 require_once "../models/employee.php";
 
 if (isset($_POST['operacion'])) {
@@ -9,35 +7,71 @@ if (isset($_POST['operacion'])) {
 
   switch ($_POST['operacion']) {
     case 'login': {
-        $data = [
-          "correo"  => $_POST["correo"],
-        ];
+        if (session_status() === PHP_SESSION_NONE) {
+          session_start();
+        }
 
-        $result = $employee->login($data);
+        // Validar y sanitizar la entrada
+        $correo = filter_var($_POST["correo"], FILTER_SANITIZE_EMAIL);
+        $contraseña = $_POST['contraseña'];
 
-        $response = [];
-        $response["estado"] = false;
+        $response = ["estado" => false];
 
-        if (!$result) {
-          $_SESSION["estado"] = false;
-          $response["mensaje"] = "El correo no existe";
-        } else if (password_verify($_POST['contraseña'], $result["clave"])) {
-          $_SESSION["estado"] = true;
-          $response["estado"] = true;
-          $response["mensaje"] = "Acceso";
-
-          $_SESSION["empleado_id"] = $result["empleado_id"];
-          $_SESSION["nombres"] = $result["nombres"];
-          $_SESSION["apellidos"] = $result["apellidos"];
-          $_SESSION["correo"] = $result["correo"];
-          // $_SESSION["clave"] = password_hash("123456", PASSWORD_BCRYPT);
+        if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+          $response["mensaje"] = "Correo no válido.";
         } else {
-          $response["mensaje"] = "La contraseña es incorrecta";
+          $data = ["correo" => $correo];
+
+          $result = $employee->login($data);
+
+          if (!$result) {
+            $_SESSION["estado"] = false;
+            $response["mensaje"] = "El correo no existe.";
+          } else if (password_verify($contraseña, $result["clave"])) {
+            $_SESSION["estado"] = true;
+            $_SESSION["empleado_id"] = $result["empleado_id"];
+            $_SESSION["nombres"] = $result["nombres"];
+            $_SESSION["apellidos"] = $result["apellidos"];
+            $_SESSION["correo"] = $result["correo"];
+
+            session_regenerate_id();
+
+            $response["estado"] = true;
+            $response["mensaje"] = "Acceso permitido.";
+          } else {
+            $response["mensaje"] = "La contraseña es incorrecta.";
+          }
         }
 
         echo json_encode($response);
+
         break;
       }
+
+
+    case "logout": {
+        session_start();
+
+        $_SESSION = [];
+
+        if (ini_get("session.use_cookies")) {
+          $params = session_get_cookie_params();
+          setcookie(
+            session_name(),
+            '',
+            time() - 42000,
+            $params["path"],
+            $params["domain"],
+            $params["secure"],
+            $params["httponly"]
+          );
+        }
+
+        session_destroy();
+
+        break;
+      }
+
 
     default:
       $operacion = $_POST['operacion'];

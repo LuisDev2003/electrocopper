@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if (isset($_SESSION["estado"]) && $_SESSION["estado"] === true) {
+  header("Location: ./servicios");
+  exit();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -149,9 +160,13 @@
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
-        })
-        .finally(() => {
-          $formMessage.style.display = "none";
+
+          if (data.estado) {
+            location.href = "./servicios.php";
+          } else {
+            $formMessage.removeAttribute("style");
+            $formMessage.textContent = data.mensaje;
+          }
         });
     });
   </script>
