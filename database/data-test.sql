@@ -1,12 +1,12 @@
 USE electrocopper;
 
-INSERT INTO empleados (nombres, apellidos, correo, contraseña)
+INSERT INTO empleados (nombres, apellidos, correo, clave)
 VALUES 
-('Carlos', 'García', 'carlos.garcia@example.com', 'password123'),
-('María', 'Lopez', 'maria.lopez@example.com', 'securepass456'),
-('Juan', 'Martínez', 'juan.martinez@example.com', 'mypassword789'),
-('Ana', 'Gómez', 'ana.gomez@example.com', 'bestpass321'),
-('Luis', 'Hernández', 'luis.hernandez@example.com', 'strongpass654');
+('Carlos', 'García', 'carlos.garcia@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346'),
+('María', 'Lopez', 'maria.lopez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346'),
+('Juan', 'Martínez', 'juan.martinez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346'),
+('Ana', 'Gómez', 'ana.gomez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346'),
+('Luis', 'Hernández', 'luis.hernandez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346');
 
 INSERT INTO servicios (nombre) 
 VALUES
