@@ -59,7 +59,12 @@
             <a href="./reseñas" class="item">Reseñas</a>
           </li>
           <li>
-            <a href="./servicios" class="item logout">Cerrar sesión</a>
+            <a href="./empleados" class="item">Empleados</a>
+          </li>
+          <li>
+            <a href="../controllers/auth.controller.php" class="item logout">
+              Cerrar sesión
+            </a>
           </li>
         </ul>
       </aside>

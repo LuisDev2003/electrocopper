@@ -20,6 +20,8 @@ const $deleteModal = $("#delete-service");
 const $deleteForm = $("#delete-service form");
 const $inputDelete = $("#input-delete-service-id");
 
+//#region Functions
+
 function handleShowCreateModal(status = "create", service) {
   const title =
     status === "create" ? "Agregar servicio" : "Actualizar servicio";
@@ -102,17 +104,14 @@ async function handleCreate(event) {
 
   const formdata = new FormData($createForm);
 
-  for (const field of formdata) {
-    const [key, value] = field;
+  if (formdata.get("nombre").trim() === "") {
+    generateAlert(
+      $createForm,
+      "error",
+      "El nombre del servicio es obligatorio"
+    );
 
-    if (key === "nombre" && value.trim() === "") {
-      generateAlert(
-        $createForm,
-        "error",
-        "El nombre del servicio es obligatorio"
-      );
-      return;
-    }
+    return;
   }
 
   if (formStatus === "update") {
@@ -188,6 +187,8 @@ async function handleActions(event) {
     handleShowCreateModal("update", service);
   }
 }
+
+//#endregion
 
 //#region Event Listeners
 

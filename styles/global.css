@@ -51,6 +51,10 @@ dialog {
   left: 50%;
   transform: translate(-50%, -50%);
   scrollbar-width: none;
+
+  &::backdrop {
+    background-color: #000000bf;
+  }
 }
 
 section {

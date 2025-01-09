@@ -95,14 +95,23 @@
     }
 
     .logout {
-      color: #ef4444;
+      width: 100%;
+      border-radius: 8px;
+      background-color: #ef4444;
+      color: var(--white);
+      transition: transform 0.15s ease-in-out;
+    }
+
+    .logout:hover {
+      color: var(--white);
+      transform: scale(1.05);
     }
   }
 }
 
 #header,
 #sidebar {
-  .menu .item:hover {
+  .item:hover {
     color: var(--primary);
   }
 }

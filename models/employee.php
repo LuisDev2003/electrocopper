@@ -35,20 +35,31 @@ class Employee extends Conexion
     }
   }
 
+  public function getById($data = [])
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_empleado_buscar(?)');
+      $consulta->execute([$data["empleado_id"]]);
+
+      return $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
+
   public function create($data = [])
   {
     try {
-      $consulta = $this->conexion->prepare('CALL spu_empleado_registrar(?,?,?,?)');
+      $consulta = $this->conexion->prepare('CALL spu_empleado_registrar(?,?,?)');
       $consulta->execute(
         [
           $data['nombres'],
           $data['apellidos'],
           $data['correo'],
-          $data['clave'],
         ]
       );
 
-      return $consulta->fetch(PDO::FETCH_ASSOC);
+      return ["success" => true];
     } catch (Exception $e) {
       die($e->getMessage());
     }
@@ -57,14 +68,13 @@ class Employee extends Conexion
   public function update($data = [])
   {
     try {
-      $consulta = $this->conexion->prepare('CALL spu_empleado_actualizar(?,?,?,?,?)');
+      $consulta = $this->conexion->prepare('CALL spu_empleado_actualizar(?,?,?,?)');
       $consulta->execute(
         [
           $data['empleado_id'],
           $data['nombres'],
           $data['apellidos'],
           $data['correo'],
-          $data['clave'],
         ]
       );
 
