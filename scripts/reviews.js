@@ -1,22 +1,8 @@
-import { $, getAll } from "./global.js";
+import { $, formatDate, getAll } from "./global.js";
 
 const reviewController = "./controllers/review.controller.php";
 
 const $formReview = $("#reseñas form");
-
-function formatDate(dateString) {
-  const date = new Date(dateString);
-
-  const options = {
-    day: "numeric",
-    month: "short",
-    hour: "2-digit",
-    minute: "2-digit",
-    hour12: true,
-  };
-
-  return date.toLocaleString("es-ES", options);
-}
 
 async function renderTable() {
   const data = await getAll(reviewController);

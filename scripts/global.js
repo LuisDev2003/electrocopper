@@ -102,3 +102,17 @@ export function generateAlert(
 
   reference.prepend(content);
 }
+
+export function formatDate(dateString) {
+  const date = new Date(dateString);
+
+  const options = {
+    day: "numeric",
+    month: "short",
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+  };
+
+  return date.toLocaleString("es-ES", options);
+}

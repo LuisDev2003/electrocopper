@@ -21,7 +21,6 @@ const $inputDelete = $("#input-delete-employee-id");
 
 async function renderTable() {
   const employees = await getAll(employeeEndpoint);
-  console.log(employees);
 
   $("#tb-employees .t-body").innerHTML = employees
     .map(({ empleado_id, nombres, apellidos, correo }) => {

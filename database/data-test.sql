@@ -31,3 +31,21 @@ INSERT INTO configuraciones (clave, valor)
 VALUES
 	('codigo-comentario', '123456'),
     ('clave-defecto', '123456');
+
+INSERT INTO ventas (empleado_id) 
+VALUES 
+	(1), 
+	(2), 
+	(3);
+
+INSERT INTO detalle_ventas (venta_id, servicio_id) 
+VALUES 
+	(1, 1), 
+	(1, 2), 
+	(1, 3), 
+	(2, 4), 
+	(2, 5), 
+	(2, 6), 
+	(3, 7), 
+	(3, 8), 
+	(3, 9);

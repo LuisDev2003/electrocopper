@@ -1,7 +1,34 @@
+<?php
+
+$menu = [
+  'Servicios' => './servicios',
+  'Reseñas' => './reseñas',
+  'Empleados' => './empleados',
+  'Clientes' => './clientes',
+  'Ventas' => './ventas',
+  'Cotizaciones' => './cotizaciones',
+  'Cerrar sesión' => '../controllers/auth.controller.php',
+];
+
+$menuDepth = [
+  'Servicios' => '../servicios',
+  'Reseñas' => '../reseñas',
+  'Empleados' => '../empleados',
+  'Clientes' => '../clientes',
+  'Ventas' => '../ventas',
+  'Cotizaciones' => '../cotizaciones',
+  'Cerrar sesión' => '../../controllers/auth.controller.php',
+];
+
+$menuRender = isset($isDepth) && $isDepth ? $menuDepth : $menu;
+
+?>
+
 <header id="header" class="header">
   <div class="wrapper">
     <div class="logo">
-      <img src="../images/logo.png" alt="Logo de la empresa" height="48" />
+      <img src=<?= $pathImage ?? "../images/logo.png" ?>
+        alt="Logo de la empresa" height="48" />
     </div>
 
     <div class="wrapper-menu">
@@ -10,8 +37,7 @@
         type="button"
         aria-label="Mostrar menú"
         data-status="close"
-        class="button"
-      >
+        class="button">
         <svg
           width="24"
           height="24"
@@ -21,8 +47,7 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="open"
-        >
+          class="open">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M4 6l16 0" />
           <path d="M4 12l16 0" />
@@ -38,8 +63,7 @@
           stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="close"
-        >
+          class="close">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M18 6l-12 12" />
           <path d="M6 6l12 12" />
@@ -52,20 +76,15 @@
           <h5 class="email"><?= $_SESSION["correo"] ?></h5>
         </div>
         <ul class="menu">
-          <li>
-            <a href="./servicios" class="item">Servicios</a>
-          </li>
-          <li>
-            <a href="./reseñas" class="item">Reseñas</a>
-          </li>
-          <li>
-            <a href="./empleados" class="item">Empleados</a>
-          </li>
-          <li>
-            <a href="../controllers/auth.controller.php" class="item logout">
-              Cerrar sesión
-            </a>
-          </li>
+          <?php foreach ($menuRender as $item => $link): ?>
+            <li>
+              <a
+                href="<?= $link ?>"
+                class="<?= ($item == 'Cerrar sesión') ? 'item logout' : 'item' ?>">
+                <?= $item ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
         </ul>
       </aside>
     </div>
