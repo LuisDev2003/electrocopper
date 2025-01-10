@@ -61,3 +61,11 @@ BEGIN
 	INSERT INTO detalle_ventas (venta_id, servicio_id)
     VALUES (_venta_id, _servicio_id);
 END $$
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_venta_eliminar(IN _venta_id INT)
+BEGIN
+	DELETE FROM detalle_ventas
+    WHERE venta_id = _venta_id;
+END $$

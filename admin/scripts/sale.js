@@ -15,7 +15,9 @@ async function renderTable() {
           <td>${formatDate(fecha)}</td>
           <td>
             <div class="actions">
-              ${buttonUpdate}
+              <a href="./actualizar?sale_id=${venta_id}">
+                ${buttonUpdate}
+              </a>
             </div>
           </td>
         </tr>

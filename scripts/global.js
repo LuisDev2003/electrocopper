@@ -67,9 +67,9 @@ export const IconX = `
 </svg>
 `;
 
-export async function getAll(endpoint) {
+export async function getAll(endpoint, operation = "get-all") {
   const formdata = new FormData();
-  formdata.append("operacion", "get-all");
+  formdata.append("operacion", operation);
 
   const requestOptions = { method: "POST", body: formdata };
 

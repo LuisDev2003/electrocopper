@@ -82,4 +82,16 @@ class Sale extends Conexion
       die($e->getMessage());
     }
   }
+
+  public function deleteDetail($data = [])
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_venta_eliminar(?)');
+      $consulta->execute([$data["venta_id"]]);
+
+      return ["success" => true];
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
 }
