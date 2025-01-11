@@ -3,6 +3,7 @@
   position: fixed;
   top: 0;
   z-index: 90;
+  background-color: var(--white);
 
   .wrapper {
     height: 64px;
@@ -153,6 +154,10 @@
       text-overflow: ellipsis;
       white-space: nowrap;
       font-size: 0.9rem;
+    }
+
+    .dropdown-content {
+      background-color: var(--white);
     }
 
     .dropdown-content .dropdown-content .item-text {

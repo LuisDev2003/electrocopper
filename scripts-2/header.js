@@ -5,8 +5,8 @@ const $menuDesktop = $("#menu-desktop");
 
 const menuList = [
   {
-    name: "Servicios",
-    link: "#servicios",
+    name: "Soluciones",
+    link: "./soluciones",
     children: [
       {
         name: "Electricidad",
@@ -75,9 +75,9 @@ const menuList = [
       },
     ],
   },
-  { name: "Sobre nosotros", link: "#sobre-nosotros" },
-  { name: "Contactos", link: "#contactos" },
-  { name: "Reseñas", link: "#reseñas" },
+  { name: "Sobre nosotros", link: "./sobre-nosotros" },
+  { name: "Contactos", link: "./contactos" },
+  { name: "Reseñas", link: "./reseñas" },
 ];
 
 const $buttonToggleMenu = $("#button-toggle-menu");
