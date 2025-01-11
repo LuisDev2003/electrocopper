@@ -118,7 +118,7 @@
 
 .wrapper-menu-desktop {
   display: none;
-  flex: 1 0 0;
+  /* flex: 1 0 0; */
 }
 
 @media (width >= 768px) {
@@ -133,7 +133,7 @@
 
   #menu-desktop {
     display: flex;
-    column-gap: 16px;
+    column-gap: 4px;
     width: fit-content;
 
     & > li:hover > .item .icon {
@@ -142,6 +142,10 @@
 
     li {
       position: relative;
+    }
+
+    & > li > .item {
+      padding-block: 0;
     }
 
     .item {
@@ -196,7 +200,7 @@
     .dropdown-content .dropdown-content {
       top: 0;
       left: 100%;
-      max-width: 450px;
+      max-width: 380px;
     }
   }
 }

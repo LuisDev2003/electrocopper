@@ -1,16 +1,3 @@
-<?php
-
-$images = [
-  "brnosite.png",
-  "casas.png",
-  "fitness.jpg",
-  "idl.jpg",
-  "rne.png",
-  "roan-logistic.png"
-]
-
-?>
-
 <section id="abous-us">
   <div class="d-1">
     <h1 class="title">Quienes somos…</h1>
@@ -74,17 +61,5 @@ $images = [
         </p>
       </li>
     </ol>
-  </div>
-
-  <div class="d-4">
-    <h2 class="title">Nuestros clientes</h2>
-
-    <div id="clients">
-      <?php foreach ($images as $image): ?>
-      <div class="item">
-        <img src="./images/clients/<?= $image ?>" alt="Cliente" />
-      </div>
-      <?php endforeach ?>
-    </div>
   </div>
 </section>

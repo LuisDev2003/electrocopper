@@ -4,6 +4,7 @@ const $menuMobile = $("#menu-list-mobile");
 const $menuDesktop = $("#menu-desktop");
 
 const menuList = [
+  { name: "Inicio", link: "./" },
   {
     name: "Soluciones",
     link: "./soluciones",
@@ -76,6 +77,7 @@ const menuList = [
     ],
   },
   { name: "Sobre nosotros", link: "./sobre-nosotros" },
+  { name: "Nuestros clientes", link: "./nuestros-clientes" },
   { name: "Contactos", link: "./contactos" },
   { name: "Reseñas", link: "./reseñas" },
 ];
