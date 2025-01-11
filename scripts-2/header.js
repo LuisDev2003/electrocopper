@@ -6,8 +6,8 @@ const $menuDesktop = $("#menu-desktop");
 const menuList = [
   { name: "Inicio", link: "./" },
   {
-    name: "Soluciones",
-    link: "./soluciones",
+    name: "Servicios",
+    link: "./servicios",
     children: [
       {
         name: "Electricidad",
