@@ -11,7 +11,7 @@
 
     <link rel="stylesheet" href="./styles-2/global.css" />
     <link rel="stylesheet" href="./styles-2/index.css" />
-    <link rel="stylesheet" href="./styles-2/about-us.css" />
+    <link rel="stylesheet" href="./styles-2/our-clients.css" />
   </head>
 
   <body>

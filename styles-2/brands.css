@@ -1,4 +1,6 @@
 #brands {
+  max-width: 1024px;
+  margin-inline: auto;
   display: grid;
   gap: 8px;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

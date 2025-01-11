@@ -11,10 +11,10 @@ $images = [
 
 ?>
 
-<div id="clients">
+<section id="clients">
   <?php foreach ($images as $image): ?>
     <div class="item">
       <img src="./images/clients/<?= $image ?>" alt="Cliente" />
     </div>
   <?php endforeach ?>
-</div>
+</section>
