@@ -7,7 +7,7 @@ CREATE TABLE configuraciones (
 	configuracion_id	INT AUTO_INCREMENT	PRIMARY KEY,
 	clave				VARCHAR(125)		NOT NULL,
     valor				TEXT				NULL,
-    
+
     CONSTRAINT un_clave_con		UNIQUE(clave)
 ) ENGINE = InnoDB;
 
@@ -80,7 +80,7 @@ CREATE TABLE servicios (
     created_at 		DATETIME			DEFAULT NOW(),
     updated_at		DATETIME			NULL,
     inactive_at		DATETIME			NULL,
-    
+
     CONSTRAINT un_nombre_ser	UNIQUE(nombre)
 ) ENGINE = InnoDB;
 
