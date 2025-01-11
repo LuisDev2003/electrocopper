@@ -5,31 +5,181 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electrocopper Riojas</title>
 
-    <?php require_once "./layouts/meta.php" ?>
-
-    <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
-
-    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles-2/global.css" />
+    <link rel="stylesheet" href="./styles-2/index.css" />
   </head>
 
   <body>
-    <?php require_once "./layouts/header.php" ?>
+    <header id="header" class="header">
+      <div class="wrapper">
+        <div class="logo">
+          <img src="./images/logo.png" alt="Logo de la empresa" height="48" />
+        </div>
 
-    <main class="main">
-      <?php require_once "./layouts/hero.php" ?>
+        <div class="wrapper-menu-mobile">
+          <button
+            id="button-toggle-menu"
+            type="button"
+            aria-label="Mostrar menú"
+            class="button"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="open"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 6l16 0" />
+              <path d="M4 12l16 0" />
+              <path d="M4 18l16 0" />
+            </svg>
 
-      <?php require_once "./layouts/services.php" ?>
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="close"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
 
-      <?php require_once "./layouts/about-us.php" ?>
+          <div id="menu-mobile" style="scrollbar-width: none">
+            <ul id="menu-list-mobile">
+              <li>
+                <a href="#servicios" class="item dropdown-trigger">
+                  Servicios
+                  <button type="button">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon"
+                    >
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                      <path d="M15 6l-6 6l6 6" />
+                    </svg>
+                  </button>
+                </a>
 
-      <?php require_once "./layouts/contact.php" ?>
+                <ul class="dropdown-content">
+                  <li>
+                    <a href="#" class="item dropdown-trigger">
+                      level 2 - 1
+                      <button type="button">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <path d="M15 6l-6 6l6 6" />
+                        </svg>
+                      </button>
+                    </a>
+                    <ul class="dropdown-content">
+                      <li>
+                        <a href="#" class="item">level 3 - 1</a>
+                      </li>
+                      <li>
+                        <a href="#" class="item">level 3 - 2</a>
+                      </li>
+                      <li>
+                        <a href="#" class="item">level 3 - 3</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#" class="item">level 2 - 2</a>
+                  </li>
+                  <li>
+                    <a href="#" class="item">level 2 - 3</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a href="#1" class="item">item 1</a>
+              </li>
+              <li>
+                <a href="#2" class="item">item 2</a>
+              </li>
+              <li>
+                <a href="#3" class="item">item 3</a>
+              </li>
+              <li>
+                <a href="#4" class="item">item 4</a>
+              </li>
+              <li>
+                <a href="#5" class="item">item 5</a>
+              </li>
+            </ul>
+          </div>
+        </div>
 
-      <?php require_once "./layouts/reviews.php" ?>
-    </main>
+        <div class="wrapper-menu-desktop">
+          <ul id="menu-desktop">
+            <li>
+              <a href="#servicios" class="item dropdown-trigger">
+                Servicios
+                <button type="button">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M15 6l-6 6l6 6" />
+                  </svg>
+                </button>
+              </a>
 
-    <?php require_once "./layouts/footer.php" ?>
+              <ul class="dropdown-content">
+                <li><a href="#" class="item">item 1</a></li>
+                <li><a href="#" class="item">item 2</a></li>
+                <li><a href="#" class="item">item 3</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#second" class="item">item 2</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
   </body>
 
-  <script type="module" src="./scripts/header.js"></script>
-  <script type="module" src="./scripts/main.js"></script>
+  <script type="module" src="./scripts-2/header.js"></script>
 </html>

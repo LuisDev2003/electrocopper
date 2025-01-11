@@ -207,7 +207,7 @@ function handleSaleUpdate(params) {
         selectedServicesId = [];
         $tbAddSales.innerHTML = "";
         renderServiceOption();
-        alert("Venta registrada exitosamente");
+        alert("Venta actualizada exitosamente");
       } else {
         alert("Error al registrar venta");
       }
