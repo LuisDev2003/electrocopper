@@ -5,20 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Electrocopper Riojas</title>
 
-    <?php require_once "./layouts/meta.php" ?>
-
-    <link rel="shortcut icon" href="./images/logo.png" type="image/png" />
-
     <link rel="stylesheet" href="./styles-2/global.css" />
     <link rel="stylesheet" href="./styles-2/index.css" />
-    <link rel="stylesheet" href="./styles-2/our-clients.css" />
   </head>
 
   <body>
     <?php require_once "./layouts-2/header.php" ?>
 
     <main class="main">
-      <?php require_once "./layouts-2/our-clients.php" ?>
+      <h1
+        style="
+          font-size: 3rem;
+          min-height: 400px;
+          align-content: center;
+          text-align: center;
+        "
+      >
+        Próximamente...
+      </h1>
     </main>
 
     <?php require_once "./layouts-2/footer.php" ?>

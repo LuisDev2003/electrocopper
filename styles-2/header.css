@@ -23,8 +23,10 @@
 
 .wrapper-menu-mobile {
   position: relative;
+  flex: 1 0 0;
 
   .button {
+    float: right;
     width: 40px;
     height: 40px;
     justify-content: center;
@@ -60,23 +62,29 @@
   display: none;
   position: absolute;
   width: 290px;
+  /* min-width: 100%; */
   top: calc(100% + 4px);
   right: 0;
   padding: 8px;
   border-radius: 14px;
   box-shadow: 2px 2px 12px #dadada;
-  max-height: calc(100vh - 64px - 12px);
+  max-height: calc(100vh - 64px - 8px);
   overflow-y: auto;
+  background-color: var(--white);
 
   .item {
     padding: 12px;
     color: var(--gray);
     width: 100%;
-    border-radius: 12px;
+    border-radius: 8px;
+    line-height: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-size: 0.9rem;
+  }
+
+  .item-text {
+    font-size: 0.85rem;
   }
 
   .item:hover {
@@ -89,7 +97,7 @@
     align-items: center;
 
     button {
-      padding-inline: 8px;
+      padding-inline: 4px;
     }
 
     .icon {

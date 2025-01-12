@@ -15,6 +15,8 @@
     <main class="main">
       <?php require_once "./layouts-2/brands.php" ?>
     </main>
+
+    <?php require_once "./layouts-2/footer.php" ?>
   </body>
 
   <script type="module" src="./scripts-2/header.js"></script>
