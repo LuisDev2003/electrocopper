@@ -1,0 +1,16 @@
+#brands {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+  .item {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item img {
+    object-fit: contain;
+  }
+}

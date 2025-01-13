@@ -1,6 +1,7 @@
 USE electrocopper;
 
 DROP PROCEDURE IF EXISTS spu_servicio_listar;
+DROP PROCEDURE IF EXISTS spu_servicio_buscar;
 DROP PROCEDURE IF EXISTS spu_servicio_registrar;
 DROP PROCEDURE IF EXISTS spu_servicio_actualizar;
 DROP PROCEDURE IF EXISTS spu_servicio_eliminar;
@@ -18,6 +19,21 @@ BEGIN
     FROM servicios
     WHERE inactive_at IS NULL
     ORDER BY nombre ASC;
+END $$
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_servicio_buscar(IN _servicio_id INT)
+BEGIN
+	SELECT
+		servicio_id,
+        nombre,
+        descripcion,
+        precio,
+        imagen
+    FROM servicios
+    WHERE servicio_id = _servicio_id
+		AND inactive_at IS NULL;
 END $$
 
 -- ###################################################################

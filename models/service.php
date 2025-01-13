@@ -52,7 +52,7 @@ class Servicio extends Conexion
 				)
 			);
 
-			return $consulta->fetch(PDO::FETCH_ASSOC);
+			return ["success" => true];
 		} catch (Exception $e) {
 			die($e->getMessage());
 		}

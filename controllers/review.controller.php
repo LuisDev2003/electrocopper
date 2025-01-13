@@ -23,9 +23,9 @@ if (isset($_POST['operacion'])) {
 
     case "create": {
         $data = [
-          "nombre"      => $_POST["nombre"],
-          "comentario"  => $_POST["comentario"],
-          "codigo"      => $_POST["codigo"],
+          "nombre"      => htmlspecialchars($_POST["nombre"], ENT_QUOTES, 'UTF-8'),
+          "comentario"  => htmlspecialchars($_POST["comentario"], ENT_QUOTES, 'UTF-8'),
+          "codigo"      => htmlspecialchars($_POST["codigo"], ENT_QUOTES, 'UTF-8'),
         ];
 
         $code = $review->getCode()["valor"];
