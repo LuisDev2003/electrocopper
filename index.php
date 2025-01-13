@@ -7,12 +7,18 @@
 
     <link rel="stylesheet" href="./styles-2/global.css" />
     <link rel="stylesheet" href="./styles-2/index.css" />
+    <link rel="stylesheet" href="./styles-2/hero.css" />
+    <link rel="stylesheet" href="./styles-2/home.css" />
   </head>
 
   <body>
     <?php require_once "./layouts-2/header.php" ?>
 
     <main class="main">
+      <?php require_once "./layouts-2/hero.php" ?>
+
+      <?php require_once "./layouts-2/home-services.php" ?>
+
       <?php require_once "./layouts-2/brands.php" ?>
     </main>
 
