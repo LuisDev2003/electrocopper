@@ -49,3 +49,10 @@ VALUES
 	(3, 7), 
 	(3, 8), 
 	(3, 9);
+    
+INSERT INTO categorias(nombre)
+VALUES
+	('Control y automatización'),
+    ('Domotica'),
+    ('Electricidad'),
+    ('Telecomunicaciones');
