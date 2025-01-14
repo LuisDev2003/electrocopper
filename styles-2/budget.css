@@ -39,7 +39,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    row-gap: 32px;
+    row-gap: 16px;
 
     .steps {
       display: flex;
@@ -58,11 +58,14 @@
         font-weight: bold;
         font-size: 0.9rem;
         border: 1px solid var(--gray);
+        background-color: var(--white);
+        transition: all 0.3s ease-in-out;
       }
 
       .step.active {
-        background-color: var(--gray);
         color: var(--white);
+        background-color: var(--gray);
+        transform: scale(1.2);
       }
 
       .step::after {
@@ -74,7 +77,6 @@
         background-color: var(--gray);
         top: 50%;
         left: 100%;
-        z-index: 10;
       }
 
       .step:last-child::after {
@@ -97,6 +99,18 @@
         display: block;
       }
 
+      .question {
+        font-size: 1.1rem;
+      }
+
+      .answer {
+        margin-top: 16px;
+      }
+
+      .answer span {
+        font-size: 0.9rem;
+      }
+
       .actions {
         display: flex;
         column-gap: 8px;
@@ -111,6 +125,23 @@
         align-items: center;
         border-radius: 12px;
         padding-block: 8px;
+      }
+
+      .form {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+      }
+
+      .form .input,
+      .form .textarea {
+        padding: 8px;
+        border-radius: 8px;
+        border: 1px solid var(--gray);
+      }
+
+      .form .textarea {
+        resize: vertical;
       }
     }
   }
