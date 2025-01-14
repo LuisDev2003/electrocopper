@@ -42,7 +42,7 @@ if (isset($_POST['operacion'])) {
     
     default:
     $operacion = $_POST['operacion'];
-    echo "$operacion no implemendado";
+    echo "$operacion no implementado";
     
   }
 

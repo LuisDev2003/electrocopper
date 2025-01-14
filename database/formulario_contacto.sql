@@ -17,7 +17,7 @@ BEGIN
         mensaje,
 		created_at
 	FROM formulario_contacto
-	WHERE incative_at IS NULL
+	WHERE inactive_at IS NULL
     ORDER BY created_at ASC;
 END $$
 
@@ -30,7 +30,7 @@ CREATE PROCEDURE spu_formulario_contacto_registrar(
 )
 BEGIN
 	INSERT INTO formulario_contacto
-		(nombres, correo, mensaje) 
+		(nombre, correo, mensaje) 
     VALUE
 		(_nombres, _correo, _mensaje);
         
@@ -62,7 +62,7 @@ CREATE PROCEDURE spu_formulario_contacto_eliminar(
 	IN 	_formulario_contacto_id 	INT
 )
 BEGIN
-	UPDATE categoria
+	UPDATE formulario_contacto
 		SET inactive_at = NOW()
 	WHERE formulario_contacto_id = _formulario_contacto_id;
 END $$

@@ -28,8 +28,8 @@ class Forms extends Conexion
       $consulta  = $this->conexion->prepare('CALL spu_formulario_contacto_registrar(?,?,?)');
       $consulta->execute(
         [
-          $data['nombres'],
-          $data['correos'],
+          $data['nombre'],
+          $data['correo'],
           $data['mensaje']
         ]
       );
@@ -46,8 +46,8 @@ class Forms extends Conexion
       $consulta->execute(
         [
           $data['formulario_contacto_id'],
-          $data['nombres'],
-          $data['correos'],
+          $data['nombre'],
+          $data['correo'],
           $data['mensaje']
         ]
       );

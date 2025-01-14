@@ -16,7 +16,7 @@ BEGIN
         nombre,
         created_at
 	FROM categorias
-	WHERE incative_at IS NULL
+	WHERE inactive_at IS NULL
     ORDER BY nombre ASC;
 END $$
 

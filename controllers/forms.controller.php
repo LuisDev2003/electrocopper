@@ -15,7 +15,9 @@ if(isset($_POST['operacion'])){
 
     case 'create':{
       $data = [
-        'nombre'  => $_POST['nombre'],
+        'nombre'                 => $_POST['nombre'],
+        'correo'                  => $_POST['correo'],
+        'mensaje'                 => $_POST['mensaje']
       ];
 
       echo json_encode($forms->create($data));
@@ -26,8 +28,9 @@ if(isset($_POST['operacion'])){
 
       $data = [
         'formulario_contacto_id'  => $_POST['formulario_contacto_id'],
-        'nombres'                 => $_POST['nombres'],
-        'correo'                  => $_POST['mensaje']
+        'nombre'                  => $_POST['nombre'],
+        'correo'                  => $_POST['correo'],
+        'mensaje'                 => $_POST['mensaje']
       ];
 
 
@@ -37,7 +40,7 @@ if(isset($_POST['operacion'])){
 
     case 'delete':{
       $data = [
-        'formulario_contacto_id'  => $_POST['_formulario_contacto_id'],
+        'formulario_contacto_id'  => $_POST['formulario_contacto_id'],
       ];
 
 
@@ -47,7 +50,7 @@ if(isset($_POST['operacion'])){
     
     default:
     $operacion = $_POST['operacion'];
-    echo "$operacion no implemendado";
+    echo "$operacion no implementado";
   };
 
 };
