@@ -80,6 +80,7 @@ const menuList = [
   { name: "Sobre nosotros", link: "./sobre-nosotros" },
   { name: "Nuestros clientes", link: "./nuestros-clientes" },
   { name: "Contactos", link: "./contactos" },
+  { name: "Presupuesto", link: "./presupuesto" },
   { name: "Reseñas", link: "./reseñas" },
 ];
 
