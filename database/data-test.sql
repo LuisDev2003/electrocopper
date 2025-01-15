@@ -49,3 +49,32 @@ VALUES
 	(3, 7), 
 	(3, 8), 
 	(3, 9);
+
+INSERT INTO empresas (ruc, razon_social, correo, telefono, direccion) 
+VALUES
+	('20512345678', 'Empresa Alpha SAC', 'contacto@alpha.com', '987654321', 'Av. Siempre Viva 123, Lima'),
+	('20698765432', 'Beta Corporation', 'info@beta.com', '912345678', 'Jr. Independencia 456, Arequipa'),
+	('20711122233', 'Gamma y Asociados', 'admin@gamma.com', '921234567', 'Calle Las Flores 789, Trujillo'),
+	('20833344455', 'Delta Logistics', 'logistica@delta.com', '934567890', 'Av. Los Pinos 101, Piura'),
+	('20955566677', 'Epsilon Tech', 'soporte@epsilon.com', '945678901', 'Jr. El Sol 202, Cusco');
+
+INSERT INTO personas (nombres, apellidos) 
+VALUES
+	('Juan', 'Perez'),
+	('Maria', 'Lopez'),
+	('Carlos', 'Gomez'),
+	('Ana', 'Torres'),
+	('Luis', 'Martinez');
+
+INSERT INTO clientes (persona_id, empresa_id, tipo) 
+VALUES
+	(NULL, 1, 'juridica'),
+	(NULL, 2, 'juridica'),
+	(NULL, 3, 'juridica'),
+	(NULL, 4, 'juridica'),
+	(NULL, 5, 'juridica'),
+	(1, NULL, 'natural'),
+	(2, NULL, 'natural'),
+	(3, NULL, 'natural'),
+	(4, NULL, 'natural'),
+	(5, NULL, 'natural');
