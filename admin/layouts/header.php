@@ -4,7 +4,8 @@ $menu = [
   'Servicios' => './servicios',
   'Reseñas' => './reseñas',
   'Empleados' => './empleados',
-  'Clientes' => './clientes',
+  'Clientes - Personas' => './clientes/personas',
+  'Clientes - Empresas' => './clientes/empresas',
   'Ventas' => './ventas',
   'Cotizaciones' => './cotizaciones',
   'Cerrar sesión' => '../controllers/auth.controller.php',
@@ -14,7 +15,8 @@ $menuDepth = [
   'Servicios' => '../servicios',
   'Reseñas' => '../reseñas',
   'Empleados' => '../empleados',
-  'Clientes' => '../clientes',
+  'Clientes - Personas' => '../clientes/personas',
+  'Clientes - Empresas' => '../clientes/empresas',
   'Ventas' => '../ventas',
   'Cotizaciones' => '../cotizaciones',
   'Cerrar sesión' => '../../controllers/auth.controller.php',
@@ -31,7 +33,7 @@ $menuRender = isset($isDepth) && $isDepth ? $menuDepth : $menu;
         alt="Logo de la empresa" height="48" />
     </div>
 
-    <div class="wrapper-menu">
+    <div class="handle-menu">
       <button
         id="button-toggle-sidebar"
         type="button"
@@ -75,17 +77,19 @@ $menuRender = isset($isDepth) && $isDepth ? $menuDepth : $menu;
           <h4 class="name"><?= $_SESSION["nombres"] ?></h4>
           <h5 class="email"><?= $_SESSION["correo"] ?></h5>
         </div>
-        <ul class="menu">
-          <?php foreach ($menuRender as $item => $link): ?>
-            <li>
-              <a
-                href="<?= $link ?>"
-                class="<?= ($item == 'Cerrar sesión') ? 'item logout' : 'item' ?>">
-                <?= $item ?>
-              </a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
+        <div class="wrapper-menu">
+          <ul class="menu">
+            <?php foreach ($menuRender as $item => $link): ?>
+              <li>
+                <a
+                  href="<?= $link ?>"
+                  class="<?= ($item == 'Cerrar sesión') ? 'item logout' : 'item' ?>">
+                  <?= $item ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </aside>
     </div>
   </div>

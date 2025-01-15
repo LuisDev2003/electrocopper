@@ -10,7 +10,7 @@ $isDepth = true;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panel administrativo - Registrar Personas</title>
+    <title>Panel administrativo - Cliente personas</title>
 
     <link rel="shortcut icon" href="../../images/logo.png" type="image/png" />
 
@@ -22,7 +22,7 @@ $isDepth = true;
 
     <main class="main">
       <div class="wrapper-header">
-        <h2 class="title">Registrar Personas</h2>
+        <h2 class="title">Cliente personas</h2>
 
         <button id="open-create-person" class="button">
           <svg

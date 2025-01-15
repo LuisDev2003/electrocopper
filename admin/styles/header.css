@@ -15,7 +15,7 @@
     padding-inline: 8px;
   }
 
-  .wrapper-menu {
+  .handle-menu {
     position: relative;
   }
 
@@ -75,12 +75,18 @@
     font-weight: normal;
   }
 
+  .wrapper-menu {
+    height: 320px;
+  }
+
   .menu {
     position: relative;
     height: 100%;
     display: flex;
     flex-direction: column;
     padding: 16px;
+    overflow-y: auto;
+    scrollbar-width: thin;
 
     li + li {
       margin-top: 8px;
