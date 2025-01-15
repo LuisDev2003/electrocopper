@@ -78,7 +78,8 @@
       }
     }
 
-    .d-1 {
+    .d-1,
+    .actions {
       display: flex;
       justify-content: center;
     }

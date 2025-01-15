@@ -57,23 +57,6 @@ $isDepth = true;
         </table>
       </div>
     </main>
-
-    <dialog id="create-person" class="form-modal" style="max-width: 420px">
-      <h3 class="title">Agregar servicio</h3>
-
-      <form autocomplete="off" class="form">
-        <input type="text" name="nombre" placeholder="Nombre" />
-        <textarea name="descripcion" placeholder="Descripción"></textarea>
-        <input id="file-image" type="file" name="imagen" />
-        <div id="preview-file-image" class="image"></div>
-
-        <div class="d-1">
-          <button type="button" class="button cancel">Cancelar</button>
-
-          <button type="submit" class="button submit">Guardar</button>
-        </div>
-      </form>
-    </dialog>
   </body>
 
   <script type="module" src="../scripts/index.js"></script>

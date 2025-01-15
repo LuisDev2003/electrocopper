@@ -19,7 +19,7 @@ DELIMITER $$
 CREATE PROCEDURE spu_persona_buscar(IN _persona_id INT)
 BEGIN
 	SELECT * FROM vw_cliente_persona
-    WHERE persona_id = 1;
+    WHERE persona_id = _persona_id;
 END $$
 
 -- ###################################################################
@@ -29,10 +29,17 @@ CREATE PROCEDURE spu_persona_registrar(
     IN _apellidos	VARCHAR(50)
 )
 BEGIN
+	DECLARE _persona_id INT;
+    
     INSERT INTO personas (nombres, apellidos)
 	VALUES (_nombres, _apellidos);
+    
+    SET _persona_id = LAST_INSERT_ID();
+    
+	INSERT INTO clientes (persona_id, tipo) 
+	VALUES (_persona_id, 'natural');
 
-    SELECT LAST_INSERT_ID() AS persona_id;
+    SELECT LAST_INSERT_ID() AS cliente_id;
 END $$
 
 -- ###################################################################

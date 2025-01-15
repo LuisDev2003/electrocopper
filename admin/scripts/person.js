@@ -1,8 +1,8 @@
-import { renderDeleteModal, renderTable } from "./utils";
+import { $, renderCreateModal, renderDeleteModal, renderTable } from "./utils";
 
-const personEndpoint = "../../controllers/person.controller.php";
+const personEndpoint = "../../controllers/person.controller";
 
-const [input, dialog] = renderDeleteModal({
+const [deleteModal, deleteInput] = renderDeleteModal({
   title: "Eliminar Persona",
   description: "¿Desea eliminar la persona?",
   name: "persona_id",
@@ -10,19 +10,47 @@ const [input, dialog] = renderDeleteModal({
   onSuccess: () => renderPersonTable(),
 });
 
+const [createModal] = renderCreateModal({
+  title: "Agregar Persona",
+  fields: ["nombres", "apellidos"],
+  endpoint: personEndpoint,
+  onSuccess: () => renderPersonTable(),
+});
+
+const [updateModal, updateInput] = renderCreateModal(
+  {
+    title: "Actualizar Persona",
+    fields: ["nombres", "apellidos"],
+    endpoint: personEndpoint,
+    onSuccess: () => renderPersonTable(),
+  },
+  {
+    isUpdate: true,
+    field: "persona_id",
+    find: personEndpoint,
+  }
+);
+
 function renderPersonTable() {
   renderTable({
     container: "#tb-persons .t-body",
     endpoint: personEndpoint,
     keys: ["nombres", "apellidos"],
     actions: {
-      onUpdate: (rowData) => console.log("Updating:", rowData),
+      onUpdate: (rowData) => {
+        updateModal.showModal();
+        updateInput.value = rowData.persona_id;
+      },
       onDelete: (rowData) => {
-        dialog.showModal();
-        input.value = rowData.persona_id;
+        deleteModal.showModal();
+        deleteInput.value = rowData.persona_id;
       },
     },
   });
 }
+
+$("#open-create-person").addEventListener("click", () =>
+  createModal.showModal()
+);
 
 renderPersonTable();

@@ -65,6 +65,31 @@ export const IconX = `
 </svg>
 `;
 
+export async function findOne({
+  endpoint,
+  operation = "get-by-id",
+  name,
+  value,
+}) {
+  try {
+    const formdata = new FormData();
+    formdata.append("operacion", operation);
+    formdata.append(name, value);
+
+    const requestOptions = {
+      method: "POST",
+      body: formdata,
+    };
+
+    const response = await fetch(endpoint, requestOptions);
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export async function getAll(endpoint, operation = "get-all") {
   const formdata = new FormData();
   formdata.append("operacion", operation);
@@ -194,7 +219,7 @@ export function renderDeleteModal({
   p.classList.add("description");
   form.classList.add("form");
   input.classList.add("input");
-  actions.classList.add("d-1");
+  actions.classList.add("actions");
   cancel.classList.add("button", "cancel");
   submit.classList.add("button", "submit", "delete");
 
@@ -218,11 +243,11 @@ export function renderDeleteModal({
   p.innerHTML = description;
   h3.innerHTML = title;
 
-  dialog.appendChild(h3);
-  dialog.appendChild(p);
-  dialog.appendChild(form);
+  cancel.addEventListener("click", () => {
+    dialog.close();
+    form.reset();
+  });
 
-  cancel.addEventListener("click", () => dialog.close());
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
 
@@ -235,22 +260,157 @@ export function renderDeleteModal({
       const response = await fetch(endpoint, requestOptions);
       const data = await response.json();
 
+      console.log(data);
+
       if (data.success) {
         dialog.close();
         form.reset();
 
         onSuccess(data);
       }
-
-      console.log(data);
     } catch (error) {
       console.error(error);
     }
   });
 
+  dialog.appendChild(h3);
+  dialog.appendChild(p);
+  dialog.appendChild(form);
+
   document.body.appendChild(dialog);
 
-  return [input, dialog];
+  return [dialog, input];
+}
+
+function createFormFields(fields, form) {
+  fields.forEach((field) => {
+    const input = document.createElement("input");
+    input.classList.add("input");
+
+    if (typeof field === "string") {
+      input.type = "text";
+      input.name = field;
+      input.placeholder = field;
+    } else if (typeof field === "object" && field !== null) {
+      const { name, type = "text", placeholder, required = true } = field;
+      input.type = type;
+      input.name = name;
+      input.placeholder = placeholder ?? name;
+      input.required = required;
+    }
+
+    form.appendChild(input);
+  });
+}
+
+function fillOutForm(form, data) {
+  for (const key in data) {
+    if (data.hasOwnProperty(key)) {
+      const input = $(`[name="${key}"]`, form);
+
+      if (input) input.value = data[key];
+    }
+  }
+}
+
+export function renderCreateModal(
+  {
+    title,
+    fields = [],
+    endpoint,
+    onSuccess = (data) => console.log("onSuccess - Create", data),
+    onError = (error) => console.error("onError - Create", error),
+  },
+  { isUpdate = false, field, find } = {}
+) {
+  const dialog = document.createElement("dialog");
+  dialog.classList.add("form-modal");
+
+  const h3 = document.createElement("h3");
+  h3.classList.add("title");
+  h3.innerHTML = title;
+  dialog.appendChild(h3);
+
+  const form = document.createElement("form");
+  form.classList.add("form");
+  createFormFields(fields, form);
+  form.addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formdata = new FormData(form);
+    formdata.append("operacion", isUpdate ? "update" : "create");
+
+    const requestOptions = { method: "POST", body: formdata };
+
+    try {
+      const response = await fetch(endpoint, requestOptions);
+
+      const data = await response.json();
+
+      if (data.success) {
+        dialog.close();
+        form.reset();
+
+        onSuccess(data);
+      }
+    } catch (error) {
+      onError(error);
+    }
+  });
+
+  const actions = document.createElement("div");
+  actions.classList.add("actions");
+
+  const cancel = document.createElement("button");
+  cancel.classList.add("button", "cancel");
+  cancel.type = "button";
+  cancel.innerHTML = "Cancelar";
+  cancel.addEventListener("click", () => {
+    dialog.close();
+    form.reset();
+  });
+
+  const submit = document.createElement("button");
+  submit.classList.add("button", "submit");
+  submit.type = "submit";
+  submit.innerHTML = "Guardar";
+
+  actions.appendChild(cancel);
+  actions.appendChild(submit);
+
+  form.appendChild(actions);
+  dialog.appendChild(form);
+
+  document.body.appendChild(dialog);
+
+  if (isUpdate) {
+    const input = document.createElement("input");
+    input.style.display = "none";
+    input.readOnly = true;
+    input.name = field;
+
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach(async (mutation) => {
+        if (mutation.attributeName === "open" && dialog.hasAttribute("open")) {
+          const data = await findOne({
+            endpoint: find,
+            name: field,
+            value: input.value,
+          });
+
+          fillOutForm(form, data);
+        }
+      });
+    });
+
+    observer.observe(dialog, { attributes: true });
+
+    form.appendChild(input);
+
+    return [dialog, input];
+  }
+
+  return [dialog];
 }
 
 //#endregion
