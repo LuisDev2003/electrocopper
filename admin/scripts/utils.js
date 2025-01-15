@@ -186,9 +186,11 @@ export function createRow({ rowData, keys, actions }) {
   return tr;
 }
 
-export async function renderTable({ container, endpoint, keys, actions }) {
+export async function renderTableBody({ container, endpoint, keys, actions }) {
   const tableBody = typeof container === "string" ? $(container) : container;
   const data = await getAll(endpoint);
+
+  console.log(data);
 
   tableBody.innerHTML = "";
 
@@ -291,12 +293,24 @@ function createFormFields(fields, form) {
       input.type = "text";
       input.name = field;
       input.placeholder = field;
+      input.required = true;
     } else if (typeof field === "object" && field !== null) {
-      const { name, type = "text", placeholder, required = true } = field;
+      const {
+        name,
+        type = "text",
+        placeholder,
+        required = true,
+        ...otherAttributes
+      } = field;
+
       input.type = type;
       input.name = name;
       input.placeholder = placeholder ?? name;
       input.required = required;
+
+      for (const [key, value] of Object.entries(otherAttributes)) {
+        input[key] = value;
+      }
     }
 
     form.appendChild(input);
@@ -411,6 +425,39 @@ export function renderCreateUpdateModal(
   }
 
   return [dialog];
+}
+
+export function renderTable(heads = []) {
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("wrapper-table");
+
+  const table = document.createElement("table");
+  table.classList.add("table");
+
+  const thead = document.createElement("thead");
+  thead.classList.add("t-head");
+  const tr = document.createElement("tr");
+  tr.classList.add("t-row");
+  heads.forEach((field) => {
+    const th = document.createElement("th");
+    th.textContent = field;
+    tr.appendChild(th);
+  });
+  const th = document.createElement("th");
+  th.textContent = "Acciones";
+  th.style.width = "120px";
+  tr.appendChild(th);
+  thead.appendChild(tr);
+
+  const tbody = document.createElement("tbody");
+  tbody.classList.add("t-body");
+
+  table.appendChild(thead);
+  table.appendChild(tbody);
+
+  wrapper.appendChild(table);
+
+  return [wrapper, tbody];
 }
 
 //#endregion

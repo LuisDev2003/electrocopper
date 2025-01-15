@@ -10,7 +10,7 @@ $isDepth = true;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panel administrativo - Registrar Personas</title>
+    <title>Panel administrativo - Registrar Empresas</title>
 
     <link rel="shortcut icon" href="../../images/logo.png" type="image/png" />
 
@@ -22,9 +22,9 @@ $isDepth = true;
 
     <main class="main">
       <div class="wrapper-header">
-        <h2 class="title">Registrar Personas</h2>
+        <h2 class="title">Registrar Empresas</h2>
 
-        <button id="open-create-person" class="button">
+        <button id="open-create-company" class="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -46,5 +46,5 @@ $isDepth = true;
   </body>
 
   <script type="module" src="../scripts/index.js"></script>
-  <script type="module" src="../scripts/person.js"></script>
+  <script type="module" src="../scripts/company.js"></script>
 </html>
