@@ -313,7 +313,7 @@ function fillOutForm(form, data) {
   }
 }
 
-export function renderCreateModal(
+export function renderCreateUpdateModal(
   {
     title,
     fields = [],

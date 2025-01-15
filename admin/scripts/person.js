@@ -1,4 +1,9 @@
-import { $, renderCreateModal, renderDeleteModal, renderTable } from "./utils";
+import {
+  $,
+  renderCreateUpdateModal,
+  renderDeleteModal,
+  renderTable,
+} from "./utils";
 
 const personEndpoint = "../../controllers/person.controller";
 
@@ -10,14 +15,14 @@ const [deleteModal, deleteInput] = renderDeleteModal({
   onSuccess: () => renderPersonTable(),
 });
 
-const [createModal] = renderCreateModal({
+const [createModal] = renderCreateUpdateModal({
   title: "Agregar Persona",
   fields: ["nombres", "apellidos"],
   endpoint: personEndpoint,
   onSuccess: () => renderPersonTable(),
 });
 
-const [updateModal, updateInput] = renderCreateModal(
+const [updateModal, updateInput] = renderCreateUpdateModal(
   {
     title: "Actualizar Persona",
     fields: ["nombres", "apellidos"],
