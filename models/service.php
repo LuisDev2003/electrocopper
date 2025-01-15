@@ -42,10 +42,11 @@ class Servicio extends Conexion
 	public function create($data = [])
 	{
 		try {
-			$consulta = $this->conexion->prepare('CALL spu_servicio_registrar(?,?,?,?)');
+			$consulta = $this->conexion->prepare('CALL spu_servicio_registrar(?,?,?,?,?)');
 			$consulta->execute(
 				array(
 					$data['nombre'],
+					$data['categoria_id'],
 					$data['descripcion'],
 					$data['precio'],
 					$data['imagen'],

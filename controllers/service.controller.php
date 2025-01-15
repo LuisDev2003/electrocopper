@@ -24,6 +24,7 @@ if (isset($_POST['operacion'])) {
     case "create": {
         $data = [
           'nombre' => $_POST['nombre'],
+          'categoria_id'=> $_POST['categoria_id'],
           'descripcion' => $_POST['descripcion'] ?? "",
           'precio' => $_POST['precio'] ?? 0,
           'imagen' => "",

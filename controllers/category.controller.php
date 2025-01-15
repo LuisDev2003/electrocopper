@@ -7,7 +7,7 @@ if (isset($_POST['operacion'])) {
   $category = new Category();
 
   switch ($_POST['operacion']) {
-    case 'getAll':{
+    case 'get-all':{
       echo json_encode($category->getAll());
       break;
     }

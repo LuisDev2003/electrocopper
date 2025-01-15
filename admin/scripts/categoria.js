@@ -9,7 +9,6 @@ import {
 const serviceController = "../controllers/service.controller.php";
 const categoryController = "../controllers/category.controller.php";
 
-
 let formStatus = "create";
 
 const $createModal = $("#create-service");
@@ -50,24 +49,10 @@ function handleShowCreateModal(status = "create", service) {
   }
 }
 
-async function renderSelect(id) {
+async function categorias() {
   const data = await getAll(categoryController)
-  $("#select-category").innerHTML = data
-  .map(({categoria_id, nombre}) => {
-    
-    if (id===''| id == categoria_id) {
-      return `
-        <option value="${categoria_id} selected">${nombre}</option>
-      `;
-    } else {
-      return `
-        <option value="${categoria_id} selected">${nombre}</option>
-      `;
-    }
-  })
-  .join("");
-
   console.log(data)
+  
 }
 
 async function renderTable() {
@@ -77,15 +62,12 @@ async function renderTable() {
     '<span style="color: red; font-size: 0.9rem">No tiene una descripción</span>';
 
   $("#tb-servicios .t-body").innerHTML = data
-    .map(({ servicio_id, nombre, descripcion, categoria}) => {
+    .map(({ servicio_id, nombre, descripcion }) => {
       return `
         <tr class="t-row" data-service-id="${servicio_id}">
           <td>${nombre}</td>
           <td>
             ${descripcion ?? descripcionNull}
-          </td>
-          <td>
-            ${categoria}
           </td>
           <td>
             <div class="actions">
@@ -243,4 +225,4 @@ $("#delete-service .cancel").addEventListener("click", () => {
 //#endregion
 console.log("holas")
 renderTable();
-renderSelect();
+categorias();

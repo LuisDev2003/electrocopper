@@ -2,6 +2,7 @@
 
 $menu = [
   'Servicios' => './servicios',
+  'Categoría' => './categoria',
   'Reseñas' => './reseñas',
   'Empleados' => './empleados',
   'Clientes' => './clientes',
@@ -12,6 +13,7 @@ $menu = [
 
 $menuDepth = [
   'Servicios' => '../servicios',
+  'Categoría' => './categoria',
   'Reseñas' => '../reseñas',
   'Empleados' => '../empleados',
   'Clientes' => '../clientes',
