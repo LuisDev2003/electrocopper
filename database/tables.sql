@@ -71,8 +71,33 @@ CREATE TABLE clientes (
 
 
 -- ###################################################################
+CREATE TABLE formulario_contacto
+(
+	formulario_contacto_id 		INT AUTO_INCREMENT		PRIMARY KEY ,
+    nombre						VARCHAR(60)				NOT NULL,
+    correo						VARCHAR(120)			NOT NULL,
+    mensaje						TEXT 					NULL,
+    created_at 					DATETIME				DEFAULT NOW(),
+    updated_at					DATETIME				NULL,
+    inactive_at					DATETIME				NULL
+)ENGINE = INNODB;
+
+
+-- ###################################################################
+CREATE TABLE categorias(
+	categoria_id 	INT	AUTO_INCREMENT 		PRIMARY KEY,
+    nombre 			VARCHAR(120) 			NOT NULL,
+	created_at 		DATETIME				DEFAULT NOW(),
+    updated_at		DATETIME				NULL,
+    inactive_at		DATETIME				NULL,
+    CONSTRAINT un_nombre_cat	UNIQUE(nombre)
+) ENGINE = INNODB;
+
+
+-- ###################################################################
 CREATE TABLE servicios (
 	servicio_id		INT AUTO_INCREMENT	PRIMARY KEY,
+    categoria_id  	INT					NULL,
     nombre			VARCHAR(120)		NOT NULL,
     descripcion		TEXT				NULL,
     precio			DECIMAL(7,2)		NULL,
@@ -80,7 +105,8 @@ CREATE TABLE servicios (
     created_at 		DATETIME			DEFAULT NOW(),
     updated_at		DATETIME			NULL,
     inactive_at		DATETIME			NULL,
-
+    
+    CONSTRAINT fk_categoria_ser	FOREIGN KEY (categoria_id) REFERENCES categorias(categoria_id),
     CONSTRAINT un_nombre_ser	UNIQUE(nombre)
 ) ENGINE = InnoDB;
 

@@ -7,7 +7,7 @@ require_once "./layouts/permissions.php";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Panel administrativo - Servicios</title>
+    <title>Panel administrativo - Categoría</title>
 
     <link rel="shortcut icon" href="../images/logo.png" type="image/png" />
 
@@ -19,9 +19,9 @@ require_once "./layouts/permissions.php";
 
     <main class="main">
       <div class="wrapper-header">
-        <h2 class="title">Servicios</h2>
+        <h2 class="title">Categoría</h2>
 
-        <button id="open-create-service" class="button">
+        <button id="open-create-category" class="button">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -41,12 +41,10 @@ require_once "./layouts/permissions.php";
       </div>
 
       <div class="wrapper-table">
-        <table id="tb-servicios" class="table">
+        <table id="tb-category" class="table">
           <thead class="t-head">
             <tr class="t-row">
               <th>Nombre</th>
-              <th>Descripción</th>
-              <th>Categoría</th>
               <th class="actions">Acciones</th>
             </tr>
           </thead>
@@ -56,16 +54,14 @@ require_once "./layouts/permissions.php";
       </div>
     </main>
 
-    <dialog id="create-service" class="form-modal" style="max-width: 420px">
-      <h3 class="title">Agregar servicio</h3>
+    <dialog id="create-category" class="form-modal" style="max-width: 420px">
+      <h3 class="title">Agregar categoria</h3>
 
       <form autocomplete="off" class="form">
-        <input type="text" name="nombre" placeholder="Nombre"/>
-        <select name="categoria_id" id="select-category">
-        </select>
-        <textarea name="descripcion" placeholder="Descripción"></textarea>
+        <input type="text" name="nombre" placeholder="Nombre" />
+        <!-- <textarea name="descripcion" placeholder="Descripción"></textarea>
         <input id="file-image" type="file" name="imagen" />
-        <div id="preview-file-image" class="image"></div>
+        <div id="preview-file-image" class="image"></div> -->
 
         <div class="d-1">
           <button type="button" class="button cancel">Cancelar</button>
@@ -75,16 +71,16 @@ require_once "./layouts/permissions.php";
       </form>
     </dialog>
 
-    <dialog id="delete-service" class="form-modal delete">
-      <h3 class="title">Eliminar servicio</h3>
+    <dialog id="delete-category" class="form-modal delete">
+      <h3 class="title">Eliminar Categoría</h3>
 
-      <p class="description">¿Desea eliminar el servicio?</p>
+      <p class="description">¿Desea eliminar la categoría?</p>
 
       <form autocomplete="off" class="form">
         <input
-          id="input-delete-service-id"
+          id="input-delete-category-id"
           type="text"
-          name="servicio_id"
+          name="categoria_id"
           readonly
           style="display: none"
         />
@@ -98,5 +94,5 @@ require_once "./layouts/permissions.php";
   </body>
 
   <script type="module" src="./scripts/index.js"></script>
-  <script type="module" src="./scripts/services.js"></script>
+  <script type="module" src="./scripts/category.js"></script>
 </html>

@@ -78,3 +78,10 @@ VALUES
 	(3, NULL, 'natural'),
 	(4, NULL, 'natural'),
 	(5, NULL, 'natural');
+    
+INSERT INTO categorias(nombre)
+VALUES
+	('Control y automatización'),
+    ('Domotica'),
+    ('Electricidad'),
+    ('Telecomunicaciones');

@@ -6,7 +6,7 @@ class Conexion
 	private $port = 3306;
 	private $dbName = "electrocopper";
 	private $user = "root";
-	private $pass = "";
+	private $pass = "admin123";
 
 	public function getConexion()
 	{

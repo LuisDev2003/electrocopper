@@ -24,6 +24,7 @@ if (isset($_POST['operacion'])) {
     case "create": {
         $data = [
           'nombre' => $_POST['nombre'],
+          'categoria_id'=> $_POST['categoria_id'],
           'descripcion' => $_POST['descripcion'] ?? "",
           'precio' => $_POST['precio'] ?? 0,
           'imagen' => "",
@@ -64,6 +65,7 @@ if (isset($_POST['operacion'])) {
     case "update": {
         $data = [
           'servicio_id' => $_POST['servicio_id'],
+          'categoria_id'=> $_POST['categoria_id'],
           'nombre' => $_POST['nombre'],
           'descripcion' => $_POST['descripcion'] ?? "",
           'precio' => $_POST['precio'] ?? 0,

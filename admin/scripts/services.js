@@ -7,6 +7,8 @@ import {
 } from "../../scripts/global.js";
 
 const serviceController = "../controllers/service.controller.php";
+const categoryController = "../controllers/category.controller.php";
+
 
 let formStatus = "create";
 
@@ -35,10 +37,12 @@ function handleShowCreateModal(status = "create", service) {
     $createForm.dataset.serviceId = service.servicio_id;
 
     const name = $createForm.querySelector("[name='nombre']");
+    const categoria_id = $createForm.querySelector("[name='categoria_id']");
     const description = $createForm.querySelector("[name='descripcion']");
 
     name.value = service.nombre;
     description.value = service.descripcion;
+    categoria_id.value = service.categoria_id
 
     const img = document.createElement("img");
     img.src = `${locateImage}${service.imagen ?? "image-not-found.png"}`;
@@ -48,6 +52,17 @@ function handleShowCreateModal(status = "create", service) {
   }
 }
 
+async function renderSelect(id) {
+  const data = await getAll(categoryController)
+  $("#select-category").innerHTML = data
+  .map(({categoria_id, nombre}) => {
+    return `
+      <option value="${categoria_id}">${nombre}</option>
+    `;
+  })
+  .join("");
+}
+
 async function renderTable() {
   const data = await getAll(serviceController);
 
@@ -55,12 +70,15 @@ async function renderTable() {
     '<span style="color: red; font-size: 0.9rem">No tiene una descripción</span>';
 
   $("#tb-servicios .t-body").innerHTML = data
-    .map(({ servicio_id, nombre, descripcion }) => {
+    .map(({ servicio_id, nombre, descripcion, categoria, categoria_id}) => {
       return `
-        <tr class="t-row" data-service-id="${servicio_id}">
+        <tr class="t-row" data-service-id="${servicio_id}" data-category-id="${categoria_id}">
           <td>${nombre}</td>
           <td>
             ${descripcion ?? descripcionNull}
+          </td>
+          <td>
+            ${categoria}
           </td>
           <td>
             <div class="actions">
@@ -216,5 +234,5 @@ $("#delete-service .cancel").addEventListener("click", () => {
 });
 
 //#endregion
-
 renderTable();
+renderSelect();
