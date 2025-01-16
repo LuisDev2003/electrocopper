@@ -62,10 +62,11 @@ class Servicio extends Conexion
 	public function update($data = [])
 	{
 		try {
-			$consulta = $this->conexion->prepare('CALL spu_servicio_actualizar(?,?,?,?,?)');
+			$consulta = $this->conexion->prepare('CALL spu_servicio_actualizar(?,?,?,?,?,?)');
 			$consulta->execute(
 				array(
 					$data['servicio_id'],
+					$data['categoria_id'],
 					$data['nombre'],
 					$data['descripcion'],
 					$data['precio'],

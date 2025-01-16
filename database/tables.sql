@@ -89,7 +89,8 @@ CREATE TABLE categorias(
     nombre 			VARCHAR(120) 			NOT NULL,
 	created_at 		DATETIME				DEFAULT NOW(),
     updated_at		DATETIME				NULL,
-    inactive_at		DATETIME				NULL
+    inactive_at		DATETIME				NULL,
+    CONSTRAINT un_nombre_cat	UNIQUE(nombre)
 ) ENGINE = INNODB;
 
 

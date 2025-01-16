@@ -12,6 +12,15 @@ if (isset($_POST['operacion'])) {
       break;
     }
 
+    case 'get-by-id': {
+      $data = [
+        "categoria_id" => $_POST['categoria_id']
+      ];
+
+      echo json_encode($category->getById($data));
+      break;
+    }
+
     case 'create':{
       $data = [
         'nombre'  => $_POST['nombre'],

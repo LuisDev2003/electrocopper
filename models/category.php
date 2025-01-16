@@ -23,6 +23,22 @@ class Category extends Conexion
     }
   }
 
+  public function getById($data = [])
+	{
+		try {
+			$consulta = $this->conexion->prepare('CALL spu_categoria_buscar(?)');
+			$consulta->execute(
+				array(
+					$data['categoria_id']
+				)
+			);
+
+			return $consulta->fetch(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
   public function create($data = [])
   {
     try {

@@ -37,10 +37,12 @@ function handleShowCreateModal(status = "create", service) {
     $createForm.dataset.serviceId = service.servicio_id;
 
     const name = $createForm.querySelector("[name='nombre']");
+    const categoria_id = $createForm.querySelector("[name='categoria_id']");
     const description = $createForm.querySelector("[name='descripcion']");
 
     name.value = service.nombre;
     description.value = service.descripcion;
+    categoria_id.value = service.categoria_id
 
     const img = document.createElement("img");
     img.src = `${locateImage}${service.imagen ?? "image-not-found.png"}`;
@@ -54,20 +56,11 @@ async function renderSelect(id) {
   const data = await getAll(categoryController)
   $("#select-category").innerHTML = data
   .map(({categoria_id, nombre}) => {
-    
-    if (id===''| id == categoria_id) {
-      return `
-        <option value="${categoria_id} selected">${nombre}</option>
-      `;
-    } else {
-      return `
-        <option value="${categoria_id} selected">${nombre}</option>
-      `;
-    }
+    return `
+      <option value="${categoria_id}">${nombre}</option>
+    `;
   })
   .join("");
-
-  console.log(data)
 }
 
 async function renderTable() {
@@ -77,9 +70,9 @@ async function renderTable() {
     '<span style="color: red; font-size: 0.9rem">No tiene una descripción</span>';
 
   $("#tb-servicios .t-body").innerHTML = data
-    .map(({ servicio_id, nombre, descripcion, categoria}) => {
+    .map(({ servicio_id, nombre, descripcion, categoria, categoria_id}) => {
       return `
-        <tr class="t-row" data-service-id="${servicio_id}">
+        <tr class="t-row" data-service-id="${servicio_id}" data-category-id="${categoria_id}">
           <td>${nombre}</td>
           <td>
             ${descripcion ?? descripcionNull}
@@ -241,6 +234,5 @@ $("#delete-service .cancel").addEventListener("click", () => {
 });
 
 //#endregion
-console.log("holas")
 renderTable();
 renderSelect();
