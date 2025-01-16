@@ -8,16 +8,23 @@ VALUES
 	('Ana', 'Gómez', 'ana.gomez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346'),
 	('Luis', 'Hernández', 'luis.hernandez@example.com', '$2y$10$AMkimEU3DxlmfC9u8QlIUeEvEjFPohmA3h01WH3CmvBkyoaWhM346');
 
-INSERT INTO servicios (nombre) 
+INSERT INTO categorias (nombre)
 VALUES
-	("Instalaciones eléctricas domiciliarias e industriales"),
-    ("Mantenimiento industrial preventivo y correctivo"),
-    ("Instalación de sistemas de telecomunicaciones"),
-    ("Domótica"),
-    ("Automatización de procesos industriales"),
-    ("Emisión de boletines eléctricos"),
-    ("Diseño y ejecución de proyectos electricos"),
-    ("Asesoramiento");
+	('Control y automatización'),
+    ('Domotica'),
+    ('Electricidad'),
+    ('Telecomunicaciones');
+
+INSERT INTO servicios (nombre, categoria_id) 
+VALUES
+	("Instalaciones eléctricas domiciliarias e industriales", 1),
+    ("Mantenimiento industrial preventivo y correctivo", 2),
+    ("Instalación de sistemas de telecomunicaciones", 3),
+    ("Domótica", 4),
+    ("Automatización de procesos industriales", 1),
+    ("Emisión de boletines eléctricos", 2),
+    ("Diseño y ejecución de proyectos electricos", 3),
+    ("Asesoramiento", 4);
 
 INSERT INTO comentarios (nombre_cliente, comentario) 
 VALUES
@@ -47,8 +54,7 @@ VALUES
 	(2, 5), 
 	(2, 6), 
 	(3, 7), 
-	(3, 8), 
-	(3, 9);
+	(3, 8);
 
 INSERT INTO empresas (ruc, razon_social, correo, telefono, direccion) 
 VALUES
@@ -78,10 +84,3 @@ VALUES
 	(3, NULL, 'natural'),
 	(4, NULL, 'natural'),
 	(5, NULL, 'natural');
-    
-INSERT INTO categorias(nombre)
-VALUES
-	('Control y automatización'),
-    ('Domotica'),
-    ('Electricidad'),
-    ('Telecomunicaciones');

@@ -29,5 +29,3 @@ BEGIN
     WHERE venta_id = _venta_id
     AND inactive_at IS NULL;
 END $$
-
-CALL spu_venta_buscar(1)

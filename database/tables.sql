@@ -124,7 +124,7 @@ CREATE TABLE ventas (
 
 -- ###################################################################
 CREATE TABLE detalle_ventas (
-	detalle_id		INT	AUTO_INCREMENT	PRIMARY KEY,
+	detalle_venta_id INT AUTO_INCREMENT	PRIMARY KEY,
     venta_id		INT					NOT NULL,
     servicio_id		INT					NOT NULL,
     created_at 		DATETIME			DEFAULT NOW(),
