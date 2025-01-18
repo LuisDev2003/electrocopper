@@ -1,10 +1,18 @@
 USE electrocopper;
 
+DROP PROCEDURE IF EXISTS spu_menu_servicio_listar;
 DROP PROCEDURE IF EXISTS spu_servicio_listar;
 DROP PROCEDURE IF EXISTS spu_servicio_buscar;
 DROP PROCEDURE IF EXISTS spu_servicio_registrar;
 DROP PROCEDURE IF EXISTS spu_servicio_actualizar;
 DROP PROCEDURE IF EXISTS spu_servicio_eliminar;
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_menu_servicio_listar()
+BEGIN
+    SELECT categoria_id, categoria, nombre AS servicio FROM vw_servicio;
+END $$
 
 -- ###################################################################
 DELIMITER $$
@@ -23,8 +31,6 @@ BEGIN
     WHERE SER.inactive_at IS NULL
     ORDER BY nombre ASC;
 END $$
-
-call spu_servicio_listar();
 
 -- ###################################################################
 DELIMITER $$

@@ -7,6 +7,11 @@ if (isset($_POST['operacion'])) {
   $category = new Category();
 
   switch ($_POST['operacion']) {
+    case 'get-menu': {
+        echo json_encode($category->getMenu());
+        break;
+      }
+
     case 'get-all':{
       echo json_encode($category->getAll());
       break;

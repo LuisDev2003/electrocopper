@@ -11,6 +11,18 @@ class Category extends Conexion
     $this->conexion = parent::getConexion();
   }
 
+  public function getMenu()
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_menu_servicio_listar()');
+      $consulta->execute();
+
+      return $consulta->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
+
   public function getAll()
   {
     try {
@@ -24,20 +36,20 @@ class Category extends Conexion
   }
 
   public function getById($data = [])
-	{
-		try {
-			$consulta = $this->conexion->prepare('CALL spu_categoria_buscar(?)');
-			$consulta->execute(
-				array(
-					$data['categoria_id']
-				)
-			);
+  {
+    try {
+      $consulta = $this->conexion->prepare('CALL spu_categoria_buscar(?)');
+      $consulta->execute(
+        array(
+          $data['categoria_id']
+        )
+      );
 
-			return $consulta->fetch(PDO::FETCH_ASSOC);
-		} catch (Exception $e) {
-			die($e->getMessage());
-		}
-	}
+      return $consulta->fetch(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+      die($e->getMessage());
+    }
+  }
 
   public function create($data = [])
   {
@@ -53,7 +65,6 @@ class Category extends Conexion
     } catch (Exception $e) {
       die($e->getMessage());
     }
-  
   }
 
 
@@ -66,7 +77,7 @@ class Category extends Conexion
           $data['categoria_id'],
           $data['nombre']
         ]
-        );
+      );
 
       return ["success" => true];
     } catch (Exception $e) {
@@ -84,12 +95,9 @@ class Category extends Conexion
         ]
       );
 
-      return ["success"=> true];
+      return ["success" => true];
     } catch (Exception $e) {
       die($e->getMessage());
     }
   }
-
 }
-
-?>

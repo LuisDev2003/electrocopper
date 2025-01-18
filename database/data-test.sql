@@ -15,16 +15,32 @@ VALUES
     ('Electricidad'),
     ('Telecomunicaciones');
 
-INSERT INTO servicios (nombre, categoria_id) 
+INSERT INTO servicios (nombre, categoria_id)
 VALUES
-	("Instalaciones eléctricas domiciliarias e industriales", 1),
-    ("Mantenimiento industrial preventivo y correctivo", 2),
-    ("Instalación de sistemas de telecomunicaciones", 3),
-    ("Domótica", 4),
-    ("Automatización de procesos industriales", 1),
-    ("Emisión de boletines eléctricos", 2),
-    ("Diseño y ejecución de proyectos electricos", 3),
-    ("Asesoramiento", 4);
+-- Categoría: Electricidad
+('Diseño De Tableros Eléctricos De Baja Tensión', 3),
+('Suministro y montaje de mecanismos en las marcas SIMON, MAZDA, SCHNEIDER, BJC, LEGRAND', 3),
+('Montaje de cuadros generales de electricidad', 3),
+('Suministro y montaje de lámparas y dicroicos', 3),
+('Suministro y montaje de iluminación, tira led de 24 V AC, 230 V AC', 3),
+('Montaje de toma de pica de tierra', 3),
+('Cambio de cometida de derivación individual', 3),
+('Instalaciones eléctricas en pisos, comunidades, mancomunidades, chalets', 3),
+('Suministro e instalación de automáticos, diferenciales rearmables superinmunizados', 3),
+('Medición de puesta a tierra', 3),
+
+-- Categoría: Telecomunicaciones
+('Montaje De Caja Pau', 4),
+('Montaje de Rack de comunicación', 4),
+('Montaje de videoporteros individuales y en comunidades', 4),
+('Montaje de antenas', 4),
+('Instalación de cable estructurado UTP cat. 5e Y 6', 4),
+
+-- Categoría: Control y Automatización
+('Diseño, Fabricación, Montaje, Pruebas Y Puesta En Servicio De Sistemas De Control Para Industrias Y Obras', 1),
+
+-- Categoría: Domótica
+('Convertimos Tu Vivienda A Una Integración De Tecnología Para El Funcionamiento De Manera Conjunta , Eficiente Y Optimizada.', 2);
 
 INSERT INTO comentarios (nombre_cliente, comentario) 
 VALUES

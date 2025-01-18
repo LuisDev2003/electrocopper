@@ -1,81 +1,17 @@
-import { $ } from "./index.js";
+import { $, findAll } from "./utils.js";
+
+const endpoint = "./controllers/category.controller.php";
 
 const $menuMobile = $("#menu-list-mobile");
 const $menuDesktop = $("#menu-desktop");
 const $menuFooter = $("#footer-menu");
 
-const menuList = [
+const mainMenuList = [
   { name: "Inicio", link: "./" },
   {
     name: "Servicios",
     link: "./servicios",
-    children: [
-      {
-        name: "Electricidad",
-        link: "#electricidad",
-        children: [
-          { name: "Diseño De Tableros Eléctricos De Baja Tensión", link: "#" },
-          {
-            name: "Suministro y montaje de mecanismos en las marcas SIMON, MAZDA, SCHNEIDER, BJC, LEGRAND",
-            link: "#",
-          },
-          { name: "Montaje de cuadros generales de electricidad", link: "#" },
-          { name: "Suministro y montaje de lámparas y dicroicos", link: "#" },
-          {
-            name: "Suministro y montaje de iluminación, tira led de 24 V AC, 230 V AC",
-            link: "#",
-          },
-          { name: "Montaje de toma de pica de tierra", link: "#" },
-          { name: "Cambio de cometida de derivación individual", link: "#" },
-          {
-            name: "Instalaciones eléctricas en pisos, comunidades, mancomunidades, chalets",
-            link: "#",
-          },
-          {
-            name: "Suministro e instalación de automáticos, diferenciales rearmables superinmunizados",
-            link: "#",
-          },
-          { name: "Medición de puesta a tierra", link: "#" },
-        ],
-      },
-      {
-        name: "Telecomunicaciones",
-        link: "#telecomunicaciones",
-        children: [
-          { name: "Montaje De Caja Pau", link: "#" },
-          { name: "Montaje de Rack de comunicación", link: "#" },
-          {
-            name: "Montaje de videoporteros individuales y en comunidades",
-            link: "#",
-          },
-          { name: "Montaje de antenas", link: "#" },
-          {
-            name: "Instalación de cable estructurado UTP cat. 5e Y 6",
-            link: "#",
-          },
-        ],
-      },
-      {
-        name: "Control y Automatización",
-        link: "#control-y-automatizacion",
-        children: [
-          {
-            name: "Diseño, Fabricación, Montaje, Pruebas Y Puesta En Servicio De Sistemas De Control Para Industrias Y Obras",
-            link: "#",
-          },
-        ],
-      },
-      {
-        name: "Domotica",
-        link: "#domotica",
-        children: [
-          {
-            name: "Convertimos Tu Vivienda A Una Integración De Tecnología Para El Funcionamiento De Manera Conjunta , Eficiente Y Optimizada.",
-            link: "#",
-          },
-        ],
-      },
-    ],
+    children: [],
   },
   { name: "Sobre nosotros", link: "./sobre-nosotros" },
   { name: "Nuestros clientes", link: "./nuestros-clientes" },
@@ -160,13 +96,56 @@ function renderMenu(reference, menuList) {
   });
 }
 
-$menuMobile.innerHTML = "";
-$menuDesktop.innerHTML = "";
-
-renderMenu($menuMobile, menuList);
-renderMenu($menuDesktop, menuList);
-
-if ($menuFooter) {
-  $menuFooter.innerHTML = "";
-  menuList.forEach((item) => $menuFooter.appendChild(createMenuItem(item)));
+function transformLink(text) {
+  return text.toLowerCase().replaceAll(" ", "-");
 }
+
+async function getMenu() {
+  const data = await findAll({ endpoint, operation: "get-menu" });
+
+  const formatData = data.reduce((acc, curr) => {
+    if (!acc[curr.categoria_id]) {
+      acc[curr.categoria_id] = {
+        categoria_id: curr.categoria_id,
+        categoria: curr.categoria,
+        servicios: [],
+      };
+    }
+
+    acc[curr.categoria_id].servicios.push(curr.servicio);
+
+    return acc;
+  }, {});
+
+  const result = Object.values(formatData);
+
+  const menuList = result.map((item) => ({
+    name: item.categoria,
+    link: transformLink(item.categoria),
+    children: item.servicios.map((subItem) => ({
+      name: subItem,
+      link: transformLink(subItem),
+    })),
+  }));
+
+  mainMenuList
+    .find((item) => item.name === "Servicios")
+    .children.push(...menuList);
+
+  $menuMobile.innerHTML = "";
+  $menuDesktop.innerHTML = "";
+
+  renderMenu($menuMobile, mainMenuList);
+  renderMenu($menuDesktop, mainMenuList);
+
+  if ($menuFooter) {
+    $menuFooter.innerHTML = "";
+    mainMenuList.forEach((item) =>
+      $menuFooter.appendChild(createMenuItem(item))
+    );
+  }
+
+  console.log(mainMenuList);
+}
+
+getMenu();
