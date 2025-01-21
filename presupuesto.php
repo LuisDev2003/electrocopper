@@ -14,7 +14,7 @@
   <?php require_once "./layouts/header.php" ?>
 
   <main class="my-8">
-    <?php require_once "./layouts/budget.php" ?>
+    <?php require_once "./layouts/budget/index.php" ?>
   </main>
 
   <?php require_once "./layouts/footer.php" ?>

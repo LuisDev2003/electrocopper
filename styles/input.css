@@ -9,6 +9,9 @@
   --secondary: #0c2f52;
 }
 
-html {
+html,
+div,
+main,
+section {
   scrollbar-width: thin;
 }
