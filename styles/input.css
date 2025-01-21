@@ -102,7 +102,7 @@ dialog {
   }
 
   .button {
-    @apply h-10 w-28 flex-1 cursor-pointer items-center justify-center rounded-lg p-2;
+    @apply h-10 w-28 cursor-pointer items-center justify-center rounded-lg p-2;
   }
 
   .cancel {

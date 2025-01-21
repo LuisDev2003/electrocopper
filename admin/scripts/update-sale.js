@@ -171,7 +171,7 @@ async function getSaleDetail() {
     const detalle = JSON.parse(data.detalle);
 
     detalle.forEach(({ servicio_id, nombre }) =>
-      addRowSale(+servicio_id, nombre)
+      addRowSale(+servicio_id, nombre),
     );
   } catch (error) {
     console.error(">>> Error al cargar los detalles de la venta:", error);
