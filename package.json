@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "tw": "npx @tailwindcss/cli -i styles/input.css -o styles/output.css --watch"
+    "tw": "npx @tailwindcss/cli -i styles/input.css -o styles/output.css -w -m --optimize"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.0.0-beta.9",
@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "prettier": "^3.4.2",
-    "prettier-plugin-tailwindcss": "^0.6.10"
+    "prettier-plugin-tailwindcss": "^0.6.10",
+    "typescript": "^5.7.3"
   }
 }

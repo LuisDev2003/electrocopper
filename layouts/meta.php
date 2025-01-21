@@ -19,3 +19,4 @@
 <meta property="og:url" content="https://preview.electrocopperriojas.com" />
 <meta property="og:type" content="website" />
 <link rel="canonical" href="https://preview.electrocopperriojas.com" />
+<link rel="shortcut icon" href="./images/logo.png" type="image/png" />

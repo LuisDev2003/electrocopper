@@ -1,8 +1,10 @@
-import { $, $$ } from "./index.js";
+import { $, $$ } from "./utils.js";
 
 const $prevButtons = $$(".button.prev[type='button']");
 const $nextButtons = $$(".button.next[type='button']");
 const $formSelectService = $("#select-services");
+
+console.log({ $prevButtons, $nextButtons, $formSelectService });
 
 const switchStepContent = (currentIndex, targetIndex) => {
   const $currentStep = $(`[data-step-index="${currentIndex}"]`);
@@ -11,11 +13,15 @@ const switchStepContent = (currentIndex, targetIndex) => {
   const $currentContent = $(`[data-content-index="${currentIndex}"]`);
   const $targetContent = $(`[data-content-index="${targetIndex}"]`);
 
-  $currentStep.classList.remove("active");
-  $targetStep.classList.add("active");
+  console.log({ $currentStep, $targetStep, $currentContent, $targetContent });
 
-  $currentContent.classList.remove("active");
-  $targetContent.classList.add("active");
+  $targetStep.removeAttribute("data-active");
+  $currentStep.setAttribute("data-active", "");
+
+  $currentContent.removeAttribute("data-active");
+  $targetContent.setAttribute("data-active", "");
+
+  console.log({ $currentStep, $targetStep, $currentContent, $targetContent });
 };
 
 const createContentChangeHandler = (direction) => (event) => {
@@ -23,6 +29,8 @@ const createContentChangeHandler = (direction) => (event) => {
 
   const { contentIndex } = $content.dataset;
   const newIndex = +contentIndex + direction;
+
+  console.log(direction, newIndex);
 
   switchStepContent(+contentIndex, newIndex);
 };
@@ -45,3 +53,5 @@ $formSelectService.addEventListener("submit", (event) => {
 
   if (service) createContentChangeHandler(1)(event);
 });
+
+// ----------------------------------------------------------------------

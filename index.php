@@ -6,27 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Electrocopper Riojas</title>
 
-  <link rel="stylesheet" href="./styles-2/global.css" />
-  <link rel="stylesheet" href="./styles-2/index.css" />
-  <link rel="stylesheet" href="./styles-2/hero.css" />
-  <link rel="stylesheet" href="./styles-2/home.css" />
+  <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/output.css">
 </head>
 
 <body>
-  <?php require_once "./layouts-2/header.php" ?>
+  <?php require_once "./layouts/header.php" ?>
 
-  <main class="main">
-    <?php require_once "./layouts-2/hero.php"; ?>
+  <main>
+    <?php require_once "./layouts/hero.php"; ?>
 
-    <?php require_once "./layouts-2/home-services.php" ?>
+    <?php require_once "./layouts/home-services.php" ?>
 
-    <?php require_once "./layouts-2/brands.php" ?>
+    <?php require_once "./layouts/brands.php" ?>
   </main>
 
-  <?php require_once "./layouts-2/footer.php" ?>
+  <?php require_once "./layouts/footer.php" ?>
 </body>
 
-<script type="module" src="./scripts-2/header.js"></script>
+<script type="module" src="./scripts/header.js"></script>
 
 </html>
