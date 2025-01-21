@@ -3,7 +3,7 @@
     class="mx-auto flex min-h-125 max-w-5xl flex-wrap items-center justify-center gap-5 px-3 py-5 text-center sm:text-start">
     <div class="shrink grow basis-0">
       <h3
-        class="mt-4 text-4xl font-bold text-balance text-neutral-900 uppercase sm:text-5xl">
+        class="text-4xl font-extrabold text-balance text-neutral-900 uppercase sm:text-5xl">
         Electrocopper Riojas
       </h3>
 
@@ -12,7 +12,7 @@
         ¡Soluciones Eléctricas Rápidas y Seguras!
       </h3>
 
-      <p class="mt-12.5 text-neutral-900">
+      <p class="mt-8 text-neutral-900">
         Reparaciones, instalaciones y mantenimiento eléctrico para hogares y
         empresas.
       </p>

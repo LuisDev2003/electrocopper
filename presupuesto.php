@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Electrocopper Riojas</title>
 
+  <?php require_once "./layouts/meta.php" ?>
+
   <link rel="stylesheet" href="./styles/header.css">
   <link rel="stylesheet" href="./styles/output.css">
 </head>
