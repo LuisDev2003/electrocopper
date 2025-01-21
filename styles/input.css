@@ -16,6 +16,10 @@ section {
   scrollbar-width: thin;
 }
 
+main {
+  @apply mx-auto max-w-7xl p-3;
+}
+
 dialog {
   @apply top-1/2 left-1/2 -translate-1/2 rounded-xl p-5;
 }
@@ -72,7 +76,7 @@ dialog {
   input,
   select,
   textarea {
-    @apply w-full rounded-lg border border-gray-300 p-2 outline-none;
+    @apply w-full rounded-lg border border-neutral-300 p-2 outline-none;
   }
 
   input:focus,
@@ -123,5 +127,25 @@ dialog {
 
   .button.delete {
     @apply bg-red-500 text-white;
+  }
+}
+
+.alert {
+  @apply mb-2 flex h-10 w-fit items-center rounded-xl px-3 font-semibold;
+
+  &.error {
+    @apply bg-red-500 text-white;
+  }
+
+  &.success {
+    @apply bg-green-500 text-green-900;
+  }
+
+  .description {
+    @apply text-sm;
+  }
+
+  .icon {
+    @apply ml-2 cursor-pointer rounded-full bg-neutral-900 p-1 text-white;
   }
 }

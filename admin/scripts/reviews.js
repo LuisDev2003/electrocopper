@@ -87,9 +87,9 @@ $("#tb-reviews").addEventListener("click", (event) => {
 function generateCode() {
   const characters = "abcdefghijklmnopqrstuvwxyz0123456789";
 
-  $("#fm-code .input").value = Array.from(
+  $("#fm-code input").value = Array.from(
     { length: 6 },
-    () => characters[Math.floor(Math.random() * characters.length)]
+    () => characters[Math.floor(Math.random() * characters.length)],
   )
     .join("")
     .toUpperCase();
@@ -106,7 +106,7 @@ async function handleSubmitCode(event) {
     generateAlert(
       $("#message-fm-code"),
       "error",
-      "El nombre del servicio es obligatorio"
+      "El nombre del servicio es obligatorio",
     );
 
     return;
@@ -127,7 +127,7 @@ async function handleSubmitCode(event) {
       generateAlert(
         $("#message-fm-code"),
         "success",
-        "Código actualizado correctamente"
+        "Código actualizado correctamente",
       );
     }
   } catch (error) {
@@ -144,3 +144,11 @@ $("#fm-code").addEventListener("submit", handleSubmitCode);
 //#endregion
 
 renderTable();
+
+$("#open-generate-code").addEventListener("click", () => {
+  $("#dl-generate-code").showModal();
+});
+
+$("#dl-generate-code .close").addEventListener("click", () => {
+  $("#dl-generate-code").close();
+});

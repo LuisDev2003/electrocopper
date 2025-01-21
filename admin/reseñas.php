@@ -1,6 +1,4 @@
-<?php 
-require_once "./layouts/permissions.php";
-?>
+<?php require_once "./layouts/permissions.php"; ?>
 
 <!DOCTYPE html>
 <html lang="es">
@@ -9,31 +7,90 @@ require_once "./layouts/permissions.php";
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Panel administrativo - Reseñas</title>
 
-    <link rel="stylesheet" href="./styles/index.css" />
-    <link rel="stylesheet" href="./styles/reviews.css" />
+    <?php require_once "./layouts/meta.php"; ?>
+
+    <link rel="stylesheet" href="../styles/output.css" />
   </head>
 
   <body>
     <?php require_once "./layouts/header.php" ?>
 
     <main class="main">
-      <div class="wrapper-header">
-        <h2 class="title">Reseñas</h2>
+      <div class="mb-3 flex items-center justify-between">
+        <h2 class="text-2xl font-bold">Reseñas</h2>
 
-        <form id="fm-code" class="form">
+        <button
+          id="open-generate-code"
+          class="cursor-pointer rounded-xl bg-neutral-800 p-2 text-white"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="size-6 stroke-2"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M5 13a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2v6a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-6z"
+            />
+            <path d="M11 16a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+            <path d="M8 11v-4a4 4 0 1 1 8 0v4" />
+          </svg>
+        </button>
+      </div>
+
+      <dialog id="dl-generate-code" class="form-modal w-95/100 max-w-96">
+        <div class="flex items-center justify-between">
+          <h2 class="title">Generar código</h2>
+
+          <button type="button" class="close mb-5 cursor-pointer">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="size-6 stroke-2"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M18 6l-12 12" />
+              <path d="M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+
+        <form id="fm-code" class="space-y-2">
           <div id="message-fm-code"></div>
 
-          <input type="text" name="codigo" class="input" placeholder="Código" />
+          <div class="flex flex-col items-center gap-y-6">
+            <input
+              type="text"
+              name="codigo"
+              class="h-10 rounded-lg border border-neutral-300 px-3 text-center font-mono tracking-widest outline-none focus:border-neutral-500"
+              placeholder="Código"
+            />
 
-          <div class="actions">
-            <button id="generate-code" type="button" class="button">
-              Generar
-            </button>
+            <div class="flex gap-x-2">
+              <button
+                id="generate-code"
+                type="button"
+                class="h-10 w-32 cursor-pointer rounded-lg bg-yellow-400 px-3 text-center text-sm font-semibold text-yellow-900 select-none"
+              >
+                Generar
+              </button>
 
-            <button type="submit" class="button submit">Actualizar</button>
+              <button
+                type="submit"
+                class="h-10 w-32 cursor-pointer rounded-lg bg-blue-600 px-3 text-center text-sm font-semibold text-white select-none"
+              >
+                Actualizar
+              </button>
+            </div>
           </div>
         </form>
-      </div>
+      </dialog>
 
       <div class="wrapper-table">
         <table id="tb-reviews" class="table">

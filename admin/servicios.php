@@ -16,7 +16,7 @@
 <body>
   <?php require_once "./layouts/header.php" ?>
 
-  <main class="max-w-7xl mx-auto p-3">
+  <main>
     <div class="flex justify-between items-center mb-3">
       <h2 class="text-2xl font-bold">Servicios</h2>
 
