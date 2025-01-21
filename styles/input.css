@@ -15,3 +15,113 @@ main,
 section {
   scrollbar-width: thin;
 }
+
+dialog {
+  @apply top-1/2 left-1/2 -translate-1/2 rounded-xl p-5;
+}
+
+.wrapper-table {
+  @apply -mx-2.5 overflow-x-auto px-2.5;
+}
+
+.table {
+  @apply w-full;
+
+  th,
+  td {
+    @apply p-3;
+  }
+
+  .t-row {
+    @apply border-b border-gray-300;
+  }
+
+  .t-head th {
+    @apply bg-neutral-800 p-3 text-white;
+  }
+
+  .t-head .actions {
+    @apply min-w-32;
+  }
+
+  .t-body td {
+    @apply text-sm;
+  }
+
+  .t-body .actions {
+    @apply flex justify-center gap-x-1;
+  }
+
+  .update,
+  .delete {
+    @apply cursor-pointer rounded-xl p-2;
+  }
+
+  .update {
+    @apply bg-yellow-400 text-yellow-900;
+  }
+
+  .delete {
+    @apply bg-red-500 text-white;
+  }
+}
+
+.form {
+  @apply space-y-2;
+
+  input,
+  select,
+  textarea {
+    @apply w-full rounded-lg border border-gray-300 p-2 outline-none;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply border-black;
+  }
+
+  textarea {
+    @apply field-sizing-content max-h-32 resize-none;
+  }
+
+  .image {
+    @apply flex items-center justify-center;
+  }
+
+  .image img {
+    @apply h-full max-h-32 object-contain;
+  }
+
+  .actions {
+    @apply flex justify-center gap-x-2;
+  }
+
+  .button {
+    @apply h-10 w-28 flex-1 cursor-pointer items-center justify-center rounded-lg p-2;
+  }
+
+  .cancel {
+    @apply bg-white text-black;
+  }
+
+  .submit {
+    @apply bg-blue-600 text-white;
+  }
+}
+
+.form-modal .title {
+  @apply mb-5 text-xl font-bold;
+}
+
+.form-modal.delete {
+  @apply w-95/100 max-w-110 space-y-8 py-10;
+
+  .description {
+    @apply text-center text-lg font-bold text-red-500;
+  }
+
+  .button.delete {
+    @apply bg-red-500 text-white;
+  }
+}
