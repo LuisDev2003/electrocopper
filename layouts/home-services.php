@@ -1,9 +1,9 @@
 <?php
 
 $images = [
-  "diseño.jpg",
-  "electricidad.jpg",
-  "iluminación-2.jpg",
+  "diseño.avif",
+  "electricidad.avif",
+  "iluminación-2.avif",
 ];
 
 ?>
