@@ -12,7 +12,8 @@
 html,
 div,
 main,
-section {
+section,
+textarea {
   scrollbar-width: thin;
 }
 

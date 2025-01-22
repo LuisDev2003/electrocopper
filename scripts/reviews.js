@@ -4,21 +4,21 @@ const reviewController = "./controllers/review.controller.php";
 
 const $formReview = $("#reseñas form");
 
-async function renderTable() {
+async function reviewRender() {
   const data = await getAll(reviewController);
 
   $("#list-reviews").innerHTML = data
     .map(({ comentario_id, nombre_cliente, comentario, created_at }) => {
       return `
-        <li class="review-item" data-review-id="${comentario_id}">
-          <div class="review">
-            <div class="d-1">
-              <p class="username">${nombre_cliente}</p>
-              <p class="date">${formatDate(created_at)}</p>
+        <li class="" data-review-id="${comentario_id}">
+          <div class="bg-gradient-to-r from-neutral-800 to-neutral-900 py-5 px-4 rounded-xl text-white">
+            <div class="mb-3 flex items-center justify-between">
+              <p class="capitalize font-semibold text-yellow-400">${nombre_cliente}</p>
+              <p class="text-xs text-yellow-200">${formatDate(created_at)}</p>
             </div>
 
-            <div class="d-2">
-              <p class="description">
+            <div>
+              <p class="text-sm">
                 ${comentario}
               </p>
             </div>
@@ -68,7 +68,7 @@ const handleSubmitFormReview = async (event) => {
       $errorReview.textContent = data.message;
       $errorReview.style.display = "block";
     } else if (data.comentario_id) {
-      renderTable();
+      reviewRender();
       $formReview.reset();
     }
   } catch (error) {
@@ -78,4 +78,4 @@ const handleSubmitFormReview = async (event) => {
 
 $formReview.addEventListener("submit", handleSubmitFormReview);
 
-renderTable();
+reviewRender();
