@@ -1,11 +1,11 @@
-import { $, formatDate, getAll } from "./global.js";
+import { $, findAll, formatDate } from "./utils.js";
 
 const reviewController = "./controllers/review.controller.php";
 
 const $formReview = $("#reseñas form");
 
 async function reviewRender() {
-  const data = await getAll(reviewController);
+  const data = await findAll({ endpoint: reviewController });
 
   $("#list-reviews").innerHTML = data
     .map(({ comentario_id, nombre_cliente, comentario, created_at }) => {
