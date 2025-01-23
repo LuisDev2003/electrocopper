@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ES2022",
-    "rootDir": "./ts",
+    "rootDir": "./scripts",
     "baseUrl": "./",
     "sourceMap": true,
     "outDir": "./scripts",
@@ -18,6 +18,6 @@
     "moduleResolution": "node",
     "verbatimModuleSyntax": true
   },
-  "include": ["./ts/**/*"],
-  "exclude": ["node_modules", "./ts/**/*.type.ts"]
+  "include": ["./scripts/**/*"],
+  "exclude": ["node_modules", "./scripts/**/*.type.ts"]
 }
