@@ -1,4 +1,4 @@
-import { $, $$ } from "./utils";
+import { $, $$ } from "./utils.js";
 
 const $buttonNext = $$('[data-action="next"]') as NodeListOf<HTMLButtonElement>;
 const $buttonPrev = $$('[data-action="prev"]') as NodeListOf<HTMLButtonElement>;

@@ -1,11 +1,12 @@
 {
+  "type": "module",
   "scripts": {
     "tw": "npx @tailwindcss/cli -i styles/input.css -o styles/output.css -w -m --optimize",
     "ts": "npx tsc -w"
   },
   "dependencies": {
-    "@tailwindcss/cli": "^4.0.0-beta.9",
-    "tailwindcss": "^4.0.0-beta.9"
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0"
   },
   "devDependencies": {
     "prettier": "^3.4.2",

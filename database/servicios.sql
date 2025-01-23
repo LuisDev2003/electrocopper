@@ -66,7 +66,6 @@ BEGIN
     SELECT LAST_INSERT_ID() AS servicio_id;
 END $$
 
-CALL spu_servicio_registrar('nombr1',2,'descrip',0,'')
 -- ###################################################################
 DELIMITER $$
 CREATE PROCEDURE spu_servicio_actualizar(

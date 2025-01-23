@@ -1,4 +1,4 @@
-import { $ } from "./utils";
+import { $ } from "./utils.js";
 const tabs = [
     {
         name: "Misión",

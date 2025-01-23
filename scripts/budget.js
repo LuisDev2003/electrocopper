@@ -1,4 +1,4 @@
-import { $, $$ } from "./utils";
+import { $, $$ } from "./utils.js";
 const $buttonNext = $$('[data-action="next"]');
 const $buttonPrev = $$('[data-action="prev"]');
 const switchStepContent = (currentIndex, targetIndex) => {
