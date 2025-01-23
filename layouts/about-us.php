@@ -7,6 +7,11 @@ $reasons = [
   "Porque realizamos un trabajo con calidad y seguridad aplicando la mejora continua."
 ];
 
+$boxs = [
+  "Misión" => "Electrocopper Riojas se proyecta en la inserción del mercado laboral comprometido a ser uno de los mejores en el rubro de electricidad, desarrollando trabajos altamente conceptuados y con tecnología de punta proporcionando asesoramiento y consultoría experta para la toma de decisiones en cuanto a sistemas de electrificación, automatización y domótica.",
+  "Visión" => "Electrocopper Riojas tiene la misión de brindar un trabajo de calidad y seguridad a nuestros clientes, con la intervención del personal adecuado y utilizando la innovación tecnológica en sistema de electricidad alcanzando la satisfacción y confort de quienes nos eligen."
+]
+
 ?>
 <section class="mx-auto my-8 max-w-3xl px-3">
   <div class="pb-12 text-center">
@@ -25,7 +30,17 @@ $reasons = [
     </p>
   </div>
 
-  <div class="flex flex-col items-center justify-center">
+  <div class="grid sm:grid-cols-2 gap-6 bg-sky-700 rounded-4xl p-6">
+    <?php foreach ($boxs as $name => $content) : ?>
+      <div class="bg-white p-5 rounded-xl text-center">
+        <h3 class="text-xl font-bold mb-5"><?= $name ?></h3>
+
+        <p><?= $content ?></p>
+      </div>
+    <?php endforeach; ?>
+  </div>
+
+  <div class="flex hidden flex-col items-center justify-center">
     <div id="tabs" class="relative flex items-start">
       <div
         id="indicator"
