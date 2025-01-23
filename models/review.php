@@ -52,15 +52,16 @@ class Review extends Conexion
   public function create($data = [])
   {
     try {
-      $consulta = $this->conexion->prepare('CALL spu_comentario_registrar(?,?)');
+      $consulta = $this->conexion->prepare('CALL spu_comentario_registrar(?,?,?)');
       $consulta->execute(
         array(
           $data['nombre'],
           $data['comentario'],
+          $data['estrellas'],
         )
       );
 
-      return $consulta->fetch(PDO::FETCH_ASSOC);
+      return ["success" => true];
     } catch (Exception $e) {
       die($e->getMessage());
     }

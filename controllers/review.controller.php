@@ -2,6 +2,12 @@
 
 require_once '../models/review.php';
 
+function sanitizeInput($input)
+{
+  $sanitized = htmlspecialchars(trim($input), ENT_QUOTES, 'UTF-8');
+  return empty($sanitized) ? null : $sanitized;
+}
+
 
 if (isset($_POST['operacion'])) {
   $review = new Review();
@@ -22,21 +28,38 @@ if (isset($_POST['operacion'])) {
       }
 
     case "create": {
-        $data = [
-          "nombre"      => htmlspecialchars($_POST["nombre"], ENT_QUOTES, 'UTF-8'),
-          "comentario"  => htmlspecialchars($_POST["comentario"], ENT_QUOTES, 'UTF-8'),
-          "codigo"      => htmlspecialchars($_POST["codigo"], ENT_QUOTES, 'UTF-8'),
-        ];
+        $nombre = sanitizeInput($_POST["nombre"]);
+        $comentario = sanitizeInput($_POST["comentario"]);
+        $estrellas = sanitizeInput($_POST["estrellas"]);
+        $codigo = sanitizeInput($_POST["codigo"]);
 
-        $code = $review->getCode()["valor"];
-
-        if ($data['codigo'] !== $code) {
+        if (!$nombre || !$comentario || !$codigo) {
           echo json_encode([
-            "error" => "code",
-            "message" => "El código es incorrecto."
+            "error" => "empty_fields",
+            "message" => "Todos los campos son obligatorios."
+          ]);
+        } else if (!is_numeric($estrellas) || $estrellas < 1 || $estrellas > 5) {
+          echo json_encode([
+            "error" => "invalid_stars",
+            "message" => "El campo 'estrellas' debe ser un número entre 1 y 5."
           ]);
         } else {
-          echo json_encode($review->create($data));
+          $code = $review->getCode()["valor"];
+
+          if ($codigo !== $code) {
+            echo json_encode([
+              "error" => "invalid_code",
+              "message" => "El código es incorrecto."
+            ]);
+          } else {
+            $data = [
+              "nombre"     => $nombre,
+              "comentario" => $comentario,
+              "estrellas"  => $estrellas,
+              "codigo"     => $codigo,
+            ];
+            echo json_encode($review->create($data));
+          }
         }
 
         break;

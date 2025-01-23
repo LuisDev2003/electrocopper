@@ -17,7 +17,7 @@
 
   <main>
 
-    <?php require_once "./layouts/reviews.php" ?>
+    <?php require_once "./layouts/reviews/index.php" ?>
 
   </main>
 

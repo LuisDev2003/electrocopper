@@ -140,10 +140,12 @@ CREATE TABLE comentarios (
 	comentario_id	INT AUTO_INCREMENT	PRIMARY KEY,
 	nombre_cliente	VARCHAR(125)		NOT NULL,
 	comentario		TEXT				NOT NULL,
+    estrellas		TINYINT				NOT NULL DEFAULT 0,
     created_at 		DATETIME			DEFAULT NOW(),
     updated_at		DATETIME			NULL,
     inactive_at		DATETIME			NULL
 ) ENGINE = InnoDB;
+
 
 -- ###################################################################
 CREATE TABLE cotizaciones (

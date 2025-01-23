@@ -95,6 +95,7 @@ export const generateAlert = (reference, type = "success", message = "Mensaje") 
     content.appendChild(button);
     if (typeof reference === "string")
         reference = $(reference);
+    reference.innerHTML = "";
     reference.prepend(content);
 };
 export const formatDate = (date) => {

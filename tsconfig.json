@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ES2022",
+    "module": "ES2015",
     "rootDir": "./scripts",
     "baseUrl": "./",
     "sourceMap": true,

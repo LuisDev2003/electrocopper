@@ -1,9 +1,4 @@
-import type {
-  FindAll,
-  FindAllOptions,
-  SelectorAll,
-  SelectorOne,
-} from "./utils.type";
+import type { FindAllOptions, SelectorAll, SelectorOne } from "./utils.type";
 
 export const IconUpdate = `
   <svg
@@ -75,7 +70,7 @@ export const $$: SelectorAll = (element) => {
   return document.querySelectorAll(element);
 };
 
-export const findAll: FindAll<any> = async <T>({
+export const findAll = async <T>({
   endpoint,
   operation = "get-all",
 }: FindAllOptions): Promise<T> => {
@@ -124,6 +119,7 @@ export const generateAlert = (
 
   if (typeof reference === "string") reference = $(reference)!;
 
+  reference.innerHTML = "";
   reference.prepend(content);
 };
 

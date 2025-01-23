@@ -30,6 +30,7 @@ BEGIN
 		comentario_id,
 		nombre_cliente,
         comentario,
+        estrellas,
         created_at
     FROM comentarios
     WHERE inactive_at IS NULL
@@ -40,11 +41,12 @@ END $$
 DELIMITER $$
 CREATE PROCEDURE spu_comentario_registrar(
     IN _nombre_cliente	VARCHAR(125),
-    IN _comentario		TEXT
+    IN _comentario		TEXT,
+    IN _estrellas		TINYINT
 )
 BEGIN
-    INSERT INTO comentarios (nombre_cliente, comentario)
-    VALUES (_nombre_cliente, _comentario);
+    INSERT INTO comentarios (nombre_cliente, comentario, estrellas)
+    VALUES (_nombre_cliente, _comentario, _estrellas);
 
     SELECT LAST_INSERT_ID() AS comentario_id;
 END $$

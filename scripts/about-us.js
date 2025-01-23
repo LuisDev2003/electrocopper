@@ -2,19 +2,11 @@ import { $ } from "./utils.js";
 const tabs = [
     {
         name: "Misión",
-        content: `Electrocopper Riojas se proyecta en la inserción del mercado laboral
-    comprometido a ser uno de los mejores en el rubro de electricidad,
-    desarrollando trabajos altamente conceptuados y con tecnología de punta
-    proporcionando asesoramiento y consultoría experta para la toma de
-    decisiones en cuanto a sistemas de electrificación, automatización y
-    domótica.`,
+        content: `Electrocopper Riojas se proyecta en la inserción del mercado laboral comprometido a ser uno de los mejores en el rubro de electricidad, desarrollando trabajos altamente conceptuados y con tecnología de punta proporcionando asesoramiento y consultoría experta para la toma de decisiones en cuanto a sistemas de electrificación, automatización y domótica.`,
     },
     {
         name: "Visión",
-        content: `Electrocopper Riojas tiene la misión de brindar un trabajo de calidad y
-    seguridad a nuestros clientes, con la intervención del personal adecuado
-    y utilizando la innovación tecnológica en sistema de electricidad
-    alcanzando la satisfacción y confort de quienes nos eligen.`,
+        content: `Electrocopper Riojas tiene la misión de brindar un trabajo de calidad y seguridad a nuestros clientes, con la intervención del personal adecuado y utilizando la innovación tecnológica en sistema de electricidad alcanzando la satisfacción y confort de quienes nos eligen.`,
     },
 ];
 const $tabs = $("#tabs");
