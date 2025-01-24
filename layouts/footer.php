@@ -2,7 +2,7 @@
   <div class="mx-auto flex max-w-5xl flex-wrap items-start gap-8 px-2 py-12">
     <div class="shrink-0 grow basis-50">
       <div class="wrapper-main flex flex-col items-center">
-        <img src="./images/logo.png" alt="Logo" class="h-32" />
+        <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo" class="h-32" />
 
         <p class="mt-5 text-center text-pretty">
           <strong>Electricistas calificados</strong>

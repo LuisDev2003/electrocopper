@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <?php require_once "./layouts/header.php" ?>
+  <?php require_once "./layouts/header/index.php" ?>
 
   <main class="main">
     <?php require_once "./layouts/our-clients.php" ?>

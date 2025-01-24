@@ -8,12 +8,12 @@
 
   <?php require_once "./layouts/meta.php" ?>
 
-  <link rel="stylesheet" href="./styles/header.css">
+
   <link rel="stylesheet" href="./styles/output.css">
 </head>
 
 <body>
-  <?php require_once "./layouts/header.php" ?>
+  <?php require_once "./layouts/header/index.php" ?>
 
   <main class="main">
     <?php require_once "./layouts/contact.php" ?>

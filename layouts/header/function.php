@@ -23,7 +23,7 @@ function getGroupedServices()
   return $groupedServices;
 }
 
-function stringToSlug($string)
+function stringToSlug(string $string, string $prefix = "")
 {
   $string = strtolower($string);
 
@@ -39,18 +39,17 @@ function stringToSlug($string)
 
   $string = trim($string, '-');
 
-  return $string;
+  return $prefix . $string;
 }
-
 
 $menu = getGroupedServices();
 
 $mainMenu = [
-  ["name" => "Inicio", "link" => "./"],
-  ["name" => "Servicios", "link" => "./servicios",],
-  ["name" => "Sobre nosotros", "link" => "./sobre-nosotros"],
-  ["name" => "Nuestros clientes", "link" => "./nuestros-clientes"],
-  ["name" => "Contactos", "link" => "./contactos"],
-  ["name" => "Presupuesto", "link" => "./presupuesto"],
-  ["name" => "Reseñas", "link" => "./reseñas"],
+  ["name" => "Inicio", "link" => $baseURL],
+  ["name" => "Servicios", "link" => $baseURL . "servicios",],
+  ["name" => "Sobre nosotros", "link" => $baseURL . "sobre-nosotros"],
+  ["name" => "Nuestros clientes", "link" => $baseURL . "nuestros-clientes"],
+  ["name" => "Contactos", "link" => $baseURL . "contactos"],
+  ["name" => "Presupuesto", "link" => $baseURL . "presupuesto"],
+  ["name" => "Reseñas", "link" => $baseURL . "reseñas"],
 ];

@@ -14,12 +14,12 @@ $name = $_GET['n'] ?: '';
 
   <?php require_once "./layouts/meta.php" ?>
 
-  <link rel="stylesheet" href="./styles/header.css">
+
   <link rel="stylesheet" href="./styles/output.css">
 </head>
 
 <body>
-  <?php require_once "./layouts/header.php" ?>
+  <?php require_once "./layouts/header/index.php" ?>
 
   <main>
 

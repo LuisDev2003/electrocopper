@@ -1,8 +1,10 @@
-<header id="header" class="sticky top-0 z-50 w-full bg-white">
+<?php include_once dirname(__DIR__, 2) . "/config/index.php"; ?>
+
+<header class="sticky top-0 z-50 w-full bg-white">
   <div
     class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-x-3 px-3">
     <div class="drop-shadow-lg">
-      <img src="./images/logo.png" alt="Logo de la empresa" class="h-12" />
+      <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo de la empresa" class="h-12" />
     </div>
 
     <div class="relative grow md:hidden">
@@ -37,11 +39,11 @@
         </svg>
       </button>
 
-      <?php require_once dirname(__FILE__) . "/header/menu-mobile.php" ?>
+      <?php require_once dirname(__FILE__) . "/menu-mobile.php" ?>
     </div>
 
     <div class="hidden items-center md:flex">
-      <?php require_once dirname(__FILE__) . "/header/menu-desktop.php" ?>
+      <?php require_once dirname(__FILE__) . "/menu-desktop.php" ?>
     </div>
   </div>
 </header>
