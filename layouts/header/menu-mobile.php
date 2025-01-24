@@ -27,7 +27,7 @@
           <?php foreach ($menu as $category => $services) : ?>
             <li class="relative">
               <a
-                href="./categoria?n=<?= $category ?>"
+                href="<?= stringToSlug($category, $baseURL . "categoria/") ?>"
                 class="peer flex h-10 items-center gap-x-1 px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white rounded-lg">
                 <span class="truncate"><?= $category ?></span>
 
@@ -39,7 +39,7 @@
                 <?php foreach ($services as $service) : ?>
                   <li>
                     <a
-                      href="./categoria/<?= stringToSlug($service) ?>"
+                      href="<?= stringToSlug($service, $baseURL . "servicio/") ?>"
                       class="flex h-10 rounded-lg items-center px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white">
                       <span class="truncate"><?= $service ?></span>
                     </a>
