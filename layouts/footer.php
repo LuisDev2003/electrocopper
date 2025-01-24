@@ -22,7 +22,15 @@
           Información
         </h3>
 
-        <ul id="footer-menu" class="space-y-2 text-center"></ul>
+        <ul id="footer-menu" class="space-y-2 text-center">
+          <?php foreach ($mainMenu as $item) : ?>
+            <li>
+              <a href="<?= $item["link"] ?>" class="underline underline-offset-2">
+                <span><?= $item["name"] ?></span>
+              </a>
+            </li>
+          <?php endforeach ?>
+        </ul>
       </div>
     </div>
 

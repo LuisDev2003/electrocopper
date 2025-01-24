@@ -11,6 +11,18 @@ class Servicio extends Conexion
 		$this->conexion = parent::getConexion();
 	}
 
+	public function getMenu()
+	{
+		try {
+			$consulta = $this->conexion->prepare('CALL spu_menu_servicio_listar()');
+			$consulta->execute();
+
+			return $consulta->fetchAll(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
 	public function getAll()
 	{
 		try {
