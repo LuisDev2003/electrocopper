@@ -44,3 +44,13 @@ function stringToSlug($string)
 
 
 $menu = getGroupedServices();
+
+$mainMenu = [
+  ["name" => "Inicio", "link" => "./"],
+  ["name" => "Servicios", "link" => "./servicios",],
+  ["name" => "Sobre nosotros", "link" => "./sobre-nosotros"],
+  ["name" => "Nuestros clientes", "link" => "./nuestros-clientes"],
+  ["name" => "Contactos", "link" => "./contactos"],
+  ["name" => "Presupuesto", "link" => "./presupuesto"],
+  ["name" => "Reseñas", "link" => "./reseñas"],
+];

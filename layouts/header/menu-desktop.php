@@ -1,18 +1,4 @@
-<?php
-
-require_once dirname(__FILE__) . "/function.php";
-
-$mainMenu = [
-  ["name" => "Inicio", "link" => "./"],
-  ["name" => "Servicios", "link" => "./servicios",],
-  ["name" => "Sobre nosotros", "link" => "./sobre-nosotros"],
-  ["name" => "Nuestros clientes", "link" => "./nuestros-clientes"],
-  ["name" => "Contactos", "link" => "./contactos"],
-  ["name" => "Presupuesto", "link" => "./presupuesto"],
-  ["name" => "Reseñas", "link" => "./reseñas"],
-];
-
-?>
+<?php require_once dirname(__FILE__) . "/function.php"; ?>
 
 <ul id="menu-desktop" class="flex items-center gap-x-4">
   <?php foreach ($mainMenu as $item) : ?>
@@ -41,7 +27,7 @@ $mainMenu = [
           <?php foreach ($menu as $category => $services) : ?>
             <li class="relative">
               <a
-                href="./categoria/<?= stringToSlug($category) ?>"
+                href="./categoria?n=<?= $category ?>"
                 class="peer group flex h-10 items-center gap-x-1 px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white">
                 <span class="truncate"><?= $category ?></span>
 

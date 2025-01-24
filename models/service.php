@@ -11,6 +11,21 @@ class Servicio extends Conexion
 		$this->conexion = parent::getConexion();
 	}
 
+	/**
+	 * @return array<int, array{servicio_id: int, nombre: string, imagen: string, en_inicio: string}>
+	 */
+	public function getToHome(): array
+	{
+		try {
+			$consulta = $this->conexion->prepare('CALL spu_servicio_inicio_listar()');
+			$consulta->execute();
+
+			return $consulta->fetchAll(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
 	public function getMenu()
 	{
 		try {

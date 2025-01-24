@@ -1,25 +1,23 @@
-<header id="header" class="header">
-  <div class="wrapper">
-    <div class="logo">
+<header id="header" class="sticky top-0 z-50 w-full bg-white">
+  <div
+    class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-x-3 px-3">
+    <div class="drop-shadow-lg">
       <img src="./images/logo.png" alt="Logo de la empresa" class="h-12" />
     </div>
 
-    <div class="wrapper-menu-mobile md:hidden">
+    <div class="relative grow md:hidden">
       <button
         id="button-menu-mobile"
         type="button"
         aria-label="Mostrar menú"
-        class="button">
+        class="float-right flex size-10 cursor-pointer items-center justify-center rounded-xl bg-neutral-800 text-white [&[data-active]+ul]:block [&[data-active]>.close]:block [&[data-active]>.open]:hidden">
         <svg
-          width="24"
-          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="open">
+          class="open size-6 stroke-2">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M4 6l16 0" />
           <path d="M4 12l16 0" />
@@ -27,15 +25,12 @@
         </svg>
 
         <svg
-          width="24"
-          height="24"
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
           stroke-linecap="round"
           stroke-linejoin="round"
-          class="close">
+          class="close hidden size-6 stroke-2">
           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
           <path d="M18 6l-12 12" />
           <path d="M6 6l12 12" />

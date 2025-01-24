@@ -102,6 +102,7 @@ CREATE TABLE servicios (
     descripcion		TEXT				NULL,
     precio			DECIMAL(7,2)		NULL,
     imagen			VARCHAR(255)		NULL,
+	en_inicio		CHAR(1)				NOT NULL DEFAULT "0",
     created_at 		DATETIME			DEFAULT NOW(),
     updated_at		DATETIME			NULL,
     inactive_at		DATETIME			NULL,

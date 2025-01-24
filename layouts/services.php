@@ -2,9 +2,9 @@
 
 require_once "./models/service.php";
 
-$s = new Servicio();
+$instance = new Servicio();
 
-$services = $s->getAll();
+$services = $instance->getAll();
 
 ?>
 

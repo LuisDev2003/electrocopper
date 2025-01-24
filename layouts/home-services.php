@@ -1,14 +1,13 @@
 <?php
 
-$images = [
-  "diseño.avif",
-  "electricidad.avif",
-  "iluminación-2.avif",
-];
+require_once dirname(__DIR__) . "/models/service.php";
+
+$instance = new Servicio();
+$services = $instance->getToHome();
 
 ?>
 
-<section id="our-services" class="mx-auto max-w-5xl px-3 text-center">
+<section id="our-services" class="mx-auto max-w-5xl px-3 text-center mt-20">
   <h4 class="text-xl font-semibold text-neutral-500">Lo que hacemos</h4>
 
   <h2 class="text-4xl font-extrabold text-neutral-900 text-balance mt-3">
@@ -30,22 +29,22 @@ $images = [
     <p>Estos son los principales servicios que ofrecemos:</p>
   </div>
 
-  <section
-    class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-4 gap-y-8">
-    <?php foreach ($images as $image): ?>
-      <div class="relative flex h-75 items-center justify-center">
-        <img
-          src="./images/new-services/<?= $image ?>"
-          alt="Servicio"
-          class="size-full max-h-full max-w-full rounded-xl object-cover object-center" />
+  <ul class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-4 gap-y-7 px-3 pb-8">
+    <?php foreach ($services as $service): ?>
+      <li>
+        <a href="servicio?n=<?= $service['nombre'] ?>" class="relative flex h-72 items-center justify-center">
+          <img
+            src="./images/services/<?= $service["imagen"] ?? "image-not-found.png" ?>"
+            alt="Imagen de referencia del servicio"
+            class="size-full rounded-lg object-cover object-center border border-neutral-300" />
 
-        <p
-          class="absolute inset-x-3 inset-y-auto -bottom-3 rounded-xl bg-yellow-400 p-3 text-center font-bold md:inset-x-5">
-          <?= $image ?>
-        </p>
-      </div>
+          <div class="absolute inset-x-3 text-sm inset-y-auto -bottom-3 rounded-lg bg-yellow-400 p-3 text-center font-semibold md:inset-x-5">
+            <p title="<?= $service["nombre"] ?>" class="line-clamp-2"><?= $service["nombre"] ?></p>
+          </div>
+        </a>
+      </li>
     <?php endforeach ?>
-  </section>
+  </ul>
 
   <a
     href="./servicios"

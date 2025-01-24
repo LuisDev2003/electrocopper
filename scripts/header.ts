@@ -1,12 +1,9 @@
 import { $, $$ } from "./utils.js";
 
-const $buttonMenuMobile = $("#button-menu-mobile") as HTMLButtonElement;
-const $dropdowns = $$(
-  "#menu-desktop li.relative a",
-) as NodeListOf<HTMLAnchorElement>;
+const $dropdowns = $$("#menu-mobile li.relative a");
 
-$buttonMenuMobile.addEventListener("click", function () {
-  this.classList.toggle("open");
+$("#button-menu-mobile")?.addEventListener("click", function () {
+  this.toggleAttribute("data-active");
 });
 
 $dropdowns.forEach((dropdown) => {
@@ -18,13 +15,13 @@ $dropdowns.forEach((dropdown) => {
     const isButton = button?.tagName === "BUTTON";
 
     if (isButton) {
-      $dropdowns.forEach((item, index) => {
-        if (index > 0 && item !== this) item.removeAttribute("data-active");
-      });
+      // $dropdowns.forEach((item, index) => {
+      //   if (index > 0 && item !== this) item.removeAttribute("data-active");
+      // });
 
       this.toggleAttribute("data-active");
     } else {
-      window.location.href = this.href;
+      window.location.href = (this as HTMLAnchorElement).href;
     }
   });
 });
