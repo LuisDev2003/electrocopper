@@ -21,9 +21,9 @@ textarea {
   scrollbar-width: thin;
 }
 
-main {
+/* main {
   @apply mx-auto max-w-7xl p-3;
-}
+} */
 
 dialog {
   @apply top-1/2 left-1/2 -translate-1/2 rounded-xl p-5;

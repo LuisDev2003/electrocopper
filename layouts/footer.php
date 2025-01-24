@@ -59,7 +59,7 @@
             </a>
           </li>
           <li>
-            <a href="mailto:electrocopper23gmail.com" class="flex gap-x-2">
+            <a href="mailto:electrocopper23&#64;gmail.com" class="flex gap-x-2">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -72,7 +72,7 @@
                   d="M3 7a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-10z"></path>
                 <path d="M3 7l9 6l9 -6"></path>
               </svg>
-              <span class="">electrocopper23gmail.com</span>
+              <span class="">electrocopper23&#64;gmail.com</span>
             </a>
           </li>
           <li>

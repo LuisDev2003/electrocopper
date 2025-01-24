@@ -24,13 +24,13 @@ VALUES
 ('Suministro y montaje de lámparas y dicroicos', 3),
 ('Suministro y montaje de iluminación, tira led de 24 V AC, 230 V AC', 3),
 ('Montaje de toma de pica de tierra', 3),
-('Cambio de cometida de derivación individual', 3),
+('Cambio de acometida de derivación individual', 3),
 ('Instalaciones eléctricas en pisos, comunidades, mancomunidades, chalets', 3),
 ('Suministro e instalación de automáticos, diferenciales rearmables superinmunizados', 3),
 ('Medición de puesta a tierra', 3),
 
 -- Categoría: Telecomunicaciones
-('Montaje De Caja Pau', 4),
+('Montaje De Caja PAU', 4),
 ('Montaje de Rack de comunicación', 4),
 ('Montaje de videoporteros individuales y en comunidades', 4),
 ('Montaje de antenas', 4),

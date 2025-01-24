@@ -8,7 +8,7 @@ $services = $service->getAll();
 
 $startProject = [
   'En menos de 3 meses',
-  'En másde 3 meses',
+  'En más de 3 meses',
   'Estoy planificando, no tengo fecha prevista'
 ];
 
