@@ -1,7 +1,7 @@
 <li data-content-index="4" class="content hidden data-active:block">
   <div>
     <h3 class="font-bold">
-      4. Para seguir con tus ideales dejanos tus datos
+      4. ¿Para contactarte déjanos tus datos?
     </h3>
 
     <div class="my-4">

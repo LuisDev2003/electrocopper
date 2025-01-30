@@ -13,14 +13,14 @@ $services = $service->getAll();
   data-content-index="1"
   class="content active hidden data-active:block">
   <div class="p-3">
-    <h3 class="font-bold">1. ¿En que te podemos ayudar?</h3>
+    <h3 class="font-bold">1. ¿En qué te podemos ayudar?</h3>
 
     <div class="my-4 max-h-60 overflow-auto">
       <ul id="select-services" class="space-y-2">
         <?php foreach ($services as $service) : ?>
           <li>
             <label class="flex items-center gap-x-2">
-              <input required type="radio" name="servicio" />
+              <input required type="checkbox" name="servicio" />
               <span class="truncate text-sm"><?= $service['nombre'] ?></span>
             </label>
           </li>

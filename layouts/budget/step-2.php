@@ -2,7 +2,7 @@
 
 $startProject = [
   'En menos de 3 meses',
-  'En másde 3 meses',
+  'En más de 3 meses',
   'Estoy planificando, no tengo fecha prevista'
 ];
 
@@ -10,7 +10,7 @@ $startProject = [
 
 <li data-content-index="2" class="content hidden data-active:block">
   <div>
-    <h3 class="font-bold">2. ¿Cuando empezamos con tu proyecto?</h3>
+    <h3 class="font-bold">2. ¿Tienes fecha definida para empezar? ¿Díganos para cuándo?</h3>
 
     <div class="my-4">
       <ul id="select-date" class="space-y-2">
