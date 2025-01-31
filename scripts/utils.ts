@@ -62,12 +62,18 @@ export const IconX = `
 </svg>
 `;
 
+export const IconAlert = `
+<svg class="shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+</svg>
+`;
+
 export const $: SelectorOne = (element, scope = document) => {
   return scope.querySelector(element);
 };
 
-export const $$: SelectorAll = (element) => {
-  return document.querySelectorAll(element);
+export const $$: SelectorAll = (element, scope = document) => {
+  return scope.querySelectorAll(element);
 };
 
 export const findAll = async <T>({
@@ -121,6 +127,44 @@ export const generateAlert = (
 
   reference.innerHTML = "";
   reference.prepend(content);
+};
+
+export const alert = (
+  message: string,
+  type: "success" | "error" = "success",
+) => {
+  const wrapper = document.createElement("div");
+  wrapper.role = "alert";
+  wrapper.classList.add(
+    "flex",
+    "items-center",
+    "p-4",
+    "text-sm",
+    "border",
+    "rounded-lg",
+  );
+
+  if (type === "success") {
+    wrapper.classList.add("bg-green-50", "text-green-800", "border-green-300");
+  } else if (type === "error") {
+    wrapper.classList.add("bg-red-50", "text-red-800", "border-red-300");
+  }
+
+  wrapper.innerHTML = IconAlert;
+
+  const span = document.createElement("span");
+  span.classList.add("sr-only");
+  span.textContent = "Info";
+
+  const description = document.createElement("div");
+  description.innerHTML = message;
+
+  wrapper.appendChild(span);
+  wrapper.appendChild(description);
+
+  document.getElementById("alert")?.appendChild(wrapper);
+
+  setTimeout(() => wrapper.remove(), 2500);
 };
 
 export const formatDate = (date: string) => {

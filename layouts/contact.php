@@ -4,8 +4,8 @@
     Contacto
   </h1>
 
-  <div class="flex gap-5 p-3">
-    <div class="shrink-0 grow basis-0">
+  <div class="grid gap-5 p-3 sm:grid-cols-2">
+    <div>
       <div>
         <h4 class="font-semibold text-neutral-600">¿Tienes alguna duda?</h4>
 
@@ -22,14 +22,17 @@
           <input
             type="text"
             placeholder="Nombre"
+            name="nombre"
             class="rounded-lg border border-neutral-600 p-2" />
           <input
             type="text"
             placeholder="Correo electrónico"
+            name="correo"
             class="rounded-lg border border-neutral-600 p-2" />
           <textarea
             rows="3"
             placeholder="Mensaje"
+            name="mensaje"
             class="resize-y rounded-lg border border-neutral-600 p-2"></textarea>
         </form>
 
@@ -42,7 +45,7 @@
       </div>
     </div>
 
-    <div class="shrink-0 grow basis-0">
+    <div>
       <div>
         <h4 class="font-semibold text-neutral-600">Seguimos en Contacto</h4>
 
@@ -190,7 +193,7 @@
   </div>
 </section>
 
-<section class="-mx-3 my-12 sm:mx-0">
+<section class="my-12">
   <iframe
     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.159331917849!2d-3.64224662309125!3d40.427470671437845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422f685502732f%3A0xf385b3a8c844dc5a!2sC%2F%20de%20San%20Fidel%2C%2054%2C%20Cdad.%20Lineal%2C%2028017%20Madrid%2C%20Espa%C3%B1a!5e0!3m2!1ses-419!2sus!4v1737724531163!5m2!1ses-419!2sus"
     height="500"

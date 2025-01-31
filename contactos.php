@@ -23,5 +23,6 @@
 </body>
 
 <script type="module" src="./scripts/header.js"></script>
+<script type="module" src="./scripts/contact.js"></script>
 
 </html>
