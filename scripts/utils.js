@@ -103,7 +103,7 @@ export const generateAlert = (reference, type = "success", message = "Mensaje") 
     reference.innerHTML = "";
     reference.prepend(content);
 };
-export const alert = (message, type = "success") => {
+export const Alert = (message, type = "success") => {
     const wrapper = document.createElement("div");
     wrapper.role = "alert";
     wrapper.classList.add("flex", "items-center", "p-4", "text-sm", "border", "rounded-lg");

@@ -2,9 +2,9 @@
 
 require_once dirname(__FILE__, 3) . "/models/service.php";
 
-$service = new Servicio();
+$instance_service = new Servicio();
 
-$services = $service->getAll();
+$services = $instance_service->getAll();
 
 ?>
 
@@ -20,7 +20,7 @@ $services = $service->getAll();
         <?php foreach ($services as $service) : ?>
           <li>
             <label class="flex items-center gap-x-2">
-              <input required type="checkbox" name="servicio" />
+              <input type="checkbox" name="servicio" />
               <span class="truncate text-sm"><?= $service['nombre'] ?></span>
             </label>
           </li>

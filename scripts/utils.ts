@@ -129,7 +129,7 @@ export const generateAlert = (
   reference.prepend(content);
 };
 
-export const alert = (
+export const Alert = (
   message: string,
   type: "success" | "error" = "success",
 ) => {

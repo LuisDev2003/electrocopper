@@ -7,24 +7,21 @@
     <div class="my-4">
       <div id="data-client" class="space-y-2">
         <input
-          required
           type="text"
-          name="nombres"
-          placeholder="Nombre"
+          name="nombre"
+          placeholder="Nombre completo"
           class="w-full rounded-lg border border-gray-600 p-2" />
 
         <input
-          required
           type="text"
           name="telefono"
           placeholder="Teléfono"
           class="w-full rounded-lg border border-gray-600 p-2" />
 
         <input
-          required
-          type="text"
+          type="email"
           name="correo"
-          placeholder="Correo eletrónico"
+          placeholder="Correo electrónico"
           class="w-full rounded-lg border border-gray-600 p-2" />
       </div>
     </div>

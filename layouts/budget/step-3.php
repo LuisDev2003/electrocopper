@@ -2,12 +2,11 @@
   <div>
     <h3 class="font-bold">3. ¿Cuánto estas dispuesto a invertir?</h3>
 
-    <div class="my-4">
+    <div id="input-price" class="my-4">
       <input
-        required
-        type="text"
+        type="number"
         name="precio"
-        class="w-full rounded-lg border border-gray-600 p-2" />
+        class="w-full rounded-lg border border-gray-600 p-2 text-right" />
     </div>
 
     <div class="flex gap-x-2">

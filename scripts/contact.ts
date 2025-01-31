@@ -1,4 +1,4 @@
-import { $, alert } from "./utils.js";
+import { $, Alert } from "./utils.js";
 
 const contactController = "./controllers/forms.controller.php";
 
@@ -17,11 +17,11 @@ $("#contact-form")?.addEventListener("submit", async function (event) {
     const data = await response.json();
 
     if (data.success) {
-      alert("Se envió el formulario correctamente");
+      Alert("Se envió el formulario correctamente");
     } else {
-      alert("Ocurrió un error inesperado");
+      Alert("Ocurrió un error inesperado");
     }
   } catch {
-    alert("Ocurrió un error inesperado");
+    Alert("Ocurrió un error inesperado");
   }
 });

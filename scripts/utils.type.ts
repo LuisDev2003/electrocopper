@@ -1,6 +1,6 @@
 export type SelectorOne = (
   element: string,
-  scope?: Document,
+  scope?: Document | HTMLElement,
 ) => HTMLElement | null;
 
 export type SelectorAll = (element: string) => NodeListOf<HTMLElement>;

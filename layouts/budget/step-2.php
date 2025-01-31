@@ -18,7 +18,6 @@ $startProject = [
           <li>
             <label>
               <input
-                required
                 type="radio"
                 name="fecha"
                 value="<?= $project ?>" />

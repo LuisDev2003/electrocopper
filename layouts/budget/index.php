@@ -20,18 +20,19 @@
 
     <div class="flex flex-col items-center justify-center gap-y-4">
       <?php require_once dirname(__FILE__,) . "/steps.php" ?>
+      <form id="form-budget" class="w-full">
+        <ul id="contents">
+          <?php require_once dirname(__FILE__,) . "/step-1.php" ?>
 
-      <ul id="contents" class="w-full">
-        <?php require_once dirname(__FILE__,) . "/step-1.php" ?>
+          <?php require_once dirname(__FILE__,) . "/step-2.php" ?>
 
-        <?php require_once dirname(__FILE__,) . "/step-2.php" ?>
+          <?php require_once dirname(__FILE__,) . "/step-3.php" ?>
 
-        <?php require_once dirname(__FILE__,) . "/step-3.php" ?>
+          <?php require_once dirname(__FILE__,) . "/step-4.php" ?>
 
-        <?php require_once dirname(__FILE__,) . "/step-4.php" ?>
-
-        <?php require_once dirname(__FILE__,) . "/step-5.php" ?>
-      </ul>
+          <?php require_once dirname(__FILE__,) . "/step-5.php" ?>
+        </ul>
+      </form>
     </div>
   </div>
 </section>
