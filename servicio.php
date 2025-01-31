@@ -1,8 +1,4 @@
-<?php
-
-$name = $_GET['n'] ?: '';
-
-?>
+<?php $name = $_GET['n'] ?: ''; ?>
 
 <!DOCTYPE html>
 <html lang="es">

@@ -39,7 +39,7 @@
                 <?php foreach ($services as $service) : ?>
                   <li>
                     <a
-                      href="<?= stringToSlug($service, $baseURL . "servicio/") ?>"
+                      href="<?= buildURL($service, "servicio?n=") ?>"
                       class="flex h-10 rounded-lg items-center px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white">
                       <span class="truncate"><?= $service ?></span>
                     </a>

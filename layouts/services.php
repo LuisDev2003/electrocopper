@@ -6,6 +6,8 @@ $instance = new Servicio();
 
 $services = $instance->getAll();
 
+// ./images/services/<?= $service["imagen"] ?? "image-not-found.png" 
+?>
 ?>
 
 <ul class="my-8 mx-auto grid max-w-5xl grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-x-4 gap-y-7 px-3 pb-8">
@@ -14,7 +16,7 @@ $services = $instance->getAll();
       <a href="#" class="relative flex h-72 items-center justify-center">
         <img
           loading="lazy"
-          src="./images/services/<?= $service["imagen"] ?? "image-not-found.png" ?>"
+          src="<?= buildURL($service["imagen"] ?? "image-not-found.png", "images/services/") ?>"
           alt="Imagen de referencia del servicio"
           class="size-full rounded-lg object-cover object-center border border-neutral-300" />
 

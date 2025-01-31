@@ -66,6 +66,20 @@ class Servicio extends Conexion
 		}
 	}
 
+
+	public function findByName($name)
+	{
+		try {
+			$consulta = $this->conexion->prepare('CALL spu_servicio_buscar_nombre(?)');
+			$consulta->execute([$name]);
+
+			return $consulta->fetch(PDO::FETCH_ASSOC);
+		} catch (Exception $e) {
+			die($e->getMessage());
+		}
+	}
+
+
 	public function create($data = [])
 	{
 		try {

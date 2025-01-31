@@ -4,6 +4,7 @@ DROP PROCEDURE IF EXISTS spu_servicio_inicio_listar;
 DROP PROCEDURE IF EXISTS spu_menu_servicio_listar;
 DROP PROCEDURE IF EXISTS spu_servicio_listar;
 DROP PROCEDURE IF EXISTS spu_servicio_buscar;
+DROP PROCEDURE IF EXISTS spu_servicio_buscar_nombre;
 DROP PROCEDURE IF EXISTS spu_servicio_registrar;
 DROP PROCEDURE IF EXISTS spu_servicio_actualizar;
 DROP PROCEDURE IF EXISTS spu_servicio_eliminar;
@@ -61,6 +62,14 @@ BEGIN
     FROM servicios
     WHERE servicio_id = _servicio_id
 		AND inactive_at IS NULL;
+END $$
+
+-- ###################################################################
+DELIMITER $$
+CREATE PROCEDURE spu_servicio_buscar_nombre(IN _nombre VARCHAR(255))
+BEGIN
+	SELECT * FROM vw_servicio
+    WHERE nombre = _nombre;
 END $$
 
 -- ###################################################################
