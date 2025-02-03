@@ -69,10 +69,8 @@ CREATE TABLE clientes (
     CONSTRAINT fk_empresa_cli		FOREIGN KEY (empresa_id) REFERENCES empresas(empresa_id)
 ) ENGINE = InnoDB;
 
-
 -- ###################################################################
-CREATE TABLE formulario_contacto
-(
+CREATE TABLE formulario_contacto (
 	formulario_contacto_id 		INT AUTO_INCREMENT		PRIMARY KEY ,
     nombre						VARCHAR(60)				NOT NULL,
     correo						VARCHAR(120)			NOT NULL,
@@ -80,8 +78,22 @@ CREATE TABLE formulario_contacto
     created_at 					DATETIME				DEFAULT NOW(),
     updated_at					DATETIME				NULL,
     inactive_at					DATETIME				NULL
-)ENGINE = INNODB;
+) ENGINE = InnoDB;
 
+-- ###################################################################
+CREATE TABLE formulario_presupuesto (
+	formulario_presupuesto_id INT AUTO_INCREMENT PRIMARY KEY ,
+    servicios			TEXT					NOT NULL,
+    fecha				VARCHAR(50)				NOT NULL,
+    precio				VARCHAR(50)				NOT NULL,
+    nombre				VARCHAR(100)			NOT NULL,
+    telefono			VARCHAR(15)				NOT NULL,
+    correo				VARCHAR(255)			NOT NULL,
+    mensaje				TEXT 					NULL,
+    created_at 			DATETIME				DEFAULT NOW(),
+    updated_at			DATETIME				NULL,
+    inactive_at			DATETIME				NULL
+) ENGINE = InnoDB;
 
 -- ###################################################################
 CREATE TABLE categorias(
@@ -91,7 +103,7 @@ CREATE TABLE categorias(
     updated_at		DATETIME				NULL,
     inactive_at		DATETIME				NULL,
     CONSTRAINT un_nombre_cat	UNIQUE(nombre)
-) ENGINE = INNODB;
+) ENGINE = InnoDB;
 
 
 -- ###################################################################
@@ -141,12 +153,11 @@ CREATE TABLE comentarios (
 	comentario_id	INT AUTO_INCREMENT	PRIMARY KEY,
 	nombre_cliente	VARCHAR(125)		NOT NULL,
 	comentario		TEXT				NOT NULL,
-    estrellas		TINYINT				NOT NULL DEFAULT 0,
+    estrellas		TINYINT				NOT NULL DEFAULT 1,
     created_at 		DATETIME			DEFAULT NOW(),
     updated_at		DATETIME			NULL,
     inactive_at		DATETIME			NULL
 ) ENGINE = InnoDB;
-
 
 -- ###################################################################
 CREATE TABLE cotizaciones (

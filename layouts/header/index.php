@@ -66,5 +66,3 @@
       d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
   </svg>
 </a>
-
-<div id="alert" class="fixed bottom-3 left-3 z-100 space-y-1"></div>

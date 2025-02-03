@@ -129,6 +129,14 @@ export const generateAlert = (
   reference.prepend(content);
 };
 
+const WrapperAlert = () => {
+  const div = document.createElement("div");
+  div.classList.add("fixed", "bottom-3", "left-3", "z-100", "space-y-1");
+  div.id = "alert";
+
+  document.body.appendChild(div);
+};
+
 export const Alert = (
   message: string,
   type: "success" | "error" = "success",
@@ -162,7 +170,14 @@ export const Alert = (
   wrapper.appendChild(span);
   wrapper.appendChild(description);
 
-  document.getElementById("alert")?.appendChild(wrapper);
+  const wrapperAlert = $("#alert");
+
+  if (wrapperAlert !== null) {
+    wrapperAlert.appendChild(wrapper);
+  } else {
+    WrapperAlert();
+    $("#alert")!.appendChild(wrapper);
+  }
 
   setTimeout(() => wrapper.remove(), 2500);
 };

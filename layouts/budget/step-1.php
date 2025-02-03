@@ -20,7 +20,7 @@ $services = $instance_service->getAll();
         <?php foreach ($services as $service) : ?>
           <li>
             <label class="flex items-center gap-x-2">
-              <input type="checkbox" name="servicio" />
+              <input type="checkbox" name="servicio[]" value="<?= $service['nombre'] ?>" />
               <span class="truncate text-sm"><?= $service['nombre'] ?></span>
             </label>
           </li>

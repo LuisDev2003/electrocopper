@@ -57,12 +57,8 @@ $buttonPrev.forEach((button) => {
   button.addEventListener("click", handleChangeStepContent(-1));
 });
 
-// $buttonNext.forEach((button) => {
-//   button.addEventListener("click", handleChangeStepContent(1));
-// });
-
 buttonNext[0].addEventListener("click", function (event) {
-  const checkboxes = $$('#select-services input[name="servicio"]');
+  const checkboxes = $$('#select-services input[name="servicio[]"]');
 
   const isChecked = Array.from(checkboxes as NodeListOf<HTMLInputElement>).some(
     (checkbox) => checkbox.checked,
@@ -93,7 +89,11 @@ buttonNext[2].addEventListener("click", function (event) {
   const input = $('#input-price input[name="precio"]') as HTMLInputElement;
 
   if (input.value.trim() === "") {
-    alert("El precio debe ser mayor a 0.");
+    alert("Por favor, ingrese un precio antes de continuar.");
+    input.focus();
+  } else if (isNaN(Number(input.value.trim()))) {
+    alert("El valor ingresado no es un número válido.");
+    input.focus();
   } else {
     handleChangeStepContent(1)(event);
   }
@@ -105,12 +105,20 @@ buttonNext[3].addEventListener("click", function (event) {
   const phone = $("input[name='telefono']", form) as HTMLInputElement;
   const email = $("input[name='correo']", form) as HTMLInputElement;
 
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  console.log(!emailRegex.test(email.value.trim()));
+
   if (
     name.value.trim() === "" ||
     phone.value.trim() === "" ||
     email.value.trim() === ""
   ) {
     alert("No debe de haber campos vacíos");
+    name.focus();
+  } else if (!emailRegex.test(email.value.trim())) {
+    alert("El correo electrónico no es válido");
+    email.focus();
   } else {
     handleChangeStepContent(1)(event);
   }
@@ -119,15 +127,28 @@ buttonNext[3].addEventListener("click", function (event) {
 //#endregion
 
 //#region Form
-$("#form-budget")?.addEventListener("submit", function (event) {
+const budgetController = "./controllers/budget.controller.php";
+
+$("#form-budget")?.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const formdata = new FormData(event.currentTarget as HTMLFormElement);
+  formdata.append("operacion", "create");
+  try {
+    const response = await fetch(budgetController, {
+      method: "POST",
+      body: formdata,
+    });
+    const data = await response.json();
 
-  for (const field of formdata) {
-    const [key, value] = field;
-
-    console.log({ key, value });
+    if (data.success) {
+      alert("Se envió el formulario correctamente");
+      location.reload();
+    } else {
+      alert("Ocurrió un error inesperado");
+    }
+  } catch (error) {
+    alert("Ocurrió un error inesperado");
   }
 });
 //#endregion
