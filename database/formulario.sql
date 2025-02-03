@@ -46,31 +46,6 @@ END $$
 
 -- ###################################################################
 DELIMITER $$
-CREATE PROCEDURE spu_formulario_presupuesto_actualizar(
-	IN	_formulario_presupuesto_id	INT,
-	IN 	_servicios	TEXT, 
-	IN 	_fecha		VARCHAR(50),
-	IN 	_precio		VARCHAR(50),
-	IN 	_nombre		VARCHAR(100),
-	IN 	_telefono	VARCHAR(15),
-	IN 	_correo		VARCHAR(255),
-	IN 	_mensaje	TEXT
-)
-BEGIN
-	UPDATE formulario_presupuesto SET
-		servicios 	= 	_servicios,
-        fecha		=	_fecha,
-        precio		=	_precio,
-		nombre 		= 	_nombre,
-        telefono	=	_telefono,
-        correo		=	_correo,
-        mensaje		=	_mensaje,
-        updated_at 	=	NOW()
-	WHERE formulario_presupuesto_id = _formulario_presupuesto_id;
-END $$
-
--- ###################################################################
-DELIMITER $$
 CREATE PROCEDURE spu_formulario_presupuesto_eliminar(
 	IN 	_formulario_presupuesto_id 	INT
 )

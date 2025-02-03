@@ -4,7 +4,7 @@
   <div
     class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-x-3 px-3">
     <div class="drop-shadow-lg">
-      <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo de la empresa" class="h-12" />
+      <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo de la empresa" class="h-12" style="filter: drop-shadow(0 0 1px #000);;" />
     </div>
 
     <div class="relative grow md:hidden">
@@ -51,7 +51,7 @@
 <a
   href="https://wa.me/604982792"
   target="_blank"
-  aria-label="Whatsapp"
+  aria-label="WhatsApp"
   class="fixed right-3 bottom-3 z-999 rounded-full !bg-green-400 !p-1.5">
   <svg
     viewBox="0 0 24 24"

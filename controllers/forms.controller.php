@@ -2,7 +2,6 @@
 
 require_once '../models/forms.php';
 
-
 if (isset($_POST['operacion'])) {
 
   $forms = new Forms();

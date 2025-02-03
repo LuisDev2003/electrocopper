@@ -1,4 +1,4 @@
-import { $, Alert } from "./utils.js";
+import { $ } from "./utils.js";
 const contactController = "./controllers/forms.controller.php";
 $("#contact-form")?.addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -11,14 +11,15 @@ $("#contact-form")?.addEventListener("submit", async function (event) {
         });
         const data = await response.json();
         if (data.success) {
-            Alert("Se envió el formulario correctamente");
+            alert("Se envió el formulario correctamente");
         }
         else {
-            Alert("Ocurrió un error inesperado");
+            alert("Ocurrió un error inesperado");
         }
     }
-    catch {
-        Alert("Ocurrió un error inesperado");
+    catch (error) {
+        console.log(error);
+        alert("Ocurrió un error inesperado");
     }
 });
 //# sourceMappingURL=contact.js.map

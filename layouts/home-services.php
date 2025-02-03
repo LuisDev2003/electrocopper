@@ -11,12 +11,12 @@ $services = $instance->getToHome();
   <h4 class="text-xl font-semibold text-neutral-500">Lo que hacemos</h4>
 
   <h2 class="text-4xl font-extrabold text-neutral-900 text-balance mt-3">
-    Nuestros Servicios de Reformas Integrales en Madrid
+    Servicios de Electricidad en Madrid
   </h2>
 
   <div class="my-8 space-y-5 text-neutral-900">
     <p>
-      Recuerda nuestra empresa somos expertos en reformas en Madrid y estamos
+      Recuerda nuestra empresa somos expertos en servicios de electricidad en Madrid y estamos
       aquí para ayudarte en cada paso del camino.
     </p>
 
