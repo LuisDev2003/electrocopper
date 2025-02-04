@@ -20,8 +20,9 @@
         Anterior
       </button>
       <button
+        id="budget-submit"
         type="submit"
-        class="inline-flex h-10 w-24 cursor-pointer items-center justify-center rounded-lg bg-blue-600 text-sm font-semibold text-blue-50">
+        class="inline-flex h-10 w-24 cursor-pointer items-center justify-center rounded-lg bg-blue-600 text-sm font-semibold text-blue-50 disabled:cursor-auto disabled:bg-neutral-600">
         Enviar
       </button>
     </div>

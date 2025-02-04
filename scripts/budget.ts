@@ -91,7 +91,7 @@ buttonNext[2].addEventListener("click", function (event) {
   if (input.value.trim() === "") {
     alert("Por favor, ingrese un precio antes de continuar.");
     input.focus();
-  } else if (isNaN(Number(input.value.trim()))) {
+  } else if (isNaN(Number(input.value.trim())) || Number(input.value) <= 0) {
     alert("El valor ingresado no es un número válido.");
     input.focus();
   } else {
@@ -129,8 +129,13 @@ buttonNext[3].addEventListener("click", function (event) {
 //#region Form
 const budgetController = "./controllers/budget.controller.php";
 
+const $submit = $("#budget-submit")!;
+
 $("#form-budget")?.addEventListener("submit", async function (event) {
   event.preventDefault();
+
+  $submit.textContent = "Enviando ...";
+  $submit.setAttribute("disabled", "");
 
   const formdata = new FormData(event.currentTarget as HTMLFormElement);
   formdata.append("operacion", "create");
@@ -149,6 +154,9 @@ $("#form-budget")?.addEventListener("submit", async function (event) {
     }
   } catch (error) {
     alert("Ocurrió un error inesperado");
+  } finally {
+    $submit.textContent = "Enviar";
+    $submit.removeAttribute("disabled");
   }
 });
 //#endregion

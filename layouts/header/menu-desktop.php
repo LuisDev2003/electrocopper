@@ -7,7 +7,7 @@
       <li>
         <a
           href="<?= $item["link"] ?>"
-          class="inline-flex items-center gap-x-2 bg-transparent p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
+          class="inline-flex items-center gap-x-2 bg-transparent p-1 text-base text-neutral-800 hover:underline underline-offset-2">
           <span><?= $item["name"] ?></span>
         </a>
       </li>
@@ -17,7 +17,7 @@
       <li class="relative">
         <a
           href="<?= $item["link"] ?>"
-          class="peer group inline-flex items-center gap-x-1 bg-transparent p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
+          class="peer group inline-flex items-center gap-x-1 bg-transparent p-1 text-base text-neutral-800 hover:underline underline-offset-2">
           <span><?= $item["name"] ?></span>
 
           <?php include dirname(__FILE__) . "/button.php" ?>
@@ -28,7 +28,7 @@
             <li class="relative">
               <a
                 href="<?= stringToSlug($category, $baseURL . "categoria/") ?>"
-                class="peer group flex h-10 items-center gap-x-1 px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white">
+                class="peer group flex h-10 items-center gap-x-1 px-3 text-base text-neutral-800 hover:bg-neutral-800 hover:text-white">
                 <span class="truncate"><?= $category ?></span>
 
                 <?php include dirname(__FILE__) . "/button.php" ?>
@@ -40,7 +40,7 @@
                   <li>
                     <a
                       href="<?= buildURL($service, "servicio?n=") ?>"
-                      class="flex h-10 items-center px-3 text-sm text-neutral-800 hover:bg-neutral-800 hover:text-white">
+                      class="flex h-10 items-center px-3 text-base text-neutral-800 hover:bg-neutral-800 hover:text-white">
                       <span class="truncate"><?= $service ?></span>
                     </a>
                   </li>
