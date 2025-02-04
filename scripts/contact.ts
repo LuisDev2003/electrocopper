@@ -1,9 +1,14 @@
-import { $ } from "./utils.js";
+import { $, Alert } from "./utils.js";
 
 const contactController = "./controllers/forms.controller.php";
 
+const $submit = $("button[form='contact-form']")!;
+
 $("#contact-form")?.addEventListener("submit", async function (event) {
   event.preventDefault();
+
+  $submit.textContent = "Enviando ...";
+  $submit.setAttribute("disabled", "");
 
   const formdata = new FormData(event.currentTarget as HTMLFormElement);
   formdata.append("operacion", "create");
@@ -17,13 +22,17 @@ $("#contact-form")?.addEventListener("submit", async function (event) {
     const data = await response.json();
 
     if (data.success) {
-      alert("Se envió el formulario correctamente");
+      ($("#contact-form") as HTMLFormElement).reset();
+      Alert("Se envió el formulario correctamente");
     } else {
-      alert("Ocurrió un error inesperado");
+      Alert("Ocurrió un error inesperado");
     }
   } catch (error) {
     console.log(error);
 
-    alert("Ocurrió un error inesperado");
+    Alert("Ocurrió un error inesperado");
+  } finally {
+    $submit.textContent = "Enviar";
+    $submit.removeAttribute("disabled");
   }
 });

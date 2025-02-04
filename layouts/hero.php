@@ -1,4 +1,4 @@
-<section role="banner" class="relative my-3">
+<section role="banner" class="relative mb-3">
   <div
     role="img"
     class="relative aspect-5/2 min-h-100 w-full bg-[url('../images/static/0.avif')] bg-cover bg-center"></div>

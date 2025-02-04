@@ -7,7 +7,7 @@
       <li>
         <a
           href="<?= $item["link"] ?>"
-          class="inline-flex items-center gap-x-2 bg-white p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
+          class="inline-flex items-center gap-x-2 bg-transparent p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
           <span><?= $item["name"] ?></span>
         </a>
       </li>
@@ -17,7 +17,7 @@
       <li class="relative">
         <a
           href="<?= $item["link"] ?>"
-          class="peer group inline-flex items-center gap-x-1 bg-white p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
+          class="peer group inline-flex items-center gap-x-1 bg-transparent p-1 text-sm text-neutral-800 hover:underline underline-offset-2">
           <span><?= $item["name"] ?></span>
 
           <?php include dirname(__FILE__) . "/button.php" ?>

@@ -1,10 +1,10 @@
 <?php include_once dirname(__DIR__, 2) . "/config/index.php"; ?>
 
-<header class="sticky top-0 z-50 w-full bg-white">
+<header class="sticky top-0 z-50 w-full bg-[#40E0D0]">
   <div
     class="mx-auto flex h-16 max-w-5xl items-center justify-between gap-x-3 px-3">
     <div class="drop-shadow-lg">
-      <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo de la empresa" class="h-12" style="filter: drop-shadow(0 0 1px #000);;" />
+      <img src="<?= $baseURL . "images/logo.png" ?>" alt="Logo de la empresa" class="h-12" />
     </div>
 
     <div class="relative grow md:hidden">

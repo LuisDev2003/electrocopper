@@ -20,16 +20,19 @@
       <div>
         <form id="contact-form" class="mt-4 flex flex-col gap-y-2">
           <input
+            required
             type="text"
             placeholder="Nombre"
             name="nombre"
             class="rounded-lg border border-neutral-600 p-2" />
           <input
-            type="text"
+            required
+            type="email"
             placeholder="Correo electrónico"
             name="correo"
             class="rounded-lg border border-neutral-600 p-2" />
           <textarea
+            required
             rows="3"
             placeholder="Mensaje"
             name="mensaje"
@@ -39,7 +42,7 @@
         <button
           type="submit"
           form="contact-form"
-          class="float-right mt-2 inline-flex w-40 items-center justify-center rounded-lg bg-blue-600 py-2 text-sm font-bold text-white">
+          class="float-right cursor-pointer mt-2 inline-flex w-40 items-center justify-center rounded-lg bg-blue-600 py-2 text-sm font-bold text-white disabled:cursor-auto disabled:bg-neutral-600">
           Enviar
         </button>
       </div>
